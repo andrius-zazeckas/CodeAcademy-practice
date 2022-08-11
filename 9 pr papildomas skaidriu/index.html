@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <main>
+            <header>
+                <h1>Payment form</h1>
+                <p>Required fields are followed by *</p>
+            </header>
+            <h2>Contact information</h2>
+            <form>
+                <div class="contact">
+
+                    <fieldset class="title">
+                        <legend>Title</legend>
+
+                        <input type="radio" id="mister" name="gender" value="mister">
+                        <label for="Mister">Mister</label>
+                        <br>
+
+                        <input type="radio" id="miss" name="gender" value="miss">
+                        <label for="Miss">Miss</label>
+
+                    </fieldset>
+
+                    <fieldset class="scontact">
+                        <div>
+                            <label for="firstname">Name: *</label>
+                            <input type="firstName" name="fname" required /><br>
+                        </div>
+                        <div>
+                            <label for="email">Email: *</label>
+                            <input type="email" name="email" required><br>
+                        </div>
+                        <div>
+                            <label for="password">Password: *</label>
+                            <input type="password" name="password" id="password" required>
+                        </div>
+                    </fieldset>
+
+                </div>
+                <h2>Payment information</h2>
+                <div class="Payment">
+                    <div>
+                        <label for="card">Card type:</label>
+                        <select name="card" id="card">
+                            <option value="Visa">Visa</option>
+                            <option value="MasterCard">MasterCard</option>
+                        </select>
+                    </div>
+                    <label for="Ccard">Card number: *</label>
+                    <input type="number" id="Ccard" name="Ccard" min="16" max="16" required>
+                </div>
+                <div>
+                    <label for="date">Expiration date: *</label>
+                    <input type="number" name="date" id="date" required>
+                </div>
+                <div class="centerbtn">
+                    <button type="submit" size="50px">Register</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>

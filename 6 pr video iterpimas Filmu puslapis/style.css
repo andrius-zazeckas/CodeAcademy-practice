@@ -1,0 +1,146 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+#page {
+    margin: auto;
+    /* border-radius: 5px; */
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#page #side-menu {
+    margin: auto;
+    padding-top: 20px;
+    background-color: #24282c;
+    max-width: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+
+#page #content {
+    /* background-color: orange; */
+    position: relative;
+    margin-left: 250px;
+    padding: 10px;
+    padding-left: 0;
+}
+
+div.separator {
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #353535;
+    margin: 20px;
+}
+
+div.separator2 {
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #353535;
+    margin: 20px;
+}
+
+h1.logo {
+    margin-top: 0;
+    margin-left: 10px;
+    color: #dddddd;
+}
+
+li.inactive a {
+    color: #727474;
+    font-size: small;
+}
+
+li.inactive {
+    color: #fe3a3a;
+
+}
+
+li.active {
+    color: #fe3a3a;
+}
+
+li.active a {
+
+    font-size: small;
+}
+
+li {
+    /* padding: 0; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+li a {
+    text-decoration: none;
+    color: #dddddd;
+}
+
+div.menu1 li,
+div.menu2 li {
+    list-style-type: none;
+}
+
+div.menu ul {
+    color: #fe3a3a;
+}
+
+#page #content p {
+    display: inline-block;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.grey {
+    color: grey;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+div.left {
+    float: left;
+}
+
+div.right {
+    float: right;
+}
+
+.titlebar {
+    padding: 20px;
+    border-bottom: 1px solid rgb(227, 226, 226);
+    overflow: hidden;
+}
+
+div.trailers {
+    margin-top: 200px;
+}
+
+#page #content #trailers .list {
+    list-style-type: none;
+}
+
+.description h4, p {
+    margin: 10px;
+}
+.description {
+    margin-bottom: 40px;
+}
+.right a {
+    text-decoration: none;
+    color: black;
+}
+
+a.blue {
+    color: blue;
+}
+.titlebar .left {
+    margin-top: 5px;
+}
+#trailers {
+    padding-right: 20px;
+}

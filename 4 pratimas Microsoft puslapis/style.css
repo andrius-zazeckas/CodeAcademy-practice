@@ -1,0 +1,77 @@
+img.belekas {
+    width: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+section img {
+    width: 100%;
+}
+/* img.belekas2 {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+} */
+
+nav {
+    text-align: center;
+    font-size: 22px;
+
+    background-color: green;
+    line-height: 60px;
+}
+
+nav a {
+    margin: 0 1em;
+    color: rgb(255, 255, 255);
+}
+
+h2.sekcija {
+    background: rgb(11, 104, 11);
+        color: white;
+        padding: 10px;
+        margin-top: 20px;
+}
+
+.sekcija1 {
+    padding: 20px;
+    background: rgb(191, 191, 191)
+}
+
+.sekcija2 {
+    padding: 20px;
+    background-color: rgb(132, 193, 110);
+}
+
+p.paragrafas {
+    margin: auto;
+    /* color: rgb(255, 255, 255); */
+  
+    /* background-color: green; */
+    padding: 10px;
+}
+
+/* .baltas {
+    margin: 0 1em;
+    color: rgb(255, 255, 255);
+
+} */
+
+a:link.baltas {
+    text-decoration: none;
+}
+
+a:visited.baltas {
+    text-decoration: none;
+}
+
+a:hover.baltas {
+    text-decoration: underline;
+}
+
+a:active.baltas {
+    text-decoration: underline;
+}

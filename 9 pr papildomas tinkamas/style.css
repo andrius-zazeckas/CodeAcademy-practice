@@ -1,0 +1,57 @@
+body {
+    background: white;
+    width: 400px;
+    margin: 0 auto;
+    border: 0.5px solid rgb(156, 144, 144);
+    border-radius: 20px;
+    padding: 5px 10px 20px 5px;
+}
+
+.container {
+    text-align: center;
+}
+
+header.left {
+    text-align: left;
+}
+
+h2 {
+    text-align: left;
+}
+
+.radio {
+    box-sizing: border-box;
+    width: 200px;
+    border: 1px solid rgb(156, 144, 144);
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.noborder {
+    border: none;
+    text-align: right;
+}
+
+input[type=email],
+input[type=password],
+input[type=number] {
+    width: 200px;
+}
+
+
+fieldset.radio legend,
+fieldset.radio label {
+    text-align: left
+}
+
+button.submit {
+    background: rgb(238, 227, 227);
+    border: 0.3px solid grey;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+button.submit:hover {
+    background: yellow;
+    cursor: pointer;
+}

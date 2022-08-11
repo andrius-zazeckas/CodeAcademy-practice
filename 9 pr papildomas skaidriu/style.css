@@ -1,0 +1,80 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.wrapper {
+    max-width: 440px;
+    border: 3px solid gray;
+    border-radius: 20px;
+    margin: 10px;
+    /* margin: 20px auto; */
+}
+
+main {
+    margin: 10px;
+}
+
+#Ccard::-webkit-outer-spin-button,
+#date::-webkit-outer-spin-button,
+#Ccard::-webkit-inner-spin-button,
+#date::-webkit-inner-spin-button {
+
+    appearance: none;
+}
+
+input {
+    margin-top: 5px;
+    /* display: flex;
+    width: 200px;
+    flex-wrap: wrap;
+    align-content: stretch;
+    overflow: scroll; */
+}
+
+.scontact {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+
+
+
+
+/* .scontact>fieldset>label {
+    display: inline-block;
+    text-align: right;
+    width: 150px;
+} */
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.title {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 240px;
+
+
+}
+.scontact {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 400px;
+
+
+}
+/* .scontact>div {
+    margin-bottom: 10px;
+
+} */

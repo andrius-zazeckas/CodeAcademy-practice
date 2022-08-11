@@ -1,0 +1,147 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #000214;
+}
+
+.contentWrapper {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 200px;
+}
+
+header h1 {
+    margin: 0 auto;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    max-width: 800px;
+}
+
+#navbar {
+    margin: 0 auto;
+    text-decoration: none;
+    background-color: #dab600;
+    padding: 20px 0;
+    max-width: 800px;
+    text-align: right;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+#about {
+    margin: 0 auto;
+    /* padding: 10px; */
+
+    text-align: justify;
+}
+
+#about p {
+    font-size: small;
+}
+
+.buttoncenter {
+
+    text-align: center;
+}
+
+#button {
+    background-color: #e40000;
+    margin: 20px;
+    width: 200px;
+    font-size: small;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0px solid;
+    color: white;
+    cursor: pointer;
+}
+
+#table {
+
+    background-color: #00144b;
+    text-align: left;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+#table h2 {
+
+    color: white;
+    padding: 10px;
+
+    text-align: left;
+}
+
+table {
+
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+tr,
+td,
+th {
+    border: 1px solid red;
+    padding: 5px;
+    font-size: smaller;
+
+}
+
+tbody>tr>td:nth-child(even) {
+    text-align: right;
+}
+
+tr:last-child {
+    text-align: right;
+}
+
+th {
+    text-align: center;
+    font-size: smaller;
+}
+
+th.name {
+    width: 40%;
+}
+
+tr {
+    text-align: center;
+}
+
+#contacts {
+    margin: 0 auto;
+    /* padding: 10px; */
+    max-width: 800px;
+    text-align: justify;
+}
+
+#contacts h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    margin: 0 auto;
+
+    background-color: #dab600;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+    font-size: small;
+}

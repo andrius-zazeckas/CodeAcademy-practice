@@ -1,0 +1,24 @@
+header {
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0 10px;
+    background-color: grey;
+}
+
+header img {
+    margin: 10px;
+    background-color: white;
+    max-height: 80px;
+    border-radius: 20px;
+    padding: 30px;
+    margin-right: auto;
+}
+
+
+
+a {
+    margin-right: 20px;
+    padding: 0 10px;
+}

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+.skyblue{
+    color:rgb(71, 71, 222)
+}
+.green{
+    color: green
+}
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    text-align: justify;
+}
+.italic{
+    font-style: italic;
+}
+.bold{
+    font-weight: 700;
+    /* text-shadow: dimgray 2px 2px; */
+}
