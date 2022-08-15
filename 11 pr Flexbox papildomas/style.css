@@ -1,0 +1,41 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+
+    background-color: grey;
+    filter: drop-shadow(0px 1px 10px black);
+}
+
+.nav {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav>a:nth-child(even):hover {
+    text-decoration: underline;
+}
+
+section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+section>div:nth-child(odd):hover {
+    background-color: green
+}
+
+section>div {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+
+}
