@@ -30,7 +30,7 @@
                     <fieldset class="title">
                         <legend>Title</legend>
 
-                        <input type="radio" id="mister" name="gender" value="mister">
+                        <input type="radio" id="mister" name="gender" value="mister" required>
                         <label for="Mister">Mister</label>
                         <br>
 
@@ -42,7 +42,7 @@
                     <fieldset class="scontact">
                         <div>
                             <label for="firstname">Name: *</label>
-                            <input type="firstName" name="fname" required /><br>
+                            <input type="text" name="fname" required /><br>
                         </div>
                         <div>
                             <label for="email">Email: *</label>
@@ -50,32 +50,38 @@
                         </div>
                         <div>
                             <label for="password">Password: *</label>
-                            <input type="password" name="password" id="password" required>
+                            <input type="password" name="password" id="password" maxlength="4" required>
                         </div>
                     </fieldset>
 
                 </div>
                 <h2>Payment information</h2>
-                <div class="Payment">
-                    <div>
+                <fieldset class="payment">
+                    <div class="selector">
                         <label for="card">Card type:</label>
                         <select name="card" id="card">
                             <option value="Visa">Visa</option>
                             <option value="MasterCard">MasterCard</option>
                         </select>
                     </div>
-                    <label for="Ccard">Card number: *</label>
-                    <input type="number" id="Ccard" name="Ccard" min="16" max="16" required>
-                </div>
-                <div>
-                    <label for="date">Expiration date: *</label>
-                    <input type="number" name="date" id="date" required>
-                </div>
+                    <div>
+                        <label for="Ccard">Card number: *</label>
+                        <input type="text" id="Ccard" name="Ccard" pattern="[0-9]{16}" title="must be 16 numbers"
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="date">Expiration date: *</label>
+                        <input type="date" name="date" id="date" value="2018-01-01" required>
+                    </div>
+                </fieldset>
                 <div class="centerbtn">
-                    <button type="submit" size="50px">Register</button>
+                    <button class="submit">Register</button>
                 </div>
             </form>
+
         </main>
+
     </div>
 </body>
 

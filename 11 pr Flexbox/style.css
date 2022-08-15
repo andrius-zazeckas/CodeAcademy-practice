@@ -1,10 +1,20 @@
+body {
+    background-color: azure;
+}
+
+.wrapper {
+    max-width: 1000px;
+    min-width: 800px;
+    margin: 0 auto;
+}
+
 header {
 
     display: flex;
     justify-content: end;
     align-items: center;
     padding: 0 10px;
-    background-color: grey;
+    background-color: #abcf00;
 }
 
 header img {
@@ -16,9 +26,62 @@ header img {
     margin-right: auto;
 }
 
-
-
-a {
+header>a {
     margin-right: 20px;
     padding: 0 10px;
+    color: black;
+    text-decoration: none;
+    font-size: larger;
+}
+
+
+
+.second img {
+    float: left;
+    padding: 30px;
+    margin-right: 10px;
+    background-color: green;
+    max-height: 80px;
+    /* border-radius: 20px; */
+    /* padding: 30px; */
+    /* margin-right: auto; */
+}
+
+main {
+    text-align: justify;
+    background-color: white;
+    display: flex;
+    padding: 20px;
+}
+
+.first {
+    /* display: flex; */
+    margin-right: 30px;
+    flex: 1 0;
+
+}
+
+.second {
+    flex: 2 0;
+    /* display: flex; */
+}
+
+
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    float: right;
+    background-color: #abcf00;
+    border: none;
+    width: 150px;
+    height: 40px;
+}
+
+button>a {
+    color: white;
+    text-decoration: none;
 }

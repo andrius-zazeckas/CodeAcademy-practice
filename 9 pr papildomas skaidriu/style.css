@@ -15,24 +15,34 @@ main {
     margin: 10px;
 }
 
-#Ccard::-webkit-outer-spin-button,
-#date::-webkit-outer-spin-button,
-#Ccard::-webkit-inner-spin-button,
-#date::-webkit-inner-spin-button {
-
-    appearance: none;
+.title {
+    margin: 0;
+    margin-bottom: 10px;
+    width: 240px;
 }
 
-input {
+.scontact input,
+.payment input {
     margin-top: 5px;
-    /* display: flex;
-    width: 200px;
-    flex-wrap: wrap;
-    align-content: stretch;
-    overflow: scroll; */
+    /* display: flex; */
+    width: 260px;
+    /* flex-wrap: wrap; */
+    /* align-content: stretch; */
+    /* overflow: scroll; */
 }
 
-.scontact {
+body main form .payment .selector {
+    display: flex;
+    align-self: start;
+    margin-left: 68px;
+}
+
+body main form .payment .selector label {
+    margin-right: 16px;
+}
+
+.scontact,
+.payment {
     border: none;
     margin: 0;
     padding: 0;
@@ -42,39 +52,30 @@ input {
     align-items: flex-end;
 }
 
-
-
-
-
-
-/* .scontact>fieldset>label {
-    display: inline-block;
-    text-align: right;
-    width: 150px;
-} */
-
 .contact {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
-
-.title {
-    margin: 0;
-    margin-bottom: 10px;
-    width: 240px;
-
-
+button.submit {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(195, 9, 9);
+    border: 0.3px solid grey;
+    border-radius: 5px;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
-.scontact {
-    margin: 0;
-    margin-bottom: 10px;
-    width: 400px;
-
-
+#date {
+    padding-left: 2px;
+    padding-right: 2px;
 }
-/* .scontact>div {
-    margin-bottom: 10px;
 
+/* input[type=text],
+input[type=email],
+input[type=password],
+input[type=number] {
+    width: 260px;
 } */
