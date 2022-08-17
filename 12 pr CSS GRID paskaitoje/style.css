@@ -1,0 +1,16 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+    background-color: pink;
+    height: 150px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.grid-rows {
+    display: grid;
+    grid-template-rows: auto auto;
+}
