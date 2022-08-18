@@ -1,3 +1,27 @@
 html {
     font-family: 'Roboto', sans-serif;
 }
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: rgb(217, 215, 215);
+}
+
+header img {
+    max-height: 100px;
+}
+
+header {
+    display: flex;
+}
+
+header h1 {
+    align-self: center;
+    margin-left: 10px;
+
+}
+
+nav {
+    background-color: rgb(233, 232, 232);
+}

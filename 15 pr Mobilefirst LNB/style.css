@@ -1,0 +1,42 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    background-color: #ebebeb;
+    width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    background-color: white;
+}
+
+header img {
+    max-height: 250px;
+}
+
+nav a {
+    display: block;
+    background-color: white;
+    text-align: center;
+    padding-bottom: 10px;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+.book-shelf {
+    background-color: white;
+    border-radius: 5px;
+    width: 500px;
+    margin: 0 auto;
+
+}
+
+.book-shelf h2 {
+    margin-left: 20px;
+    color: gray;
+    font-weight: 100;
+    font-size: 44px;
+}

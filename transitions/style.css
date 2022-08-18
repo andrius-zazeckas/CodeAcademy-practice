@@ -1,0 +1,13 @@
+#main-container {
+    border: 16px dotted black;
+    height: 200px;
+    width: 300px;
+    background-color: aquamarine;
+
+    transition: background-color 1s linear 2s, width 1s;
+}
+
+#main-container:hover {
+    width: 600px;
+    background-color: red;
+}
