@@ -2,41 +2,108 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
-.container {
+body {
     background-color: #ebebeb;
-    width: 600px;
-    margin: 0 auto;
 }
+
+
 
 header {
     text-align: center;
     background-color: white;
+
 }
 
 header img {
-    max-height: 250px;
+    height: 200px;
 }
 
 nav a {
     display: block;
-    background-color: white;
-    text-align: center;
     padding-bottom: 10px;
     text-decoration: none;
-    font-size: x-large;
+    font-size: 30px;
+    margin-top: 10px;
 }
 
-.book-shelf {
+.container {
+    padding: 40px;
+}
+
+.wrapper {
+    padding: 40px;
+}
+
+main.container {
     background-color: white;
     border-radius: 5px;
-    width: 500px;
     margin: 0 auto;
-
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
-.book-shelf h2 {
-    margin-left: 20px;
+.container>h2 {
     color: gray;
     font-weight: 100;
     font-size: 44px;
+    margin-left: 20px;
+}
+
+.container>.books {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    /* width: 100%; */
+}
+
+.books {
+    row-gap: 10px;
+    font-size: 20px;
+    padding-bottom: 40px;
+}
+
+.books>div:first-child,
+.books>div:nth-child(2) {
+    border-bottom: 1px solid rgb(211, 209, 209);
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.books>div:nth-child(3),
+.books>div:nth-child(4) {
+    border-bottom: 1px solid rgb(211, 209, 209);
+    padding-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+
+
+    header img {
+
+        max-height: 100px;
+
+    }
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav a {
+        display: inline;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+
+    .container>h2 {
+        font-size: 30px;
+    }
+
+    .books {
+        font-size: 16px;
+    }
 }
