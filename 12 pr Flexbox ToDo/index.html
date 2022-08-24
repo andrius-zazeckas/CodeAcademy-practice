@@ -18,31 +18,33 @@
 </head>
 
 <body>
-    <header class="container">
-        <h2 class="logo">Best <span>ToDo</span> App</h1>
-            <ul class="social">
-                <li>
-                    <a href="https://www.facebook.com">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.twitter.com">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </li>
-            </ul>
+    <header>
+        <div class="container">
+            <h2 class="logo">Best <span>ToDo</span> App</h1>
+                <ul class="social">
+                    <li>
+                        <a href="https://www.facebook.com">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.twitter.com">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+        </div>
     </header>
     <main class="wrapper">
         <form>
             <fieldset>
                 <div class="taskl">
-                    <label for="task">Your Tasks</label>
+                    <h3>Your Tasks</h3>
                 </div>
                 <div class="taskinput">
                     <input placeholder="e. g. wash dishes" type="text" id="task" name="task">
@@ -53,15 +55,31 @@
         </form>
 
     </main>
-    <section class="wrapper">
-        <ul class="checkmark-none">
-            <li>Take Out Trashes</li>
-        </ul>
-    </section>
-    <section class="wrapper">
-        <ul class="checkmark">
-            <li>Take Out Trashes</li>
-        </ul>
+    <section class="task-container">
+        <div class="tasks">
+            <div class="one-task">
+                <p><i class="far fa-check-circle"></i>Take Out Trashes</p>
+                <div class="task-edit">
+                    <a href="task.html" class="edit-link">
+                        <i class="far fa-edit"></i>
+                    </a>
+                    <button type="button" class="delete-btn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="one-task checkmark">
+                <p><i class="far fa-check-circle"></i>Walk The Dog</p>
+                <div class="task-edit">
+                    <a href="task.html" class="edit-link">
+                        <i class="far fa-edit"></i>
+                    </a>
+                    <button type="button" class="delete-btn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 

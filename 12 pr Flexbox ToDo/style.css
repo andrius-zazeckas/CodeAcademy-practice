@@ -2,25 +2,36 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
-:root {
+
+html {
     --main-color: #645cff;
     --hover-color: grey;
     --error-color: #8b2e36;
     --bg-color: #f8fafc;
     --wh-color: white;
-    --shadow: 0px 5px 7px 0px rgba(110, 110, 110, 0.5);
+    --gr-color: green;
+    --bl-color: black;
+    --shadow1: 0px 5px 7px 0px rgba(110, 110, 110, 0.5);
+    --shadow2: 1px 23px 42px 9px rgba(110, 110, 110, 0.5);
 }
 
 body {
     background-color: var(--bg-color);
 }
 
+header {
+    background-color: var(--wh-color);
+    box-shadow: var(--shadow1);
+}
+
 .container {
     display: flex;
-    background-color: var(--wh-color);
+    margin: 0 auto;
+
     justify-content: space-between;
     padding: 20px;
-    box-shadow: var(--shadow);
+
+    max-width: 1000px;
 }
 
 .logo>span {
@@ -51,25 +62,26 @@ ul {
 
 .wrapper {
     display: flex;
-
-    /* flex-wrap: wrap; */
     border-radius: 7px;
     flex-direction: column;
     margin: 0 auto;
     margin-top: 50px;
-    /* gap: 50px; */
     max-width: 800px;
     background-color: var(--wh-color);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow1);
 }
 
 fieldset {
     border: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
 }
 
-fieldset>.taskl {
+h3 {
     text-align: center;
-    margin: 50px;
+    margin: 40px;
+    font-weight: 400;
     font-size: x-large;
 }
 
@@ -77,7 +89,6 @@ fieldset>.taskl {
     display: flex;
     margin-left: 50px;
     margin-right: 50px;
-    bor
 }
 
 #task {
@@ -115,9 +126,153 @@ input {
     color: var(--error-color);
 }
 
-section.wrapper {
+.task-container {
     display: flex;
+    flex-direction: column;
+
     margin: 0 auto;
     margin-top: 50px;
+    max-width: 800px;
+
 }
 
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.one-task p {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.one-task {
+    display: flex;
+    padding: 40px 50px;
+    border-radius: 7px;
+    background-color: var(--wh-color);
+    box-shadow: var(--shadow1);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-edit {
+    text-align: center;
+}
+
+.one-task .fa-check-circle {
+    color: var(--gr-color);
+    margin: 0;
+    padding: 0;
+    margin-right: 20px;
+    visibility: hidden;
+}
+
+section p {
+    font-size: larger;
+}
+
+.checkmark .fa-check-circle {
+    visibility: visible;
+}
+
+.checkmark p {
+    text-decoration: line-through;
+}
+
+.one-task:hover {
+    box-shadow: var(--shadow2);
+}
+
+section .delete-btn,
+.edit-link {
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.edit-link {
+    color: var(--gr-color);
+}
+
+section .delete-btn {
+    color: var(--error-color);
+}
+
+.task-edit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ---------
+TASK.Html
+--------- */
+
+.edit-task-wrapper {
+    display: flex;
+    border-radius: 7px;
+    flex-direction: column;
+    padding: 20px 40px;
+    margin: 0 auto;
+    margin-top: 50px;
+    max-width: 550px;
+    background-color: var(--wh-color);
+    box-shadow: var(--shadow1);
+}
+
+.edit-task-wrapper p {
+    margin: 0;
+}
+
+.edit-task-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.edit-button {
+    padding: 10px;
+    width: 100%;
+    color: var(--wh-color);
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 7px;
+}
+
+#task1 {
+    height: 25px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+}
+
+.edit-error {
+    text-align: center;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: var(--error-color);
+}
+
+.back-btn {
+    margin: 0 auto;
+    margin-top: 80px;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--bl-color);
+    width: 200px;
+    border-radius: 7px;
+}
+
+.back-btn a {
+    text-decoration: none;
+    color: var(--wh-color);
+}
+
+.back-btn:hover {
+    opacity: 70%;
+    cursor: pointer;
+}
