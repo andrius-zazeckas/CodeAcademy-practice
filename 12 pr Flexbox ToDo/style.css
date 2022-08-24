@@ -1,0 +1,123 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --main-color: #645cff;
+    --hover-color: grey;
+    --error-color: #8b2e36;
+    --bg-color: #f8fafc;
+    --wh-color: white;
+    --shadow: 0px 5px 7px 0px rgba(110, 110, 110, 0.5);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.container {
+    display: flex;
+    background-color: var(--wh-color);
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.logo>span {
+    color: var(--main-color);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.social {
+    display: none;
+}
+
+.social a {
+    margin: 0 0.5rem;
+    color: var(--main-color);
+}
+
+.social a:hover {
+    color: var(--hover-color);
+}
+
+.social {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+
+    /* flex-wrap: wrap; */
+    border-radius: 7px;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 50px;
+    /* gap: 50px; */
+    max-width: 800px;
+    background-color: var(--wh-color);
+    box-shadow: var(--shadow);
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset>.taskl {
+    text-align: center;
+    margin: 50px;
+    font-size: x-large;
+}
+
+.taskinput {
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    bor
+}
+
+#task {
+    height: 40px;
+    width: 70%;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
+
+button {
+    width: 30%;
+    color: var(--wh-color);
+    background-color: var(--main-color);
+    border: none;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+input {
+    padding-left: 10px;
+}
+
+
+.error {
+    margin-top: 5px;
+    margin-left: 50px;
+    font-size: small;
+    color: var(--error-color);
+}
+
+section.wrapper {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
