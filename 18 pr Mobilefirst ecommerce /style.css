@@ -29,10 +29,12 @@ html {
 body {
     background-color: var(--bg-color);
 }
+
 h1 {
     margin: 90px 0px;
     text-align: center;
 }
+
 h2 {
     margin: 0;
 }
@@ -327,18 +329,37 @@ footer {
 .ft-info {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
     color: var(--wh-color);
+    gap: 3%;
 }
 
+.ft-info h2 {
+    text-align: center;
+    align-self: center;
+}
 
 ul {
     list-style-type: none;
+    /* color: var(--bl-color); */
     padding: 0;
 }
 
-.ft-contacts {
-    grid-column: 3/4;
+.ft-sustainable a {
+    color: var(--wh-color);
+    /* text-decoration: none; */
+    transition: all 200ms ease-in;
+    transform: scale(1);
 }
+
+.ft-sustainable li:hover {
+    transition: all 200ms ease-in;
+    transform: scale(1.02);
+}
+
+/* .ft-contacts {
+    grid-column: 3/4;
+} */
 
 footer p {
     text-align: justify;
@@ -348,6 +369,16 @@ footer p {
 footer .copy {
     text-align: center;
 }
+
+@media (min-width: 300px) and (max-width: 460px) {
+
+    .ft-info p,
+    ul,
+    li {
+        font-size: 10px;
+    }
+}
+
 
 @media (min-width: 390px) and (max-width: 576px) {
     header .wrap {
