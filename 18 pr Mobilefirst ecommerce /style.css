@@ -39,20 +39,17 @@ h2 {
     margin: 0;
 }
 
-/* -----------------
-header
--------------------- */
 
-.logo-container a {
+header .logo-container a {
     text-decoration: none;
 }
 
-.fa-tshirt {
+header .fa-tshirt {
     color: var(--grey-color);
     font-size: xx-large;
 }
 
-.fa-search {
+header .fa-search {
     color: var(--wh-color);
     font-size: medium;
 
@@ -70,11 +67,9 @@ header {
     box-shadow: var(--shadow1);
 }
 
-/* -------------------
-search bar
-----------------------*/
 
-form {
+
+header form {
     display: flex;
     width: 100%;
     margin: 0 auto;
@@ -106,7 +101,7 @@ header .wrap {
     width: 50%;
 }
 
-nav button {
+header nav button {
     border: none;
     background-color: transparent;
     transition: transform 700ms ease-out;
@@ -114,12 +109,12 @@ nav button {
     font-size: 20px;
 }
 
-nav button:hover {
+header nav button:hover {
     transform: scale(1.12);
     cursor: pointer;
 }
 
-nav a {
+header nav a {
     text-decoration: none;
     color: var(--bl-color);
 }
@@ -151,11 +146,8 @@ header .logo {
 
 }
 
-/* -------------------
-main-goods
-----------------------*/
 
-.figcont {
+main>.figcont {
     display: grid;
     width: 150px;
     height: 250px;
@@ -165,12 +157,12 @@ main-goods
     will-change: transform;
 }
 
-.figcont:hover {
+main .figcont:hover {
     cursor: pointer;
     transform: scale(1.04);
 }
 
-.figcont>img {
+main .figcont>img {
     object-fit: cover;
     width: 100%;
     max-height: 100%;
@@ -192,14 +184,7 @@ main-goods
     padding: 20px;
 }
 
-.container>h2 {
-    color: var(--grey-color);
-    font-size: 30px;
-}
 
-/* -----------------
-main shirts
--------------------- */
 main h2 {
     text-shadow: var(--text-shadow);
 }
@@ -211,7 +196,7 @@ main>.shirts {
 
 }
 
-.goods>.shirts {
+main .shirts {
     display: grid;
     grid-template-columns: auto auto;
     justify-items: center;
@@ -219,29 +204,26 @@ main>.shirts {
     gap: 10px;
 }
 
-.shirts>:first-child {
+main .shirts>:first-child {
     grid-column: 1/3;
 }
 
-figure {
+main figure {
     margin: 10px;
 }
 
 
 
-figcaption {
+main figcaption {
     margin-top: 10px;
     text-align: center;
 }
 
-.shirts {
+main .shirts {
     row-gap: 10px;
     font-size: 20px;
 }
 
-/* -----------------
-main backpacks
--------------------- */
 
 main>.backpacks {
     background-color: rgb(233, 232, 232);
@@ -250,7 +232,7 @@ main>.backpacks {
 
 }
 
-.goods>.backpacks {
+main .goods>.backpacks {
     display: grid;
     grid-template-columns: auto auto;
     justify-items: center;
@@ -258,19 +240,17 @@ main>.backpacks {
     gap: 10px;
 }
 
-.backpacks>:first-child {
+main .backpacks>:first-child {
     grid-column: 1/3;
 }
 
-.backpacks {
+main .backpacks {
     row-gap: 10px;
     font-size: 20px;
 }
 
 
-/* ----------------
-footer
--------------------*/
+
 
 footer {
     background-color: rgba(0, 0, 0, 0.7);
@@ -290,14 +270,15 @@ footer {
 .ft-contacts {
     display: grid;
     grid-template-rows: 1fr 3fr;
-    margin-left: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 footer h2 {
     color: var(--grey-color);
 }
 
-ul {
+footer ul {
     list-style-type: none;
     padding: 0;
 }
@@ -322,9 +303,7 @@ footer .copy {
     text-align: center;
 }
 
-/* -------------
-media queries
-----------------*/
+
 
 @media (min-width: 300px) and (max-width: 767px) {
     .ft-info {
@@ -344,7 +323,7 @@ media queries
         margin: 5px;
     }
 
-    nav button {
+    header nav button {
         display: block;
         margin: 0 auto;
         text-decoration: none;
@@ -353,11 +332,11 @@ media queries
         width: 200px;
     }
 
-    .goods {
+    main .goods {
         padding: 20px 0 20px 0;
     }
 
-    .figcont {
+    main .figcont {
         display: grid;
         width: 140px;
         height: 240px;
@@ -371,7 +350,7 @@ media queries
         margin: 0 auto;
     }
 
-    nav button {
+    header nav button {
         display: block;
         margin: 0 auto;
         text-decoration: none;
@@ -384,16 +363,16 @@ media queries
         row-gap: 60px;
     }
 
-    .goods>.shirts {
+    main .goods>.shirts {
 
         grid-template-columns: auto auto;
     }
 
-    .goods>.backpacks {
+    main .goods>.backpacks {
         grid-template-columns: auto auto;
     }
 
-    .figcont {
+    main .figcont {
         display: grid;
         width: 200px;
         height: 300px;
@@ -410,7 +389,7 @@ media queries
         align-items: center;
     }
 
-    nav {
+    header nav {
         display: grid;
         grid-template-columns: auto auto auto;
     }
@@ -421,39 +400,35 @@ media queries
         grid-template-columns: auto;
     }
 
-    .figcont {
+    main .figcont {
         display: grid;
         width: 180px;
         height: 300px;
         align-items: center;
     }
 
-    .goods>.shirts {
+    main .goods>.shirts {
 
         grid-template-columns: auto auto auto;
     }
 
-    .goods>.backpacks {
+    main .goods>.backpacks {
         grid-template-columns: auto auto auto;
     }
 
-    .goods>h2 {
+    main .goods>h2 {
         font-size: 30px;
-    }
-
-    .books {
-        font-size: 16px;
     }
 }
 
 @media (min-width: 1200px) {
 
-    .goods>.shirts {
+    main .goods>.shirts {
 
         grid-template-columns: auto auto auto auto auto;
     }
 
-    .goods>.backpacks {
+    main .goods>.backpacks {
         grid-template-columns: auto auto auto auto auto;
     }
 }
