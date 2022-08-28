@@ -17,10 +17,22 @@
     <link rel="stylesheet" href="./style.css" />
 </head>
 <style>
-    #footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+
+    .footer {
+        flex-shrink: 0;
     }
 </style>
 
@@ -29,7 +41,9 @@
     <header>
         <div class="container">
             <div class="logo-container">
-                <h2 class="logo"><i class="fas fa-tshirt"></i> <span>Shirts&stuff</span></h1>
+                <a href="index.html">
+                    <h2 class="logo"><i class="fas fa-tshirt"></i> <span>Shirts&stuff</span></h1>
+                </a>
             </div>
             <div class="wrap">
                 <div class="search">
@@ -63,18 +77,15 @@
 
     <footer id="footer">
         <div class="ft-info">
-            <h2>About us</h2>
-            <h2>What to know about Sustainable materials</h2>
-            <h2>Contacts</h2>
             <div class="ft-about">
-                <div class="secondRow">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos itaque inventore enim dolor
-                        distinctio
-                        commodi, voluptatum molestias accusantium dolore incidunt animi quia corporis doloribus mollitia
-                        laboriosam veritatis cum et ipsum.</p>
-                </div>
+                <h2>About us</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos itaque inventore enim dolor
+                    distinctio
+                    commodi, voluptatum molestias accusantium dolore incidunt animi quia corporis doloribus mollitia
+                    laboriosam veritatis cum et ipsum.</p>
             </div>
             <div class="ft-sustainable">
+                <h2>Sustainable materials</h2>
                 <ul>
                     <li><a href="https://www.thegoodtrade.com/features/sustainable-clothing-fabrics"
                             alt="Link to sustainable materials and fabrics">12 Sustainable Materials And Fabrics You
@@ -87,6 +98,7 @@
                 </ul>
             </div>
             <div class="ft-contacts">
+                <h2>Contacts</h2>
                 <ul>
                     <li>Tel.: +370 651 98882</li>
                     <li>Email: a.zazeckas@gmail.com</li>
