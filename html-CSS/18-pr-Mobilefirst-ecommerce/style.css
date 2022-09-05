@@ -6,9 +6,7 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html {}
 
 html {
     --main-color: #645cff;
@@ -147,7 +145,7 @@ header .logo {
 }
 
 
-main>.figcont {
+main .figcont {
     display: grid;
     width: 150px;
     height: 250px;

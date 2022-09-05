@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <link rel="stylesheet" href="./style.css" />
 </head>
-</head>
+
 
 <body>
 
@@ -39,14 +39,14 @@
             </div>
             <nav>
                 <button><a href="#">About</a></button>
-                <button onclick="myFunction()">Contacts</button>
+                <button onclick="showfooter()">Contacts</button>
                 <button><a href="#">F.A.Q</a></button>
             </nav>
         </div>
     </header>
 
     <script>
-        function myFunction() {
+        function showfooter() {
             const element = document.getElementById("footer");
             element.scrollIntoView();
         }
