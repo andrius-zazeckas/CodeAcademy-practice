@@ -18,9 +18,24 @@
 
 // 3.
 
-function calculateRandom(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
+const calcRandom = Math.floor(Math.random() * (12 - 5 + 1)) + 5
+console.log(calcRandom)
 
-const rndInt = calculateRandom(5, 12)
-console.log(rndInt);
+// function calculateRandom(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1) + min);
+// }
+
+// const rndInt = calculateRandom(5, 12)
+// console.log(rndInt);
+
+// 4.
+
+// const luckyUser = calculateRandom = Math.floor(Math.random ()*5)+1;
+// console.log(luckyUser);
+
+// if (luckyUser === 5) {
+//     alert("You won the lottery")
+// }
+// else {
+//     alert("Try again!")
+// }
