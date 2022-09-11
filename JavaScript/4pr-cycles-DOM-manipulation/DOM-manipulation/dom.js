@@ -21,7 +21,7 @@
 
 // 4.
 
-// document.querySelectorAll("p>span")[1].textContent ="BLUE"
+// document.querySelectorAll("p>span")[1].textContent = "BLUE"
 
 // 5.
 
@@ -35,7 +35,4 @@ firstListItem.textContent = vw_group;
 secondListItem.textContent = bmw_group;
 
 
-
-// const listas = document.getElementsByTagNameNS("li").textContent = "bla"
-// Collections.swap(listas, 0, 1);
 
