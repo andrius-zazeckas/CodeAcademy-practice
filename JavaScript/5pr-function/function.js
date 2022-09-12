@@ -24,9 +24,53 @@
 
 // 2.
 
+// function generateRandomNumber() {
+//     let random = Math.random() * 5 + 1;
+//     random = Math.floor(random);
+//     return random;
+// }
+// console.log(generateRandomNumber())
+
+// 3.
+
+// function nameFunction() {
+//     const fname = "Andrius";
+//     const fname2 = "Zazeckas";
+//     return fname + fname2;
+// }
+
+// console.log(nameFunction().length)
+
+// 4.
+
+// function alphabet(index) {
+//     const alfabetas = ["A", "B", "C", "D"]
+//     return alfabetas[index];
+// }
+// console.log(alphabet(0))
+
+// 5.
+
+// function calcFunction(n1, n2, operator) {
+//     switch (operator) {
+//         case 'sum':
+//             return n1 + n2;
+//         case 'sub':
+//             return n1 - n2;
+//         case 'div':
+//             return n1 / n2;
+//         case 'multi':
+//             return n1 / n2;
+//     }
+// }
+// console.log(calcFunction(5, 1, 'sub'))
+
+// 6.
+
 function generateRandomNumber() {
-    let random = Math.random() * 5 + 1;
-    random = Math.floor(random)
-    return random
+    return Math.floor(Math.random() * 10 + 1);
 }
-console.log(generateRandomNumber())
+function squareNum(number) {
+    return Math.pow(number, 2);
+}
+console.log(squareNum(generateRandomNumber()))
