@@ -34,14 +34,17 @@ function canYouDrive(event) {
   const ageResult = document.querySelector("input[name=myAge]").value;
 
   if (ageResult >= 18) {
-    document.querySelector("h1").innerText = "Vairuoti gali: ";
-    const text = document.createTextNode(nameResult);
-    const pNode = document.querySelector("h1");
-    pNode.appendChild(text);
+    document.querySelector("h1").innerText = "Vairuoti gali: " + nameResult;
+
+    // const text = document.createTextNode(nameResult);
+    // const pNode = document.querySelector("h1");
+    // pNode.appendChild(text);
   } else if (ageResult < 18) {
-    document.querySelector("h1").innerText = "Dar mokysis vairuotis: ";
-    const text = document.createTextNode(nameResult);
-    const pNode = document.querySelector("h1");
-    pNode.appendChild(text);
+    document.querySelector("h1").innerText =
+      "Dar mokysis vairuotis: " + nameResult;
+
+    // const text = document.createTextNode(nameResult);
+    // const pNode = document.querySelector("h1");
+    // pNode.appendChild(text);
   }
 }
