@@ -89,7 +89,7 @@
 // }
 
 // 9.
-// document.body.addEventListener("click", () => {
+// document.body.addEventListener("click", (event) => {
 //   const isButton = event.target.nodeName === "BUTTON";
 //   if (isButton) {
 //     document.getElementById("output").innerText = "Neklausote manęs";
