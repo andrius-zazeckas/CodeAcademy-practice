@@ -39,7 +39,7 @@ function canYouDrive(event) {
     // const text = document.createTextNode(nameResult);
     // const pNode = document.querySelector("h1");
     // pNode.appendChild(text);
-  } else if (ageResult < 18) {
+  } else {
     document.querySelector("h1").innerText =
       "Dar mokysis vairuotis: " + nameResult;
 
