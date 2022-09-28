@@ -117,6 +117,7 @@ const changeButtonColor = (event) => {
 };
 
 button.addEventListener("click", changeButtonColor);
+``;
 
 // CAO atsakymas
 // function generateRandomColor() {
