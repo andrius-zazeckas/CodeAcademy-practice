@@ -76,5 +76,5 @@ console.log(randomNumbers(3));
 // 9. Sukurkite arrow funkciją, kuri paimtų du skaičius ir grąžintų boolean value ar skaičių suma didesnė už 100 ar mažesnė (ir lygi).
 // Pvz.: fn(10, 50) -> true
 
-const sumOverHundred = (n1, n2) => n1 + n2 >= 100;
+const sumOverHundred = (n1, n2) => n1 + n2 > 100;
 console.log(sumOverHundred([10, 50]));
