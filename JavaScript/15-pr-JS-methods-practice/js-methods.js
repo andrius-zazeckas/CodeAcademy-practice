@@ -77,4 +77,52 @@ console.log(randomNumbers(3));
 // Pvz.: fn(10, 50) -> true
 
 const sumOverHundred = (n1, n2) => n1 + n2 > 100;
-console.log(sumOverHundred([10, 50]));
+console.log(sumOverHundred(60, 50));
+
+// 10. Parašykite funkciją, kuri paimtų array (susideda iš objektų su vardu ir amžium) bei grąžina array
+// išrykiuotą pagal amžių ir jei amžius sutampa – vardus a>z tvarka. Pvz.: fn([{name: „Alfredas“, age: 25}, {name: „Jonas“, age: 25}, {name: „Kasparas“, age: 20}])
+//  -> [{name: „Kasparas“, age: 20}, {name: „Alfredas“, age: 25}, {name: „Jonas“, age: 25}]
+
+const people = [
+  { name: "Jonas", age: 25 },
+  { name: "Alfredas", age: 25 },
+  { name: "Kasparas", age: 20 },
+];
+
+const sortedByAge = () =>
+  people
+    .sort((a, b) => (a.name > b.name ? 1 : -1))
+    .sort((a, b) => a.age - b.age);
+
+sortedByAge();
+
+console.log(people);
+
+// 11. Parašykite funkciją, į kurią padavus datą, pasakys ar išeiginė ar ne (visos išeiginės turi būti saugomos array.)
+// Pvz.: fn(new Date(2020, 12, 25)) -> true
+
+// mano variantas:
+const givenDate = new Date("2022, 10, 08");
+const day = givenDate.getDay();
+const isWeekend = day === 6 || day === 0 ? "It's weekend" : "It's working day";
+
+console.log(isWeekend);
+
+// is atsakymo:
+
+function isItHoliday(date) {
+  const holidays = ["2020-01-01", "2020-05-25"];
+  return holidays.some(
+    (holiday) => new Date(holiday).getDate() === date.getDate()
+  );
+}
+
+console.log(isItHoliday(new Date("2020-05-25")));
+
+// 12. Sukurkite funkciją, kuri kaip parametrą gaus array su skaičiais. Funkcija turės grąžinti mažiausią trūkstamą skaičių iš array.
+// Pvz. Paduodu: [1, 2, 4, 5]; Grąžina: 3
+
+const missingNumber = (array) =>
+  array.find((x, i) => x + 1 !== array[i + 1]) + 1;
+
+console.log(missingNumber([1, 2, 4, 5]));
