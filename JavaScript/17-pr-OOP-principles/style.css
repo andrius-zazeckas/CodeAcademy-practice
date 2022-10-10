@@ -1,0 +1,9 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card>img {
+    width: 100px;
+}

@@ -10,7 +10,7 @@ function Fullname(name, surname) {
   this.name = name;
   this.surname = surname;
 
-  this.fullnameInTable = function () {
+  this.addToTable = function () {
     const tablename = document.body.querySelector("#name");
     tablename.textContent = this.name;
     const tablesurname = document.body.querySelector("#surname");
@@ -18,19 +18,34 @@ function Fullname(name, surname) {
   };
 }
 
+const capitalize = (text) =>
+  text.charAt(0).toUpperCase() + text.slice(1).toLocaleLowerCase();
+
 document.body.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
+
   const nameValue = document.body
     .querySelector("#fullname")
-    .value.trim()
-    .toLocaleLowerCase();
-  const firstName = nameValue.split(" ")[0];
-  const surname = nameValue.replace(firstName, "").trim();
-  const capitalization = firstName.charAt(0).toUpperCase();
+    .value.toLocaleLowerCase();
+
+  // mano variantas
+  //   const firstName = capitalize(nameValue[0]).trim();
+  //   const surname = capitalize(nameValue[1]).trim();
+
+  // CAO atsakymo variantas
+  const [firstName, surname] = nameValue
+    .split(" ")
+    .map((namePart) => capitalize(namePart.trim()));
 
   const fullname = new Fullname(firstName, surname);
-  fullname.fullnameInTable();
+  fullname.addToTable();
 });
 
-// const audi = new Car("Audi", "A4", "electric", 7_000);
-// const bmw = new Car("BMW", 325, "diesel", 5_000);
+// Prisimename darbą su masyvais: sukurkite funkciją, kuri priims masyvą
+// ir išfiltruos visus pasikartojančius skaičius bei šį masyvą grąžins atgal.
+// Pvz:
+// paduodu: [1, 3, 3, 5, 5, 5]
+// grąžina: [1, 3, 5]
+
+const removeDuplicates = (arr) => [...new Set(arr)];
+console.log(removeDuplicates([1, 3, 3, 5, 5, 5]));
