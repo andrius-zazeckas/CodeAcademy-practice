@@ -1,5 +1,4 @@
-// 1. Sukurk formą, kuri leis įrašyti vardą - jis bus išsaugojamas į cookies.
-// Jei vardas jau egzistuoja - išmeta tik vardą ir mygtuką, su kuriuo cookies ištrinamas. Jei neegzistuoja - formą.
+// 1. Sukurk formą, kuri leis įrašyti vardą - jis bus išsaugojamas į cookies. Jei vardas jau egzistuoja - išmeta tik vardą ir mygtuką, su kuriuo cookies ištrinamas. Jei neegzistuoja - formą.
 
 const form = document.body.querySelector("form");
 const cookieResult = document.body.querySelector("#nameResult");
@@ -87,3 +86,57 @@ document.body.querySelector("#erase").addEventListener("click", (event) => {
 //   output.classList.add("hidden");
 //   form.classList.remove("hidden");
 // });
+
+// 2.Į localStorage, įrašykite savo vardą, pavardę, aprašymą, ir nuorodą į profilio nuotrauką. Informaciją įrašykite pirmą kartą užkrovus puslapį, o vėliau ją atvaizduokite.
+
+// const userProfile = {
+//   firstName: "Andrius",
+//   lastName: "Zazeckas",
+//   description:
+//     "It is very long and boring story, but I am going to tell you anyway.",
+//   picture:
+//     "https://images.unsplash.com/photo-1649840974220-9d8494c4a90b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1040&q=80",
+// };
+
+// localStorage.setItem("profile", JSON.stringify(userProfile));
+
+// const renderUserProfile = (profile) => {
+//   const img = document.createElement("img");
+//   img.width = "200";
+//   img.src = profile.picture;
+//   img.alt = `${profile.firstName} ${profile.lastName} profile picture`;
+
+//   const profileName = document.createElement("h4");
+//   profileName.textContent = `${profile.firstName} ${profile.lastName}`;
+
+//   const profileDescription = document.createElement("p");
+//   profileDescription.textContent = profile.description;
+
+//   const div = document.createElement("div");
+//   div.style.marginTop = "50px";
+//   div.append(img, profileName, profileDescription);
+//   document.body.append(div);
+// };
+
+// const profileInfoFromLocalStorage = JSON.parse(localStorage.getItem("profile"));
+// renderUserProfile(profileInfoFromLocalStorage);
+
+// 3. Sukurkite puslapį, kuriame būtų forma su vienu input - fullName. Įvedus vardą ir pavardę, juos padalina į dvi dalis (name ir surname). Vardą ir pavardę įdeda į objektą, o objektą - į array. Šį array išsaugo localStorage. Po forma sukurkite lentelę joje atvaizduokite informaciją iš localStorage.
+
+const formLS = document.body.querySelector("#localStorageInputForm");
+
+formLS.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const fullNameValue = document.body.querySelector("#fullName").value;
+  const firstNameLS = fullNameValue.split(" ")[0];
+  const lastNameLS = fullNameValue.split(" ")[1];
+
+  const trName = document.createElement("td");
+  trName.textContent = firstNameLS;
+  const trLastName = document.createElement("td");
+  trLastName.textContent = lastNameLS;
+  const tr = document.createElement("tr");
+
+  tr.append(trName, trLastName);
+  document.querySelector("table>tbody").append(tr);
+});

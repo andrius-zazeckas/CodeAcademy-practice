@@ -11,10 +11,18 @@ function Fullname(name, surname) {
   this.surname = surname;
 
   this.addToTable = function () {
-    const tablename = document.body.querySelector("#name");
-    tablename.textContent = this.name;
-    const tablesurname = document.body.querySelector("#surname");
-    tablesurname.textContent = this.surname;
+    if (document.querySelector("#fullname").value === "") {
+      alert("Please input your full name");
+    } else {
+      const tablename = document.createElement("td");
+      tablename.textContent = this.name;
+      const tablesurname = document.createElement("td");
+      tablesurname.textContent = this.surname;
+      const tr = document.createElement("tr");
+      tr.append(tablename, tablesurname);
+
+      document.querySelector("table > tbody").append(tr);
+    }
   };
 }
 
@@ -26,7 +34,8 @@ document.body.querySelector("form").addEventListener("submit", (event) => {
 
   const nameValue = document.body
     .querySelector("#fullname")
-    .value.toLocaleLowerCase();
+    .value.toLocaleLowerCase()
+    .trim();
 
   // mano variantas
   //   const firstName = capitalize(nameValue[0]).trim();
