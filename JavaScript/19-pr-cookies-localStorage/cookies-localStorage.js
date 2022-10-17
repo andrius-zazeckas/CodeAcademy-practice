@@ -126,33 +126,67 @@ renderUserProfile(profileInfoFromLocalStorage);
 const formLS = document.body.querySelector("#localStorageInputForm");
 const LOCAL_STORAGE_ITEM_KEY = "users";
 
-const addToTheTable = () => {
-  const name = document.createElement("td");
-  //   name.textContent = "firstNameLS";
+// formLS.addEventListener("submit", (e) => {
+//   e.preventDefault();
 
-  const lastName = document.createElement("td");
-  //   lastName.textContent = "lastNameLS";
+//   const fullNameValue = document.body.querySelector("#fullName").value;
+//   const [firstNameLS, lastNameLS] = fullNameValue.split(" ");
 
-  const tr = document.createElement("tr");
+//   localStorage.setItem("users", JSON.stringify([{ firstNameLS, lastNameLS }]));
+//   const userInLocalStorage = localStorage.getItem("users");
 
-  tr.append(name, lastName);
-  document.querySelector("tbody").append(tr);
+//   console.log(userInLocalStorage);
+
+//   const name = document.createElement("td");
+//   name.textContent = JSON.parse(userInLocalStorage)[0];
+
+//   const lastName = document.createElement("td");
+//   lastName.textContent = lastNameLS;
+
+//   const tr = document.createElement("tr");
+
+//   tr.append(name, lastName);
+//   document.querySelector("tbody").append(tr);
+// });
+
+const renderUsersTable = () => {
+  const users = JSON.parse(localStorage.getItem(LOCAL_STORAGE_ITEM_KEY));
+  const tbody = document.querySelector("tbody");
+  tbody.innerHTML = "";
+  users &&
+    users.forEach((user) => {
+      const name = document.createElement("td");
+      name.innerText = user.name;
+
+      const surname = document.createElement("td");
+      surname.innerText = user.surname;
+
+      const tr = document.createElement("tr");
+      tr.append(name, surname);
+      tbody.append(tr);
+    });
 };
 
-formLS.addEventListener("submit", (e) => {
-  e.preventDefault();
+formLS.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const fullName = event.target.querySelector("#fullName").value;
+  const [name, surname] = fullName.split(" ");
 
-  const fullNameValue = document.body.querySelector("#fullName").value;
-  const [firstNameLS, lastNameLS] = (
-    fullNameValue.split(" ")[0].toUppercase + fullNameValue.slice(1).toLoweCase
-  ).trim();
-
-  localStorage.setItem(
-    "users",
-    JSON.stringify([..."users", { firstNameLS, lastNameLS }])
+  const usersInlocalStorage = JSON.parse(
+    localStorage.getItem(LOCAL_STORAGE_ITEM_KEY)
   );
-
-  addToTheTable();
+  if (usersInlocalStorage && usersInlocalStorage.length) {
+    localStorage.setItem(
+      LOCAL_STORAGE_ITEM_KEY,
+      JSON.stringify([...usersInlocalStorage, { name, surname }])
+    );
+  } else {
+    localStorage.setItem(
+      LOCAL_STORAGE_ITEM_KEY,
+      JSON.stringify([{ name, surname }])
+    );
+  }
+  renderUsersTable();
 });
 
-addToTheTable();
+renderUsersTable();
