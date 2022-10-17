@@ -124,19 +124,35 @@ renderUserProfile(profileInfoFromLocalStorage);
 // 3. Sukurkite puslapį, kuriame būtų forma su vienu input - fullName. Įvedus vardą ir pavardę, juos padalina į dvi dalis (name ir surname). Vardą ir pavardę įdeda į objektą, o objektą - į array. Šį array išsaugo localStorage. Po forma sukurkite lentelę joje atvaizduokite informaciją iš localStorage.
 
 const formLS = document.body.querySelector("#localStorageInputForm");
+const LOCAL_STORAGE_ITEM_KEY = "users";
+
+const addToTheTable = () => {
+  const name = document.createElement("td");
+  //   name.textContent = "firstNameLS";
+
+  const lastName = document.createElement("td");
+  //   lastName.textContent = "lastNameLS";
+
+  const tr = document.createElement("tr");
+
+  tr.append(name, lastName);
+  document.querySelector("tbody").append(tr);
+};
 
 formLS.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const fullNameValue = document.body.querySelector("#fullName").value;
-  const firstNameLS = fullNameValue.split(" ")[0];
-  const lastNameLS = fullNameValue.split(" ")[1];
+  const [firstNameLS, lastNameLS] = (
+    fullNameValue.split(" ")[0].toUppercase + fullNameValue.slice(1).toLoweCase
+  ).trim();
 
-  const trName = document.createElement("td");
-  trName.textContent = firstNameLS;
-  const trLastName = document.createElement("td");
-  trLastName.textContent = lastNameLS;
-  const tr = document.createElement("tr");
+  localStorage.setItem(
+    "users",
+    JSON.stringify([..."users", { firstNameLS, lastNameLS }])
+  );
 
-  tr.append(trName, trLastName);
-  document.querySelector("table>tbody").append(tr);
+  addToTheTable();
 });
+
+addToTheTable();
