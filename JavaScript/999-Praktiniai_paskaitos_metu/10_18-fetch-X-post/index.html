@@ -8,15 +8,19 @@
   </head>
   <body>
     <form>
-      <input
-        type="number"
-        id="showPostInput"
-        min="1"
-        max="100"
-        name="showPostInput"
-        placeholder="Input which post you want to see"
-      />
-      <button type="submit">OK</button>
+      <fieldset>
+        <label for="showXPost">Input number to see post</label>
+        <input
+          style="width: 200px"
+          type="number"
+          name="showXPost"
+          id="showPostInput"
+          min="1"
+          max="100"
+          name="showPostInput"
+        />
+        <button type="submit">OK</button>
+      </fieldset>
     </form>
 
     <script type="module" src="./fetch-X-post.js"></script>
