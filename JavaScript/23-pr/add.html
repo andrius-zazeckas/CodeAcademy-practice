@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="./index.html">Pradinis</a>
+      <a href="./add.html">Prideti uzduoti</a>
+    </header>
+    <form id="create-todo-form">
+      <fieldset>
+        <label for="title">Uzduotis</label>
+        <input id="todo-title" name="title" placeholder="Sportuoti" />
+      </fieldset>
+      <fieldset>
+        <label for="completed">Ivykdytas</label>
+        <input id="todo-completed" name="completed" type="checkbox" />
+      </fieldset>
+      <button type="submit">Prideti</button>
+    </form>
+    <script type="module" src="./modules/createTodo.js"></script>
+  </body>
+</html>

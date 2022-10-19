@@ -1,3 +1,24 @@
 #toDos, th, td{
 border: 2px solid black;
 }
+
+form > button{
+    margin-bottom: 20px
+
+}
+
+form>fieldset{
+    margin: 10px 0;
+    width: 30%;
+    min-width: 300px;
+}
+
+header {
+    display: flex;
+background-color: blanchedalmond;
+
+}
+
+header a {
+    margin-right: 50px;
+}

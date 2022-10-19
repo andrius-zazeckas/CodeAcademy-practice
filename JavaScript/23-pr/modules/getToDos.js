@@ -8,7 +8,9 @@ const getToDos = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/todos");
     const toDos = await response.json();
 
-    return toDos;
+    const fakeBackendTodos = JSON.parse(localStorage.getItem("todos")) || []; //imk kas yra localstorage, priesingu atveju tuscais masyvas
+
+    return [...fakeBackendTodos, ...toDos];
   } catch (error) {
     console.error(error);
   }
