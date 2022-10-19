@@ -7,14 +7,34 @@ const getGuestList = async () => {
     );
     if (response.ok) {
       const guests = await response.json();
-      const name = guests.name;
-      console.log(name);
+
+      return guests;
     }
   } catch (error) {
     console.error(error);
   }
 };
 
-// const guestTable = (guest) => {};
+const tableElement = document.querySelector("#guest-list");
 
-getGuestList();
+const addRow = (guest) => {
+  const nameColumn = document.createElement("td");
+  const plusOneColumn = document.createElement("td");
+  const atttendingColumn = document.createElement("td");
+  const rowElement = document.createElement("tr");
+
+  nameColumn.textContent = guest.name;
+  plusOneColumn.textContent = guest.plusOne ? "+" : "-";
+  atttendingColumn.textContent = guest.attending ? "+" : "-";
+
+  rowElement.append(nameColumn, plusOneColumn, atttendingColumn);
+  tableElement.append(rowElement);
+};
+
+const populateTable = async () => {
+  const guest = await getGuestList();
+
+  guest.forEach((guest) => addRow(guest));
+};
+
+populateTable();
