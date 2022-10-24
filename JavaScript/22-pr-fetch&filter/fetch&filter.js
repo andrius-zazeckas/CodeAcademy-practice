@@ -24,7 +24,7 @@ const createCheckbox = () => {
 
 createCheckbox();
 
-const addRow = (person) => {
+const addRow = (robot) => {
   const id = document.createElement("td");
   const name = document.createElement("td");
   const surname = document.createElement("td");
@@ -33,35 +33,35 @@ const addRow = (person) => {
   const rowElement = document.createElement("tr");
 
   const img = document.createElement("img");
-  img.src = person.image;
+  img.src = robot.image;
   const image = document.createElement("td");
   image.append(img);
 
-  const splitName = person.name.split(" ");
+  const splitName = robot.name.split(" ");
   const firstName = splitName[0];
   const lastName = splitName[1];
 
-  id.textContent = person.id;
+  id.textContent = robot.id;
   name.textContent = firstName;
   surname.textContent = lastName;
-  city.textContent = person.city;
-  fav_color.textContent = person.fav_color;
+  city.textContent = robot.city;
+  fav_color.textContent = robot.fav_color;
 
   rowElement.append(id, image, name, surname, city, fav_color);
   tableElement.append(rowElement);
 };
 
 const populateTable = async () => {
-  const persons = await getData();
+  const robots = await getData();
 
-  persons.forEach((person) => addRow(person));
+  robots.forEach((robot) => addRow(robot));
 };
 
 document.getElementById("isVipCheckbox").addEventListener("change", (event) => {
   populateTable(
     event.target.checked
-      ? state.post.filter((person) => person.vip)
-      : state.post
+      ? state.robots.filter((robot) => robot.vip)
+      : state.robots
   );
 });
 
@@ -70,8 +70,8 @@ const getData = async () => {
     const response = await fetch("https://magnetic-melon-yam.glitch.me");
 
     if (response.ok) {
-      state.post = await response.json();
-      return state.post;
+      state.robots = await response.json();
+      return state.robots;
     }
   } catch (error) {
     console.error(error);
