@@ -22,14 +22,32 @@ const createCheckbox = () => {
   document.body.prepend(checkboxElement, checkboxLabel);
 };
 
+const createSearchForm = () => {
+  const searchBox = document.createElement("input");
+  searchBox.type = "search";
+  searchBox.name = "search";
+  searchBox.id = "search";
+
+  const searchButton = document.createElement("button");
+  searchButton.type = "submit";
+  searchButton.id = "submitButton";
+  searchButton.innerText = "Search for name";
+
+  const form = document.createElement("form");
+  form.append(searchBox, searchButton);
+
+  document.body.prepend(form);
+};
+
 createCheckbox();
+createSearchForm();
 
 const addRow = (robot) => {
   const id = document.createElement("td");
   const name = document.createElement("td");
   const surname = document.createElement("td");
   const city = document.createElement("td");
-  const fav_color = document.createElement("td");
+  const favColor = document.createElement("td");
   const rowElement = document.createElement("tr");
 
   const img = document.createElement("img");
@@ -45,24 +63,30 @@ const addRow = (robot) => {
   name.textContent = firstName;
   surname.textContent = lastName;
   city.textContent = robot.city;
-  fav_color.textContent = robot.fav_color;
+  favColor.textContent = robot.fav_color;
 
-  rowElement.append(id, image, name, surname, city, fav_color);
+  rowElement.append(id, image, name, surname, city, favColor);
   tableElement.append(rowElement);
 };
 
 const populateTable = async () => {
-  const robots = await getData();
-
-  robots.forEach((robot) => addRow(robot));
+  if (!state.robots) {
+    state.robots = await getData();
+  } else {
+    tableElement.replaceChildren();
+  }
+  console.log(state.robots);
+  state.robots.forEach((robot) => addRow(robot));
 };
 
 document.getElementById("isVipCheckbox").addEventListener("change", (event) => {
-  populateTable(
-    event.target.checked
-      ? state.robots.filter((robot) => robot.vip)
-      : state.robots
-  );
+  state.robots = event.target.checked
+    ? state.robots.filter((robot) => robot.vip)
+    : state.robots;
+
+  console.log(state);
+
+  populateTable();
 });
 
 const getData = async () => {
@@ -70,8 +94,9 @@ const getData = async () => {
     const response = await fetch("https://magnetic-melon-yam.glitch.me");
 
     if (response.ok) {
-      state.robots = await response.json();
-      return state.robots;
+      const robots = await response.json();
+
+      return robots;
     }
   } catch (error) {
     console.error(error);
@@ -79,3 +104,40 @@ const getData = async () => {
 };
 
 populateTable();
+
+console.log(state);
+
+// document.querySelector("form").addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   const searchString = document.getElementById("search").value.toLowerCase();
+//   populateTable(
+//     state.robots.filter((robot) =>
+//       robot.name.toLowerCase().includes(searchString)
+//     )
+//   );
+// });
+
+//Netinkamas variantas, nes rezultata parodo tik is 3 td elemento, o reikia, kad rezultata parodytu tiek is vardo, tiek is pavardes.
+
+// document.querySelector("form").addEventListener("submit", (event) => {
+//   event.preventDefault();
+
+//   let input = document.getElementById("search");
+//   let filter = input.value.toUpperCase();
+//   let table = document.querySelector("table");
+//   let td = document.getElementsByTagName("td");
+//   let tr = table.getElementsByTagName("tr");
+//   let txtValue = document.querySelector("#search");
+
+//   for (let i = 0; i < tr.length; i++) {
+//     td = tr[i].getElementsByTagName("td")[2];
+//     if (td) {
+//       txtValue = td.textContent || td.innerText;
+//       if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//         tr[i].style.display = "";
+//       } else {
+//         tr[i].style.display = "none";
+//       }
+//     }
+//   }
+// });

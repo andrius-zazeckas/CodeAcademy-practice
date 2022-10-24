@@ -1,0 +1,17 @@
+#postContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    visibility: hidden;
+}
+
+.postHeading {
+    font-weight: bold;
+    margin-top: 5px;
+
+}
+
+#updatePostButton {
+    visibility: hidden;
+    
+}
