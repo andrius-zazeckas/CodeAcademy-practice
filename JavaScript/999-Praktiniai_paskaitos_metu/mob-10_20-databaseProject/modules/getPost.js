@@ -6,6 +6,7 @@ const getPost = async (postNumber) => {
         method: "GET",
       } // nebutina kai GET darome, dazniausia naudojami POST ir PATCH
     );
+
     const post = await response.json();
 
     return post;

@@ -119,25 +119,25 @@ console.log(state);
 
 //Netinkamas variantas, nes rezultata parodo tik is 3 td elemento, o reikia, kad rezultata parodytu tiek is vardo, tiek is pavardes.
 
-// document.querySelector("form").addEventListener("submit", (event) => {
-//   event.preventDefault();
+document.querySelector("form").addEventListener("submit", (event) => {
+  event.preventDefault();
 
-//   let input = document.getElementById("search");
-//   let filter = input.value.toUpperCase();
-//   let table = document.querySelector("table");
-//   let td = document.getElementsByTagName("td");
-//   let tr = table.getElementsByTagName("tr");
-//   let txtValue = document.querySelector("#search");
+  let input = document.getElementById("search");
+  let filter = input.value.toUpperCase();
+  let table = document.querySelector("table");
+  let td = document.getElementsByTagName("td");
+  let tr = table.getElementsByTagName("tr");
+  let txtValue = document.querySelector("#search");
 
-//   for (let i = 0; i < tr.length; i++) {
-//     td = tr[i].getElementsByTagName("td")[2];
-//     if (td) {
-//       txtValue = td.textContent || td.innerText;
-//       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//         tr[i].style.display = "";
-//       } else {
-//         tr[i].style.display = "none";
-//       }
-//     }
-//   }
-// });
+  for (let i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+});
