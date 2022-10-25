@@ -22,7 +22,9 @@ const createTable = (robots) => {
 
   const idHeader = createElementWithParams("th", { innerText: "ID" });
   const imgHeader = createElementWithParams("th", { innerText: "Image" });
-  const firstNameHeader = createElementWithParams("th", { innerText: "Name" });
+  const firstNameHeader = createElementWithParams("th", {
+    innerText: "First name",
+  });
   const lastNameHeader = createElementWithParams("th", {
     innerText: "Last name",
   });

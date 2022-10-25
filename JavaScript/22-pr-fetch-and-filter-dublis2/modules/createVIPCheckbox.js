@@ -3,8 +3,11 @@ import { createElementWithParams, populateTable } from "./createTable.js";
 const createVIPCheckbox = (robots) => {
   const checkboxElement = createElementWithParams("input", {
     type: "checkbox",
-    label: "VIP",
+    name: "VIP",
   });
+
+  const checkboxElementLabel = createElementWithParams("label", { for: "VIP" });
+  checkboxElementLabel.textContent = "VIP";
 
   const onVIPCheckboxClick = (event) => {
     const isChecked = event.target.checked;
@@ -26,7 +29,7 @@ const createVIPCheckbox = (robots) => {
 
   checkboxElement.addEventListener("change", onVIPCheckboxClick);
 
-  document.body.prepend(checkboxElement);
+  document.body.prepend(checkboxElement, checkboxElementLabel);
 };
 
 export { createVIPCheckbox };
