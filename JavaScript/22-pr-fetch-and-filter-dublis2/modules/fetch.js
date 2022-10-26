@@ -6,8 +6,6 @@
 //     Sukurkite checkbox virš lentelės su JS. Jį paspaudus, rodys tik tuos žmones, kurie yra VIP.
 //     Sukurkite virš lentelės ir search laukelį (forma su input type search ir mygtukas). Suvedus duomenis, lentelėje turi prasifiltruoti pagal vardą arba pavardę (fullname contains search string). Capitalizacija turėtų būti nesvarbi.
 
-// sukurti VIP užrašą
-
 const getRobots = async () => {
   try {
     const response = await fetch("https://magnetic-melon-yam.glitch.me");

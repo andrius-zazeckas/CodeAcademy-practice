@@ -1,6 +1,7 @@
-import { createElementWithParams, populateTable } from "./createTable.js";
+import { createElementWithParams } from "./createTable.js";
+import { filterRobots } from "./filterRobots.js";
 
-const createVIPCheckbox = (robots) => {
+const createVIPCheckbox = (state) => {
   const checkboxElement = createElementWithParams("input", {
     type: "checkbox",
     name: "VIP",
@@ -10,21 +11,9 @@ const createVIPCheckbox = (robots) => {
   checkboxElementLabel.textContent = "VIP";
 
   const onVIPCheckboxClick = (event) => {
-    const isChecked = event.target.checked;
-    const tbodyElement = document.querySelector("tbody");
-
-    tbodyElement.replaceChildren();
-
-    if (!isChecked) {
-      // rodyk visus robotus
-      populateTable(robots, tbodyElement);
-
-      return;
-    }
-    // rodyk VIP`inius
-    const VIPRobots = robots.filter((robot) => robot.vip);
-
-    populateTable(VIPRobots, tbodyElement);
+    const isVIPChecked = event.target.checked;
+    state.isVIPChecked = isVIPChecked;
+    filterRobots(state);
   };
 
   checkboxElement.addEventListener("change", onVIPCheckboxClick);
