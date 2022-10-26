@@ -1,3 +1,4 @@
+import { filterByCity } from "./filterByCity.js";
 import { getListings } from "./getListings.js";
 import { populateListings } from "./populateListings.js";
 
@@ -7,4 +8,6 @@ const showListings = async () => {
   populateListings(listings);
 };
 
-showListings();
+await showListings();
+
+filterByCity(listings);

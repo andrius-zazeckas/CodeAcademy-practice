@@ -26,7 +26,7 @@ const populateListings = (listings) => {
     price.style.fontWeight = "bold";
     price.style.fontSize = "20px";
 
-    price.innerText = listing.price;
+    price.innerText = `${listing.price}€`;
 
     textContainer.append(price, city, description);
 
