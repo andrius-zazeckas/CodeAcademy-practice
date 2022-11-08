@@ -1,6 +1,6 @@
 const casual = require("casual");
 
-const randomNumber = Math.round(Math.random() * 10);
+const randomNumber = Math.round(Math.random() * 11);
 const city = casual.city;
 const nameSuffix = casual.name_suffix;
 const firstName = casual.first_name;
