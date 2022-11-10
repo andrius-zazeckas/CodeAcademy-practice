@@ -15,7 +15,7 @@ app.get("/", (_, res) => {
 });
 
 app.post("/", (req, res) => {
-  const car = req.body?.car;
+  const car = req.body.car;
 
   cars.push(car);
 
