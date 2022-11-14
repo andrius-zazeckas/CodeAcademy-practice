@@ -23,4 +23,4 @@ const getUsers = async () => {
   }
 };
 
-populateList();
+await populateList();

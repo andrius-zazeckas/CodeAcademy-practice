@@ -12,7 +12,7 @@ const cars = {
 };
 
 app.get("/", (_, res) => {
-  res.send(cars);
+  res.send(cars).end();
 });
 
 app.get("/cars/:model", (req, res) => {
