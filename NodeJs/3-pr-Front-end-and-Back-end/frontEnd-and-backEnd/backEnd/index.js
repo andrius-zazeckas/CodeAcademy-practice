@@ -5,7 +5,7 @@ const PORT = 5000;
 
 const app = express();
 
-const users = [{ name: "Jonas", surname: "Girdzijauskas" }];
+const users = [{ name: "Andrius", surname: "Zazeckas" }];
 
 app.use(express.json());
 app.use(cors());
