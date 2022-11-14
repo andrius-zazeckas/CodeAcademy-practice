@@ -15,8 +15,8 @@ app.get("/", (_, res) => {
 });
 
 app.post("/", (req, res) => {
-  const name = req.body?.name;
-  const surname = req.body?.surname;
+  const { name } = req.body;
+  const { surname } = req.body;
 
   users.push({ name, surname });
 
