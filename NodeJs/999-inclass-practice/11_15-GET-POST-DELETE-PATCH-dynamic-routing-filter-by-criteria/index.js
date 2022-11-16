@@ -72,27 +72,29 @@ app.delete("/student/:studentId", (req, res) => {
 app.patch("/student/:studentId", (req, res) => {
   const studentId = +req.params.studentId;
   const { firstName, lastName } = req.body;
+  // console.log(req.body);
 
-  const studentToUpdateIndex = students.findIndex(
+  if (!firstName && !lastName) {
+    return res.status(404).send("No name was provided");
+  }
+
+  const studentToUpdate = students.find(
     (curStudent) => curStudent.studentId === studentId
   );
 
-  if (!firstName) {
-    return res.status(404).send("First name was not provided").end();
+  if (!studentToUpdate) {
+    return res.status(404).send("Student does not exist").end();
   }
 
-  const studentToUpdate = students[studentToUpdateIndex];
-  console.log(studentToUpdate);
-
-  if (studentToUpdateIndex !== -1) {
-    console.log(firstName);
-    students[studentToUpdateIndex] = {
-      ...students[studentToUpdateIndex],
-      firstName,
-    };
+  if (lastName) {
+    studentToUpdate.lastName = lastName;
   }
 
-  res.send(students[studentToUpdateIndex]).end();
+  if (firstName) {
+    studentToUpdate.firstName = firstName;
+  }
+
+  res.send(studentToUpdate).end();
 });
 
 app.listen(PORT, () => console.log(`server is running on port: ${PORT}`));

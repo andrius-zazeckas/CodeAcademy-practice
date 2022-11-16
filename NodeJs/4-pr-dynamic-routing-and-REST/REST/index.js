@@ -19,7 +19,7 @@ app.get("/email", (_, res) => {
 
 app.get("/:car", (req, res) => {
   const { car } = req.params;
-
+  console.log(car);
   const filterUsersByCarBrand = data.filter(
     (curCar) => curCar.car.toLowerCase() === car.toLowerCase()
   );
