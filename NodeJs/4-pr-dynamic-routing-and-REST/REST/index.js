@@ -12,17 +12,9 @@ app.get("/", (_, res) => {
 });
 
 app.get("/email", (_, res) => {
-  const extractValue = (arr, prop) => {
-    // extract value from property
-    let extractedValue = arr.map((item) => item[prop]);
+  const userEmails = data.map((user) => user.email);
 
-    return extractedValue;
-  };
-
-  // passing an array of objects and property 'a' to extract
-  const result = extractValue(data, "email");
-
-  res.send(result).end();
+  res.send(userEmails).end();
 });
 
 app.get("/:car", (req, res) => {
@@ -54,11 +46,11 @@ app.get("/gender/:gender", (req, res) => {
       (curGender) =>
         curGender.gender.toLowerCase() === gender.toLocaleLowerCase()
     );
-    const showFilteredNames = filterByGender.map(
+    const filteredNames = filterByGender.map(
       (curGender) => `${curGender.first_name} ${curGender.last_name}`
     );
 
-    res.send(showFilteredNames).end();
+    res.send(filteredNames).end();
     return;
   }
   res.status(404).send("Gender does not exist").end();
