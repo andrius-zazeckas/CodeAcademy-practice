@@ -19,7 +19,7 @@ app.get("/", async (_, res) => {
       .find()
       .toArray();
     await con.close();
-    console.log(typeof data.age);
+    console.log(typeof data[0].age);
     return res.send(data);
   } catch (err) {
     res.status(500).send({ err });
