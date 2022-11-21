@@ -1,5 +1,5 @@
 const express = require("express");
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 
 const app = express();
 require("dotenv").config();
@@ -12,6 +12,40 @@ const DB = process.env.DB;
 const DBCOLLECTION = process.env.DBCOLLECTION;
 
 app.use(express.json());
+
+app.get("/filtered-users", async (req, res) => {
+  const { firstName, surname } = req.query; // naudojant endpointe ?firstName=Petras&surname=Slekys
+
+  try {
+    const connection = await client.connect();
+    const data = await connection
+      .db(DB)
+      .collection(DBCOLLECTION)
+      .find({ firstName, surname })
+      .toArray();
+    await connection.close();
+    return res.send(data);
+  } catch (err) {
+    res.status(500).send({ err });
+  }
+});
+
+app.get("/user/:id", async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const connection = await client.connect();
+    const data = await connection
+      .db(DB)
+      .collection(DBCOLLECTION)
+      .findOne({ _id: ObjectId(id) });
+
+    await connection.close();
+    return res.send(data);
+  } catch (err) {
+    res.status(500).send({ err });
+  }
+});
 
 app.get("/users", async (_, res) => {
   try {
