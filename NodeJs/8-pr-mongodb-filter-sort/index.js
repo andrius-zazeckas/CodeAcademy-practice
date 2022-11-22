@@ -36,7 +36,7 @@ app.get("/pets/:type", async (req, res) => {
     const pets = await con
       .db(DB)
       .collection(DBCOLLECTION)
-      .find({ type: type })
+      .find({ type })
       .toArray();
 
     await con.close();
