@@ -1,9 +1,11 @@
 const express = require("express");
 const { MongoClient } = require("mongodb");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const URI = process.env.URI;
 const client = new MongoClient(URI);
@@ -62,7 +64,8 @@ app.get("/pets/age/byoldest", async (req, res) => {
 });
 
 app.post("/pet", async (req, res) => {
-  const { firstName, type, age } = req.body;
+  const { firstName, type } = req.body;
+  const age = +req.body.age;
 
   if (!firstName || !type || !age) {
     res.status(400).send("You did not provided pets name, type or age");
@@ -86,6 +89,8 @@ app.post("/pet", async (req, res) => {
       .collection(DBCOLLECTION)
       .insertOne({ firstName, type, age });
     await con.close();
+
+    console.log({ pet });
     return res.send(pet);
   } catch (err) {
     res.status(500).send({ err }).end();
