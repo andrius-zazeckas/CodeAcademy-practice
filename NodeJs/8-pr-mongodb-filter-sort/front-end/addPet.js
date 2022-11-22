@@ -24,8 +24,6 @@ const addPet = async () => {
   }
 };
 
-// document.body.querySelector("#submit").addEventListener("click", addPet);
-
 document.body
   .querySelector("#petForm")
   .addEventListener("submit", async (event) => {
