@@ -24,7 +24,24 @@ app.get("/pets", async (_, res) => {
   }
 });
 
-app.get("/pets/:type", async (req, res) => {
+app.get("/pets/order/:order?", async (req, res) => {
+  try {
+    const con = await client.connect();
+    const pets = await con
+      .db(DB)
+      .collection(DBCOLLECTION)
+      .find()
+      .sort({ age: req.params.order?.toLowerCase() === "dsc" ? -1 : 1 })
+      .toArray();
+
+    await con.close();
+    return res.send(pets);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+app.get("/pets/type/:type", async (req, res) => {
   const { type } = req.params;
   if (!type) {
     res.status(400).send("You did not provided pets type to filter");
@@ -54,6 +71,23 @@ app.get("/pets/age/byoldest", async (req, res) => {
       .collection(DBCOLLECTION)
       .find()
       .sort({ age: -1 })
+      .toArray();
+
+    await con.close();
+    return res.send(pets);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+app.get("/pets/age/byyoungest", async (req, res) => {
+  try {
+    const con = await client.connect();
+    const pets = await con
+      .db(DB)
+      .collection(DBCOLLECTION)
+      .find()
+      .sort({ age: 1 })
       .toArray();
 
     await con.close();

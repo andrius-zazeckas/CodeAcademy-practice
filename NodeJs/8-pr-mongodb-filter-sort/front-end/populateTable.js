@@ -1,8 +1,8 @@
-const populateTable = async () => {
-  const pets = await getPets();
+const populateTable = (pets) => {
+  const tableEl = document.querySelector("#petsTable");
 
-  const tableEl = document.querySelector("#output");
-  const tableBodyEl = document.createElement("tbody");
+  const tableBodyEl = document.querySelector("#output");
+  tableBodyEl.innerHTML = "";
 
   pets.forEach((pet) => {
     const tableRowEl = document.createElement("tr");
@@ -23,15 +23,4 @@ const populateTable = async () => {
   tableEl.append(tableBodyEl);
 };
 
-const getPets = async () => {
-  try {
-    const response = await fetch("http://localhost:5000/pets");
-    const pets = await response.json();
-
-    return pets;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-await populateTable();
+export { populateTable };
