@@ -42,7 +42,7 @@ app.get("/pets/order/:order?", async (req, res) => {
 });
 
 app.get("/pets/type/:type", async (req, res) => {
-  const { type } = req.params;
+  const type = req.query.type;
   if (!type) {
     res.status(400).send("You did not provided pets type to filter");
     return;

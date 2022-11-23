@@ -9,6 +9,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"
     />
+
+    <style>
+      .selected {
+        background-color: rgb(159, 159, 159);
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -16,6 +22,12 @@
 
       <h1>Pets</h1>
     </header>
+
+    <div id="filterButtons">
+      <button id="dogButton" class="selected">Dog</button>
+      <button id="catButton" class="selected">Cat</button>
+      <button id="bunnyButton" class="selected">Bunny</button>
+    </div>
 
     <table id="petsTable">
       <th>Name</th>
