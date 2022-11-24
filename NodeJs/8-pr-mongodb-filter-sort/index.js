@@ -17,49 +17,30 @@ app.get("/pets", async (_, res) => {
   try {
     const con = await client.connect();
     const pets = await con.db(DB).collection(DBCOLLECTION).find().toArray();
+
     await con.close();
-    return res.send(pets);
+
+    return res.send(pets).end();
   } catch (err) {
-    res.status(500).send(err);
+    res.status(500).send(err).end();
   }
 });
 
-app.get("/pets/order/:order?", async (req, res) => {
+app.get("/pets/:types?/:order?", async (req, res) => {
   try {
     const con = await client.connect();
     const pets = await con
       .db(DB)
       .collection(DBCOLLECTION)
-      .find()
+      .find({ type: { $in: req.params.types?.split(",") } })
       .sort({ age: req.params.order?.toLowerCase() === "dsc" ? -1 : 1 })
       .toArray();
 
     await con.close();
-    return res.send(pets);
+
+    return res.send(pets).end();
   } catch (err) {
-    res.status(500).send(err);
-  }
-});
-
-app.get("/pets/type/:type", async (req, res) => {
-  const type = req.query.type;
-  if (!type) {
-    res.status(400).send("You did not provided pets type to filter");
-    return;
-  }
-
-  try {
-    const con = await client.connect();
-    const pets = await con
-      .db(DB)
-      .collection(DBCOLLECTION)
-      .find({ type })
-      .toArray();
-
-    await con.close();
-    return res.send(pets);
-  } catch (err) {
-    res.status(500).send(err);
+    res.status(500).send(err).end();
   }
 });
 
@@ -74,9 +55,10 @@ app.get("/pets/age/byoldest", async (req, res) => {
       .toArray();
 
     await con.close();
-    return res.send(pets);
+
+    return res.send(pets).end();
   } catch (err) {
-    res.status(500).send(err);
+    res.status(500).send(err).end();
   }
 });
 
@@ -91,9 +73,10 @@ app.get("/pets/age/byyoungest", async (req, res) => {
       .toArray();
 
     await con.close();
-    return res.send(pets);
+
+    return res.send(pets).end();
   } catch (err) {
-    res.status(500).send(err);
+    res.status(500).send(err).end();
   }
 });
 
@@ -122,10 +105,10 @@ app.post("/pet", async (req, res) => {
       .db(DB)
       .collection(DBCOLLECTION)
       .insertOne({ firstName, type, age });
+
     await con.close();
 
-    console.log({ pet });
-    return res.send(pet);
+    return res.send(pet).end();
   } catch (err) {
     res.status(500).send({ err }).end();
   }

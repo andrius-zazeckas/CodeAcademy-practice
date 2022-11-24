@@ -2,16 +2,18 @@ import { populateTable } from "./populateTable.js";
 
 const ageEl = document.querySelector("#ageSort");
 const dogButton = document.querySelector("#dogButton");
-const catButton = document.querySelector("#catButton");
-const bunnyButton = document.querySelector("#bunnyButton");
 
-const getPets = async (order) => {
+let petSelection = ["dog", "cat", "bunny"];
+let order = "asc";
+
+const getPets = async () => {
   try {
-    const response = await fetch(`http://localhost:5000/pets/order/${order}`);
+    const response = await fetch(
+      `http://localhost:5000/pets/${petSelection.join(",")}/${order}`,
+    );
     const pets = await response.json();
 
     populateTable(pets);
-    return pets;
   } catch (error) {
     console.log(error);
   }
@@ -24,37 +26,27 @@ ageEl.addEventListener("click", async (e) => {
 
   if (text.includes("ASC")) {
     e.target.textContent = text.replace("ASC", "DSC");
-    const pets = await getPets("dsc");
-    populateTable(pets);
+    order = "dsc";
   } else {
     e.target.textContent = text.replace("DSC", "ASC");
-    const pets = await getPets("asc");
-    populateTable(pets);
+    order = "asc";
   }
+  await getPets();
 });
 
-const filterType = async (type) => {
-  try {
-    const response = await fetch(
-      `http://localhost:5000/pets/type/?type=${type}`,
-    );
-    const pets = await response.json();
+document.querySelectorAll("button").forEach((button) =>
+  button.addEventListener("click", async (e) => {
+    e.target.classList.toggle("selected");
 
-    populateTable(pets);
-    return pets;
-  } catch (error) {
-    console.log(error);
-  }
-};
+    const petClicked = e.target.textContent.toLowerCase();
 
-dogButton.addEventListener("click", async () => {
-  dogButton.classList.toggle("selected");
-
-  if (dogButton.className === "") {
-    const pets = await filterType("dog&?type=cat");
-    populateTable(pets);
-  } else {
-    const pets = await getPets();
-    populateTable(pets);
-  }
-});
+    if (petSelection.includes(petClicked)) {
+      petSelection = petSelection.filter(
+        (petStored) => petStored !== petClicked,
+      );
+    } else {
+      petSelection.push(petClicked);
+    }
+    await getPets();
+  }),
+);
