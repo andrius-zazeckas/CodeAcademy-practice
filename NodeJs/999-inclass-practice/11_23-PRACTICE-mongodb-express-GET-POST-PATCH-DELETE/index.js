@@ -74,7 +74,7 @@ app.post("/order", async (req, res) => {
     return;
   }
 
-  if (typeof products !== "object" || typeof comments !== "string") {
+  if (!Array.isArray(products) || typeof comments !== "string") {
     res
       .status(400)
       .send("Products or comments were provided incorectly.")
@@ -136,7 +136,7 @@ app.patch("/order/:id", async (req, res) => {
     return;
   }
 
-  if (typeof products !== "object") {
+  if (Array.isArray(products)) {
     res
       .status(400)
       .send("Products or comments were provided incorectly.")
