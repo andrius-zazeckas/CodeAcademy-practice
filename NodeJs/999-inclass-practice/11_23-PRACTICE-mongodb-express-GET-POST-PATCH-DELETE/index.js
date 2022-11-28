@@ -22,9 +22,9 @@ app.get("/orders", async (_, res) => {
       .find()
       .toArray();
     await connection.close();
-    return res.send(data);
+    return res.send(data).end();
   } catch (err) {
-    res.status(500).send({ err });
+    res.status(500).send({ err }).end();
   }
 });
 
@@ -39,9 +39,9 @@ app.get("/order/find/:id", async (req, res) => {
       .find({ _id: ObjectId(id) })
       .toArray();
     await connection.close();
-    return res.send(data);
+    return res.send(data).end();
   } catch (err) {
-    res.status(500).send({ err });
+    res.status(500).send({ err }).end();
   }
 });
 
@@ -56,9 +56,9 @@ app.get("/orders/:products", async (req, res) => {
       .find({ products })
       .toArray();
     await connection.close();
-    return res.send(data);
+    return res.send(data).end();
   } catch (err) {
-    res.status(500).send({ err });
+    res.status(500).send({ err }).end();
   }
 });
 
@@ -89,9 +89,9 @@ app.post("/order", async (req, res) => {
       .collection(DBCOLLECTION)
       .insertOne({ products, creationDate, completionDate, comments });
     await con.close();
-    return res.send(dbRes);
+    return res.send(dbRes).end();
   } catch (err) {
-    res.status(500).send({ err });
+    res.status(500).send({ err }).end();
   }
 });
 
@@ -121,9 +121,9 @@ app.post("/orders", async (req, res) => {
       ]);
 
     await con.close();
-    return res.send(dbRes);
+    return res.send(dbRes).end();
   } catch (err) {
-    res.status(500).send({ err });
+    res.status(500).send({ err }).end();
   }
 });
 
