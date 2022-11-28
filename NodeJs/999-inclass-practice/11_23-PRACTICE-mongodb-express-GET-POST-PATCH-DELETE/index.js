@@ -24,7 +24,7 @@ app.get("/orders", async (req, res) => {
       .db(DB)
       .collection(DBCOLLECTION)
       .count({ deliveryType });
-    const data = await connection
+    const orders = await connection
       .db(DB)
       .collection(DBCOLLECTION)
       .find()
@@ -32,7 +32,7 @@ app.get("/orders", async (req, res) => {
 
     await connection.close();
 
-    res.send({ data, ordersCount }).end();
+    res.send({ ordersCount, orders }).end();
   } catch (err) {
     res.status(500).send({ err }).end();
     throw Error(err);
@@ -120,7 +120,7 @@ app.post("/orders", async (req, res) => {
   const { postOrders } = req.body;
 
   if (!Array.isArray(postOrders)) {
-    return res.status(400).send({ message: "orders is not an array" });
+    return res.status(400).send({ message: "postOrders is not an array" });
   }
 
   // todo: Loretos pvz
@@ -134,20 +134,7 @@ app.post("/orders", async (req, res) => {
     const newOrders = await con
       .db(DB)
       .collection(DBCOLLECTION)
-      .insertMany([
-        {
-          products,
-          creationDate,
-          completionDate,
-          comments,
-        },
-        {
-          products,
-          creationDate,
-          completionDate,
-          comments: "two",
-        },
-      ]);
+      .insertMany(postOrders, creationDate);
 
     await con.close();
 
@@ -160,6 +147,8 @@ app.post("/orders", async (req, res) => {
 app.patch("/order/:id", async (req, res) => {
   const { id } = req.params;
   const { products } = req.body;
+
+  const isProperProducts = products && typeof products === "string";
 
   const userIp =
     req.ip || req.headers["x-forwarded-for"] || req.socket.remoteAddress;
@@ -181,7 +170,13 @@ app.patch("/order/:id", async (req, res) => {
 
   try {
     const con = await client.connect();
-    const data = await con
+
+    const updatedValues = {};
+
+    if (isProperProducts) {
+      updatedValues.products = products;
+    }
+    const order = await con
       .db(DB)
       .collection(DBCOLLECTION)
       .findOneAndUpdate(
@@ -191,7 +186,7 @@ app.patch("/order/:id", async (req, res) => {
 
     await con.close();
 
-    res.send(data).end();
+    res.send(order).end();
   } catch (error) {
     return res.send({ error }).end();
   }
