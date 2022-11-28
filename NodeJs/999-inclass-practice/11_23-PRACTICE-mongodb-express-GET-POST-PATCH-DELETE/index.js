@@ -13,9 +13,17 @@ const DBCOLLECTION = process.env.DBCOLLECTION;
 
 app.use(express.json());
 
-app.get("/orders", async (_, res) => {
+app.get("/orders", async (req, res) => {
+  const { deliveryType } = req.body;
+
+  // if prideti
+
   try {
     const connection = await client.connect();
+    const ordersCount = await connection
+      .db(DB)
+      .collection(DBCOLLECTION)
+      .count({ deliveryType });
     const data = await connection
       .db(DB)
       .collection(DBCOLLECTION)
@@ -24,15 +32,16 @@ app.get("/orders", async (_, res) => {
 
     await connection.close();
 
-    return res.send(data).end();
+    res.send({ data, ordersCount }).end();
   } catch (err) {
     res.status(500).send({ err }).end();
+    throw Error(err);
   }
 });
 
-app.get("/order/find/:id", async (req, res) => {
+app.get("/order/:id", async (req, res) => {
   const { id } = req.params;
-
+  // todo: if
   try {
     const connection = await client.connect();
     const data = await connection
@@ -49,15 +58,16 @@ app.get("/order/find/:id", async (req, res) => {
   }
 });
 
-app.get("/orders/:products", async (req, res) => {
-  const { products } = req.params;
+app.get("/orders/:product", async (req, res) => {
+  const { product } = req.params;
+  //todo if
 
   try {
     const connection = await client.connect();
     const data = await connection
       .db(DB)
       .collection(DBCOLLECTION)
-      .find({ products })
+      .find({ products: { $regex: product } })
       .toArray();
 
     await connection.close();
@@ -69,10 +79,10 @@ app.get("/orders/:products", async (req, res) => {
 });
 
 app.post("/order", async (req, res) => {
-  const { products, comments } = req.body;
+  const { products, comments, deliveryType } = req.body;
 
-  const creationDate = new Date().toISOString;
-  const plusOneDay = new Date().getTime() + 86400000;
+  const creationDate = new Date().toISOString();
+  const plusOneDay = new Date().getTime() + 86_400_000;
   const completionDate = new Date(plusOneDay);
 
   if (!products) {
@@ -90,10 +100,13 @@ app.post("/order", async (req, res) => {
 
   try {
     const con = await client.connect();
-    const dbRes = await con
-      .db(DB)
-      .collection(DBCOLLECTION)
-      .insertOne({ products, creationDate, completionDate, comments });
+    const dbRes = await con.db(DB).collection(DBCOLLECTION).insertOne({
+      products,
+      creationDate,
+      completionDate,
+      comments,
+      deliveryType,
+    });
 
     await con.close();
 
@@ -104,24 +117,32 @@ app.post("/order", async (req, res) => {
 });
 
 app.post("/orders", async (req, res) => {
+  const { postOrders } = req.body;
+
+  if (!Array.isArray(postOrders)) {
+    return res.status(400).send({ message: "orders is not an array" });
+  }
+
+  // todo: Loretos pvz
+
   const creationDate = new Date();
-  const plusOneDay = new Date().getTime() + 86400000;
+  const plusOneDay = new Date().getTime() + 86_400_000;
   const completionDate = new Date(plusOneDay);
 
   try {
     const con = await client.connect();
-    const dbRes = await con
+    const newOrders = await con
       .db(DB)
       .collection(DBCOLLECTION)
       .insertMany([
         {
-          products: ["shoe", "purse"],
+          products,
           creationDate,
           completionDate,
-          comments: "one",
+          comments,
         },
         {
-          products: ["table", "sink"],
+          products,
           creationDate,
           completionDate,
           comments: "two",
@@ -130,7 +151,7 @@ app.post("/orders", async (req, res) => {
 
     await con.close();
 
-    return res.send(dbRes).end();
+    res.send(newOrders).end();
   } catch (err) {
     res.status(500).send({ err }).end();
   }
@@ -140,12 +161,17 @@ app.patch("/order/:id", async (req, res) => {
   const { id } = req.params;
   const { products } = req.body;
 
+  const userIp =
+    req.ip || req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+
+  console.log(userIp);
+
   if (!products) {
     res.status(400).send("Products was not provided.").end();
     return;
   }
 
-  if (Array.isArray(products)) {
+  if (!Array.isArray(products)) {
     res
       .status(400)
       .send("Products or comments were provided incorectly.")
@@ -158,7 +184,10 @@ app.patch("/order/:id", async (req, res) => {
     const data = await con
       .db(DB)
       .collection(DBCOLLECTION)
-      .findOneAndUpdate({ _id: ObjectId(id) }, { $set: { products } });
+      .findOneAndUpdate(
+        { _id: ObjectId(id) },
+        { $set: { products, updatedBy: userIp } }
+      );
 
     await con.close();
 
@@ -170,6 +199,7 @@ app.patch("/order/:id", async (req, res) => {
 
 app.patch("/orders/:products", async (req, res) => {
   const { products } = req.params;
+  const { isSold } = req.body;
 
   if (!products) {
     res.status(400).send("Products was not provided.").end();
@@ -181,13 +211,14 @@ app.patch("/orders/:products", async (req, res) => {
     const data = await con
       .db(DB)
       .collection(DBCOLLECTION)
-      .updateMany({ products }, { $set: { sold: "bread crumbs" } });
+      .updateMany({ products }, { $set: { isSold } });
 
     await con.close();
 
     res.send(data).end();
   } catch (error) {
-    return res.send({ error }).end();
+    res.send({ error }).end();
+    throw Error(error);
   }
 });
 
@@ -210,12 +241,15 @@ app.delete("/order/:id", async (req, res) => {
 
     res.send(data).end();
   } catch (error) {
-    return res.send({ error }).end();
+    res.send({ error }).end();
+    throw Error(error);
   }
 });
 
 app.delete("/orders/:products", async (req, res) => {
   const { products } = req.params;
+
+  console.log(products, typeof products);
 
   if (!products) {
     res.status(400).send("Products was not provided.").end();
@@ -233,7 +267,8 @@ app.delete("/orders/:products", async (req, res) => {
 
     res.send(data).end();
   } catch (error) {
-    return res.send({ error }).end();
+    res.send({ error }).end();
+    throw Error(error);
   }
 });
 
