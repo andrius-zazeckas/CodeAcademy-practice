@@ -135,7 +135,7 @@ app.get("/categoryvalue", async (req, res) => {
 //           $lookup: {
 //             from: PRODUCTSCOLLECTION,
 //             localField: "_id",
-//             foreignField: "categoryId",
+//             foreignField: "categoryId", // nepriima nestringo, su id netinka
 //             as: "products",
 //           },
 //         },
