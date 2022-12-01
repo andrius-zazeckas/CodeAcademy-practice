@@ -31,9 +31,9 @@ app.get("/categories", async (_, res) => {
     throw Error(err);
   }
 });
-
 app.get("/products", async (_, res) => {
   try {
+    const docs = [];
     const con = await client.connect();
     const products = await con
       .db(DB)
@@ -44,6 +44,34 @@ app.get("/products", async (_, res) => {
     await con.close();
 
     res.send(products).end();
+  } catch (err) {
+    res.status(500).send({ err }).end();
+    throw Error(err);
+  }
+});
+
+app.get("/products-with-title-category", async (_, res) => {
+  const productsWithTitle = [];
+
+  try {
+    const con = await client.connect();
+    const db = con.db(DB);
+    const products = await db.collection(PRODUCTSCOLLECTION).find().toArray();
+
+    for (const product of products) {
+      const category = await db
+        .collection(CATEGORIESCOLLECTION)
+        .findOne({ _id: ObjectId(product.categoryId) });
+
+      productsWithTitle.push({
+        ...product,
+        category: { title: category.title, _id: product.categoryId },
+      });
+    }
+
+    await con.close();
+
+    res.send(productsWithTitle).end();
   } catch (err) {
     res.status(500).send({ err }).end();
     throw Error(err);
@@ -95,33 +123,33 @@ app.get("/categoryvalue", async (req, res) => {
   }
 });
 
-app.get("/twocollections", async (req, res) => {
-  try {
-    const con = await client.connect();
-    const db = con.db(DB);
-    const collection = db.collection(CATEGORIESCOLLECTION);
+// app.get("/twocollections", async (req, res) => {
+//   try {
+//     const con = await client.connect();
+//     const db = con.db(DB);
+//     const collection = db.collection(CATEGORIESCOLLECTION);
 
-    const join = collection
-      .aggregate([
-        {
-          $lookup: {
-            from: PRODUCTSCOLLECTION,
-            localField: "_id",
-            foreignField: "categoryId",
-            as: "products",
-          },
-        },
-      ])
-      .toArray();
+//     const join = collection
+//       .aggregate([
+//         {
+//           $lookup: {
+//             from: PRODUCTSCOLLECTION,
+//             localField: "_id",
+//             foreignField: "categoryId",
+//             as: "products",
+//           },
+//         },
+//       ])
+//       .toArray();
 
-    await con.close();
+//     await con.close();
 
-    res.send(join).end();
-  } catch (error) {
-    res.status(500).send({ error }).end();
-    throw Error(error);
-  }
-});
+//     res.send(join).end();
+//   } catch (error) {
+//     res.status(500).send({ error }).end();
+//     throw Error(error);
+//   }
+// });
 
 app.listen(PORT, async () => {
   console.log(`server is running on ${PORT}`);

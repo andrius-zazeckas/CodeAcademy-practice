@@ -24,7 +24,7 @@ app.get("/users", async (req, res) => {
     return;
   }
 
-  if (!hasOrdered || typeof hasOrdered !== "boolean") {
+  if (!hasOrdered && typeof hasOrdered !== "boolean") {
     res.status(400).send("Has ordered is provided incorrectly").end();
     return;
   }
@@ -32,6 +32,7 @@ app.get("/users", async (req, res) => {
   const pipeline = [
     {
       $match: {
+        // name: { $regex: name, $options: "i" }, //paieska be case sensitive, nes options yra i "insensitive"
         hasOrdered,
       },
     },
