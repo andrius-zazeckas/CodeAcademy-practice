@@ -123,34 +123,6 @@ app.get("/categoryvalue", async (req, res) => {
   }
 });
 
-// app.get("/twocollections", async (req, res) => {
-//   try {
-//     const con = await client.connect();
-//     const db = con.db(DB);
-//     const collection = db.collection(CATEGORIESCOLLECTION);
-
-//     const join = collection
-//       .aggregate([
-//         {
-//           $lookup: {
-//             from: PRODUCTSCOLLECTION,
-//             localField: "_id",
-//             foreignField: "categoryId",
-//             as: "products",
-//           },
-//         },
-//       ])
-//       .toArray();
-
-//     await con.close();
-
-//     res.send(join).end();
-//   } catch (error) {
-//     res.status(500).send({ error }).end();
-//     throw Error(error);
-//   }
-// });
-
 app.listen(PORT, async () => {
   console.log(`server is running on ${PORT}`);
 });
