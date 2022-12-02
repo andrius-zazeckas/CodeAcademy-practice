@@ -1,0 +1,66 @@
+html {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.wrapper > nav {
+  text-align: center;
+  margin: 20px;
+}
+
+.wrapper > nav > a {
+  margin: 20px;
+}
+
+#title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#newMembershipBtn {
+  height: 50px;
+  width: 210px;
+}
+
+#plus {
+  margin: 0 18px 0 0;
+}
+
+#container {
+  margin: 80px 0;
+  display: grid;
+  /* grid-template-columns: auto auto auto; */
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.membershipContainer,
+.userContainer {
+  padding: 20px;
+  /* min-width: 360px; */
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.48);
+  border-radius: 7px;
+  background-color: rgb(240, 240, 240);
+}
+
+.membershipTypeContainer {
+  padding: 20px;
+  text-align: center;
+  border-bottom: double;
+}
+
+.deleteMembershipContainer {
+  padding: 20px;
+  text-align: right;
+}

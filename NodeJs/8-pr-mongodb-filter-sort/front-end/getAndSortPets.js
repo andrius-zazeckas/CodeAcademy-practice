@@ -1,7 +1,6 @@
 import { populateTable } from "./populateTable.js";
 
 const ageEl = document.querySelector("#ageSort");
-const dogButton = document.querySelector("#dogButton");
 
 let petSelection = ["dog", "cat", "bunny"];
 let order = "asc";
