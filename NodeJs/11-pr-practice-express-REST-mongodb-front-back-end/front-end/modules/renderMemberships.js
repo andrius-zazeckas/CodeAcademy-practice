@@ -1,3 +1,5 @@
+import { getMemberships } from "./getMemberships.js";
+
 const currency = "$";
 
 const renderMemberships = (memberships) => {
@@ -6,6 +8,8 @@ const renderMemberships = (memberships) => {
   sectionContainer.replaceChildren();
 
   memberships.forEach((membership) => {
+    const { _id, price, name, description } = membership;
+
     const membershipContainer = document.createElement("div");
     membershipContainer.className = "membershipContainer";
 
@@ -18,12 +22,11 @@ const renderMemberships = (memberships) => {
     const deleteMembershipContainer = document.createElement("div");
     deleteMembershipContainer.className = "deleteMembershipContainer";
 
-    const deleteMembershipButton = document.createElement("button");
-
-    const { price, name, description } = membership;
-
     membershipType.textContent = `${currency}${price} ${name}`;
     descriptionEl.textContent = description;
+
+    const deleteMembershipButton = document.createElement("button");
+    deleteMembershipButton.id = _id;
     deleteMembershipButton.textContent = "Delete";
 
     membershipTypeContainer.append(membershipType, descriptionEl);
@@ -34,7 +37,29 @@ const renderMemberships = (memberships) => {
       membershipTypeContainer,
       deleteMembershipContainer
     );
+
     sectionContainer.append(membershipContainer);
+
+    const deleteMembership = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/membership/${deleteMembershipButton.id}`,
+          {
+            method: "DELETE",
+          }
+        );
+
+        const isPostDeleted = response.ok;
+
+        if (isPostDeleted) {
+          await getMemberships();
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    deleteMembershipButton.addEventListener("click", deleteMembership);
   });
 };
 

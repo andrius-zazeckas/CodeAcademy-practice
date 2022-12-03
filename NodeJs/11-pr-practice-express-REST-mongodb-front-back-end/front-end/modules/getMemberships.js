@@ -12,3 +12,5 @@ const getMemberships = async () => {
 };
 
 await getMemberships();
+
+export { getMemberships };

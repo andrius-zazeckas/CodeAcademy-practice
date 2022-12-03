@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Users</title>
+    <title>Memberships</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -36,19 +36,44 @@
     <main class="wrapper">
       <section id="title-container">
         <div>
-          <h1>User Management</h1>
+          <h1>Create Membership</h1>
         </div>
-        <a href="./new-user.html"
-          ><button id="newUserBtn"><span id="plus">+</span>New User</button></a
-        >
-      </section>
-      <section id="sort">
-        <h3 id="sortingEl">Sorting By Name: ASC</h3>
       </section>
 
-      <section id="container"></section>
+      <section>
+        <form id="membership-form">
+          <fieldset>
+            <label for="name">Name</label>
+            <input name="name" id="membership-name-input" placeholder="Name" />
+          </fieldset>
+          <fieldset>
+            <label for="price">Membership Price</label>
+            <input
+              type="number"
+              name="price"
+              id="membership-price-input"
+              step=".01"
+              placeholder="Membership Price"
+            />
+          </fieldset>
+          <fieldset>
+            <label for="description">Description</label>
+
+            <textarea
+              id="membership-description-input"
+              name="description"
+              rows="8"
+              cols="50"
+            ></textarea>
+          </fieldset>
+          <a href="./memberships.html">Cancel</a>
+          <button type="submit" id="submit-new-membership">
+            New Membership
+          </button>
+        </form>
+      </section>
     </main>
 
-    <script type="module" src="./modules/getUsers.js"></script>
+    <script type="module" src="./modules/newMembership.js"></script>
   </body>
 </html>

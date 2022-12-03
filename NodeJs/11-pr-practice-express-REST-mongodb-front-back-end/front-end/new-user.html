@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Users</title>
+    <title>Memberships</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -36,19 +36,47 @@
     <main class="wrapper">
       <section id="title-container">
         <div>
-          <h1>User Management</h1>
+          <h1>Create User</h1>
         </div>
-        <a href="./new-user.html"
-          ><button id="newUserBtn"><span id="plus">+</span>New User</button></a
-        >
       </section>
-      <section id="sort">
-        <h3 id="sortingEl">Sorting By Name: ASC</h3>
+
+      <section>
+        <form id="user-form">
+          <fieldset>
+            <label for="first-name">First Name *</label>
+            <input
+              name="first-name"
+              id="user-first-name-input"
+              placeholder="First Name"
+            />
+            <label for="last-name">Last Name *</label>
+            <input
+              name="last-name"
+              id="user-last-name-input"
+              placeholder="Last Name"
+            />
+          </fieldset>
+          <fieldset>
+            <label for="email">Email Address *</label>
+            <input
+              type="email"
+              name="email"
+              id="user-email-input"
+              placeholder="Email Address"
+            />
+          </fieldset>
+          <fieldset>
+            <label for="user-membership">Change Membership</label>
+            <select id="user-membership-input" name="user-membership"></select>
+          </fieldset>
+          <a href="./users.html">Cancel</a>
+          <button type="submit" id="submit-new-user">New User</button>
+        </form>
       </section>
 
       <section id="container"></section>
     </main>
 
-    <script type="module" src="./modules/getUsers.js"></script>
+    <script type="module" src="./modules/newUser.js"></script>
   </body>
 </html>
