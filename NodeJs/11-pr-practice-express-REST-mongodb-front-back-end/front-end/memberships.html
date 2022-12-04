@@ -28,31 +28,32 @@
   <body>
     <header class="wrapper">
       <nav>
-        <a href="./memberships.html">Memberships</a>
+        <a id="membershipsURL" href="./memberships.html">Memberships</a>
         <a href="./users.html">Users</a>
       </nav>
     </header>
+    <div id="body-wrapper">
+      <main class="wrapper">
+        <section id="title-container">
+          <div>
+            <h1>Membership Management</h1>
+            <p>
+              Here you can manage your membership packages. Note: Make sure you
+              are not deleting ir deactivating packages assigned to active
+              users.
+            </p>
+          </div>
 
-    <main class="wrapper">
-      <section id="title-container">
-        <div>
-          <h1>Membership Management</h1>
-          <p>
-            Here you can manage your membership packages. Note: Make sure you
-            are not deleting ir deactivating packages assigned to active users.
-          </p>
-        </div>
+          <a href="./new-membership.html">
+            <button id="newMembershipBtn">
+              <span id="plus">+</span>New Membership
+            </button></a
+          >
+        </section>
 
-        <a href="./new-membership.html">
-          <button id="newMembershipBtn">
-            <span id="plus">+</span>New Membership
-          </button></a
-        >
-      </section>
-
-      <section id="container"></section>
-    </main>
-
+        <section id="container"></section>
+      </main>
+    </div>
     <script type="module" src="./modules/getMemberships.js"></script>
   </body>
 </html>

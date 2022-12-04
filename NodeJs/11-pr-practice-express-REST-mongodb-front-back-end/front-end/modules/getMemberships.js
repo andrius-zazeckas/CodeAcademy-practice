@@ -3,9 +3,9 @@ import { renderMemberships } from "./renderMemberships.js";
 const getMemberships = async () => {
   try {
     const response = await fetch("http://localhost:5000/memberships/");
-    const memberhips = await response.json();
+    const memberships = await response.json();
 
-    renderMemberships(memberhips);
+    renderMemberships(memberships);
   } catch (err) {
     console.log(err);
   }

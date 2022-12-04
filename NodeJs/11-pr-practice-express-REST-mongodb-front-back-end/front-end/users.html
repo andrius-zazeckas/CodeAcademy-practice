@@ -29,26 +29,28 @@
     <header class="wrapper">
       <nav>
         <a href="./memberships.html">Memberships</a>
-        <a href="./users.html">Users</a>
+        <a id="usersURL" href="./users.html">Users</a>
       </nav>
     </header>
+    <div id="body-wrapper">
+      <main class="wrapper">
+        <section id="title-container">
+          <div>
+            <h1>User Management</h1>
+          </div>
+          <a href="./new-user.html"
+            ><button id="newUserBtn">
+              <span id="plus">+</span>New User
+            </button></a
+          >
+        </section>
+        <section id="sort">
+          <h3 id="sortingEl">Sorting By Name: ASC</h3>
+        </section>
 
-    <main class="wrapper">
-      <section id="title-container">
-        <div>
-          <h1>User Management</h1>
-        </div>
-        <a href="./new-user.html"
-          ><button id="newUserBtn"><span id="plus">+</span>New User</button></a
-        >
-      </section>
-      <section id="sort">
-        <h3 id="sortingEl">Sorting By Name: ASC</h3>
-      </section>
-
-      <section id="container"></section>
-    </main>
-
+        <section id="container"></section>
+      </main>
+    </div>
     <script type="module" src="./modules/getUsers.js"></script>
   </body>
 </html>

@@ -1,19 +1,32 @@
-const getMembershipValues = async () => {
-  const values = ["trial", "silver", "bronze", "gold", "platinum"];
-
+const getMembershipNames = (memberships) => {
   const select = document.querySelector("#user-membership-input");
+  select.replaceChildren();
 
-  for (const val of values) {
-    const option = document.createElement("option");
-    option.value = val;
-    option.text = val.charAt(0).toUpperCase() + val.slice(1);
-    select.append(option);
+  memberships.forEach((membership) => {
+    const { _id, name } = membership;
+
+    const optionEl = document.createElement("option");
+    optionEl.value = _id;
+    optionEl.textContent = name;
+
+    select.append(optionEl);
+  });
+};
+
+const getMemberships = async () => {
+  try {
+    const response = await fetch("http://localhost:5000/memberships/");
+    const memberships = await response.json();
+
+    getMembershipNames(memberships);
+  } catch (err) {
+    console.log(err);
   }
 };
 
-await getMembershipValues();
+await getMemberships();
 
-const newMembership = async () => {
+const newUser = async () => {
   const firstNameInputValue = document
     .querySelector("#user-first-name-input")
     .value.trim();
@@ -55,5 +68,5 @@ document.body
   .addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    await newMembership();
+    await newUser();
   });
