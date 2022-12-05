@@ -24,6 +24,7 @@ app.get("/memberships", async (_, res) => {
       .db(DB)
       .collection(SERVICESCOLLECTION)
       .find()
+      .sort({ price: 1 })
       .toArray();
 
     await con.close();
@@ -77,9 +78,22 @@ app.delete("/membership/:id", async (req, res) => {
   }
 });
 
+// app.get("/users", async (_, res) => {
+//   try {
+//     const con = await client.connect();
+//     const users = await con.db(DB).collection(USERSCOLLECTION).find().toArray();
+
+//     await con.close();
+
+//     res.send(users).end();
+//   } catch (err) {
+//     res.status(500).send({ err }).end();
+//     throw Error(err);
+//   }
+// });
+
 app.get("/users/:order", async (req, res) => {
   const usersWithMembershipName = [];
-
   try {
     const con = await client.connect();
     const db = con.db(DB);

@@ -21,6 +21,11 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./style.css" />
@@ -41,45 +46,59 @@
           </div>
         </section>
 
-        <section>
+        <section id="form-section">
           <form id="user-form">
-            <fieldset>
-              <label for="first-name">First Name *</label>
+            <div>
+              <label for="first-name"
+                >First Name <i class="fa fa-asterisk"> </i
+              ></label>
               <input
                 name="first-name"
                 id="user-first-name-input"
                 placeholder="First Name"
+                required
               />
-              <label for="last-name">Last Name *</label>
+            </div>
+            <div>
+              <label for="last-name"
+                >Last Name <i class="fa fa-asterisk"> </i
+              ></label>
               <input
                 name="last-name"
                 id="user-last-name-input"
                 placeholder="Last Name"
+                required
               />
-            </fieldset>
-            <fieldset>
-              <label for="email">Email Address *</label>
+            </div>
+            <div>
+              <label for="email"
+                >Email Address <i class="fa fa-asterisk"> </i
+              ></label>
               <input
                 type="email"
                 name="email"
                 id="user-email-input"
                 placeholder="Email Address"
+                required
               />
-            </fieldset>
-            <fieldset>
+            </div>
+            <div id="user-membership">
               <label for="user-membership">Change Membership</label>
               <select
                 id="user-membership-input"
                 name="user-membership"
               ></select>
-            </fieldset>
-            <a href="./users.html">Cancel</a>
-            <button type="submit" id="submit-new-user">New User</button>
+            </div>
+            <div class="submit-cancel">
+              <a href="./users.html">Cancel</a>
+              <button type="submit" id="submit-new-user">New User</button>
+            </div>
           </form>
         </section>
 
         <section id="container"></section>
       </main>
+      <footer>Copyright ©2022 Membership Manager</footer>
     </div>
     <script type="module" src="./modules/newUser.js"></script>
   </body>

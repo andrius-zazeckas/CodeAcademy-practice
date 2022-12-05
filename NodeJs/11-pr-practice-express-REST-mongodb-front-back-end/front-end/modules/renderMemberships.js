@@ -27,7 +27,8 @@ const renderMemberships = (memberships) => {
 
     const deleteMembershipButton = document.createElement("button");
     deleteMembershipButton.id = _id;
-    deleteMembershipButton.textContent = "Delete";
+    deleteMembershipButton.className = "delete-button";
+    deleteMembershipButton.innerHTML = '<i class="fa fa-trash"> </i>';
 
     membershipTypeContainer.append(membershipType, descriptionEl);
 

@@ -21,6 +21,10 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./style.css" />
@@ -41,18 +45,19 @@
           </div>
         </section>
 
-        <section>
+        <section id="form-section">
           <form id="membership-form">
-            <fieldset>
+            <div class="membership-input">
               <label for="name">Name</label>
               <input
                 name="name"
                 id="membership-name-input"
                 placeholder="Name"
               />
-            </fieldset>
-            <fieldset>
+            </div>
+            <div class="membership-input">
               <label for="price">Membership Price</label>
+              <i class="fa fa-dollar icon"> </i>
               <input
                 type="number"
                 name="price"
@@ -60,24 +65,24 @@
                 step=".01"
                 placeholder="Membership Price"
               />
-            </fieldset>
-            <fieldset>
+            </div>
+            <div class="membership-input">
               <label for="description">Description</label>
-
               <textarea
                 id="membership-description-input"
                 name="description"
-                rows="8"
-                cols="50"
               ></textarea>
-            </fieldset>
-            <a href="./memberships.html">Cancel</a>
-            <button type="submit" id="submit-new-membership">
-              New Membership
-            </button>
+            </div>
+            <div class="submit-cancel">
+              <a href="./memberships.html">Cancel</a>
+              <button type="submit" id="submit-new-membership">
+                New Membership
+              </button>
+            </div>
           </form>
         </section>
       </main>
+      <footer>Copyright ©2022 Membership Manager</footer>
     </div>
     <script type="module" src="./modules/newMembership.js"></script>
   </body>
