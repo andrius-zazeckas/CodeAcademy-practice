@@ -28,52 +28,57 @@
   <body>
     <header class="wrapper">
       <nav>
-        <a href="./memberships.html">Memberships</a>
+        <a id="membershipsURL" href="./memberships.html">Memberships</a>
         <a href="./users.html">Users</a>
       </nav>
     </header>
 
-    <main class="wrapper">
-      <section id="title-container">
-        <div>
-          <h1>Create Membership</h1>
-        </div>
-      </section>
+    <div id="body-wrapper">
+      <main class="wrapper">
+        <section id="title-container">
+          <div>
+            <h1>Create Membership</h1>
+          </div>
+        </section>
 
-      <section>
-        <form id="membership-form">
-          <fieldset>
-            <label for="name">Name</label>
-            <input name="name" id="membership-name-input" placeholder="Name" />
-          </fieldset>
-          <fieldset>
-            <label for="price">Membership Price</label>
-            <input
-              type="number"
-              name="price"
-              id="membership-price-input"
-              step=".01"
-              placeholder="Membership Price"
-            />
-          </fieldset>
-          <fieldset>
-            <label for="description">Description</label>
+        <section>
+          <form id="membership-form">
+            <fieldset>
+              <label for="name">Name</label>
+              <input
+                name="name"
+                id="membership-name-input"
+                placeholder="Name"
+              />
+            </fieldset>
+            <fieldset>
+              <label for="price">Membership Price</label>
+              <input
+                type="number"
+                name="price"
+                id="membership-price-input"
+                step=".01"
+                placeholder="Membership Price"
+              />
+            </fieldset>
+            <fieldset>
+              <label for="description">Description</label>
 
-            <textarea
-              id="membership-description-input"
-              name="description"
-              rows="8"
-              cols="50"
-            ></textarea>
-          </fieldset>
-          <a href="./memberships.html">Cancel</a>
-          <button type="submit" id="submit-new-membership">
-            New Membership
-          </button>
-        </form>
-      </section>
-    </main>
-
+              <textarea
+                id="membership-description-input"
+                name="description"
+                rows="8"
+                cols="50"
+              ></textarea>
+            </fieldset>
+            <a href="./memberships.html">Cancel</a>
+            <button type="submit" id="submit-new-membership">
+              New Membership
+            </button>
+          </form>
+        </section>
+      </main>
+    </div>
     <script type="module" src="./modules/newMembership.js"></script>
   </body>
 </html>

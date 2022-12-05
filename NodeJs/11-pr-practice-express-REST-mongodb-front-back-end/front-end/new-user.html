@@ -29,54 +29,58 @@
     <header class="wrapper">
       <nav>
         <a href="./memberships.html">Memberships</a>
-        <a href="./users.html">Users</a>
+        <a id="usersURL" href="./users.html">Users</a>
       </nav>
     </header>
 
-    <main class="wrapper">
-      <section id="title-container">
-        <div>
-          <h1>Create User</h1>
-        </div>
-      </section>
+    <div id="body-wrapper">
+      <main class="wrapper">
+        <section id="title-container">
+          <div>
+            <h1>Create User</h1>
+          </div>
+        </section>
 
-      <section>
-        <form id="user-form">
-          <fieldset>
-            <label for="first-name">First Name *</label>
-            <input
-              name="first-name"
-              id="user-first-name-input"
-              placeholder="First Name"
-            />
-            <label for="last-name">Last Name *</label>
-            <input
-              name="last-name"
-              id="user-last-name-input"
-              placeholder="Last Name"
-            />
-          </fieldset>
-          <fieldset>
-            <label for="email">Email Address *</label>
-            <input
-              type="email"
-              name="email"
-              id="user-email-input"
-              placeholder="Email Address"
-            />
-          </fieldset>
-          <fieldset>
-            <label for="user-membership">Change Membership</label>
-            <select id="user-membership-input" name="user-membership"></select>
-          </fieldset>
-          <a href="./users.html">Cancel</a>
-          <button type="submit" id="submit-new-user">New User</button>
-        </form>
-      </section>
+        <section>
+          <form id="user-form">
+            <fieldset>
+              <label for="first-name">First Name *</label>
+              <input
+                name="first-name"
+                id="user-first-name-input"
+                placeholder="First Name"
+              />
+              <label for="last-name">Last Name *</label>
+              <input
+                name="last-name"
+                id="user-last-name-input"
+                placeholder="Last Name"
+              />
+            </fieldset>
+            <fieldset>
+              <label for="email">Email Address *</label>
+              <input
+                type="email"
+                name="email"
+                id="user-email-input"
+                placeholder="Email Address"
+              />
+            </fieldset>
+            <fieldset>
+              <label for="user-membership">Change Membership</label>
+              <select
+                id="user-membership-input"
+                name="user-membership"
+              ></select>
+            </fieldset>
+            <a href="./users.html">Cancel</a>
+            <button type="submit" id="submit-new-user">New User</button>
+          </form>
+        </section>
 
-      <section id="container"></section>
-    </main>
-
+        <section id="container"></section>
+      </main>
+    </div>
     <script type="module" src="./modules/newUser.js"></script>
   </body>
 </html>

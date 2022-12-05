@@ -10,11 +10,11 @@ html {
 }
 
 h1 {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 a {
-  margin: 20px;
+  margin: 20px 60px;
   text-decoration: none;
   color: #b0b7c8;
 }
@@ -46,10 +46,22 @@ a {
 }
 
 #newMembershipBtn,
-#newUserBtn {
+#newUserBtn,
+#submit-new-membership,
+#submit-new-user {
   cursor: pointer;
-  height: 50px;
+  height: 40px;
   width: 210px;
+  background-color: #677de9;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+#submit-new-membership,
+#submit-new-user {
+  text-align: center;
+  margin: 20px;
 }
 
 #plus {
@@ -69,9 +81,9 @@ a {
 .userContainer {
   padding: 20px;
   /* min-width: 360px; */
-  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.48);
-  border-radius: 7px;
-  background-color: rgb(240, 240, 240);
+  box-shadow: 0px 7px 8px 0px rgba(104, 104, 104, 0.23);
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
 }
 
 .membershipTypeContainer {
