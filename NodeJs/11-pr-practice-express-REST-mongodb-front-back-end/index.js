@@ -100,7 +100,10 @@ app.get("/users/:order", async (req, res) => {
     const users = await db
       .collection(USERSCOLLECTION)
       .find()
-      .sort({ firstName: req.params.order?.toLowerCase() === "dsc" ? -1 : 1 })
+      .sort({
+        lastName: req.params.order?.toLowerCase() === "dsc" ? -1 : 1,
+        firstName: req.params.order?.toLowerCase() === "dsc" ? -1 : 1,
+      })
       .toArray();
 
     for (const user of users) {
