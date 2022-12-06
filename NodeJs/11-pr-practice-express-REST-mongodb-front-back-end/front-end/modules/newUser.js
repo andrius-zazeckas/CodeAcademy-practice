@@ -1,4 +1,19 @@
-const getMembershipNames = (memberships) => {
+const getMemberships = async () => {
+  try {
+    const response = await fetch("http://localhost:5000/memberships/");
+    const memberships = await response.json();
+
+    return memberships;
+  } catch (err) {
+    throw Error({ err });
+  }
+};
+
+// todo isvengti getmemberships su state is robots
+
+const renderMembershipNames = async () => {
+  const memberships = await getMemberships();
+
   const select = document.querySelector("#user-membership-input");
   select.replaceChildren();
 
@@ -13,18 +28,7 @@ const getMembershipNames = (memberships) => {
   });
 };
 
-const getMemberships = async () => {
-  try {
-    const response = await fetch("http://localhost:5000/memberships/");
-    const memberships = await response.json();
-
-    getMembershipNames(memberships);
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-await getMemberships();
+await renderMembershipNames();
 
 const newUser = async () => {
   const firstNameInputValue = document

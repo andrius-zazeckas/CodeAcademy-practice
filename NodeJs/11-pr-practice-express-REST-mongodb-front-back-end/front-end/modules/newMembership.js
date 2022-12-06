@@ -19,16 +19,24 @@ const newMembership = async () => {
     const myHeaders = new Headers();
     myHeaders.append("Content-type", "application/json");
 
-    const request = await fetch("http://localhost:5000/membership", {
+    const response = await fetch("http://localhost:5000/membership", {
       method: "POST",
       headers: myHeaders,
       body: newMembership,
     });
-    return request;
+
+    if (response.ok) {
+      document.body.querySelector("#membership-form").reset();
+
+      alert("Membership was created");
+    }
+    return response;
   } catch (error) {
     alert(error);
   }
 };
+
+// todo: isvalyti input
 
 document.body
   .querySelector("#membership-form")

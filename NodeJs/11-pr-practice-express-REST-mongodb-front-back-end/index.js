@@ -47,7 +47,7 @@ app.post("/membership", async (req, res) => {
       .insertOne({ name, price, description });
 
     await con.close();
-    return res.send(newMembership).end();
+    res.send(newMembership).end();
   } catch (err) {
     res.status(500).send({ err }).end();
     throw Error;
@@ -78,21 +78,9 @@ app.delete("/membership/:id", async (req, res) => {
   }
 });
 
-// app.get("/users", async (_, res) => {
-//   try {
-//     const con = await client.connect();
-//     const users = await con.db(DB).collection(USERSCOLLECTION).find().toArray();
-
-//     await con.close();
-
-//     res.send(users).end();
-//   } catch (err) {
-//     res.status(500).send({ err }).end();
-//     throw Error(err);
-//   }
-// });
-
 app.get("/users/:order", async (req, res) => {
+  const shouldOrderAscendingly = req.params.order?.toLowerCase() === "asc";
+
   const usersWithMembershipName = [];
   try {
     const con = await client.connect();
@@ -101,8 +89,8 @@ app.get("/users/:order", async (req, res) => {
       .collection(USERSCOLLECTION)
       .find()
       .sort({
-        lastName: req.params.order?.toLowerCase() === "dsc" ? -1 : 1,
-        firstName: req.params.order?.toLowerCase() === "dsc" ? -1 : 1,
+        lastName: shouldOrderAscendingly ? 1 : -1,
+        firstName: shouldOrderAscendingly ? 1 : -1,
       })
       .toArray();
 
@@ -116,7 +104,7 @@ app.get("/users/:order", async (req, res) => {
 
     await con.close();
 
-    return res.send(usersWithMembershipName).end();
+    res.send(usersWithMembershipName).end();
   } catch (err) {
     res.status(500).send(err).end();
   }
@@ -136,7 +124,7 @@ app.post("/user", async (req, res) => {
       .insertOne({ firstName, lastName, email, service_id, userIp });
 
     await con.close();
-    return res.send(newUser).end();
+    res.send(newUser).end();
   } catch (err) {
     res.status(500).send({ err }).end();
     throw Error;
