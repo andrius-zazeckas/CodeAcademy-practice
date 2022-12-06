@@ -26,6 +26,20 @@ a {
   color: #b0b7c8;
 }
 
+#success-message-container {
+  width: 300px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+#success-message-container > #success-message {
+  background-color: rgb(102, 58, 65);
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+}
+
 .center {
   padding-top: 80px;
   text-align: center;
@@ -57,7 +71,7 @@ a {
 
 #form-section {
   background-color: white;
-  padding: 50px 0;
+  padding-bottom: 50px;
   border-radius: 5px;
   box-shadow: 0px 7px 8px 0px rgba(104, 104, 104, 0.23);
 }
@@ -66,6 +80,10 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#title-container p {
+  font-size: 14px;
 }
 
 #newMembershipBtn,
@@ -175,9 +193,6 @@ textarea {
 
 #membership-form i {
   position: absolute;
-}
-
-#membership-form .icon {
   padding: 14px 12px;
   color: rgb(0, 0, 0);
   min-width: 20px;

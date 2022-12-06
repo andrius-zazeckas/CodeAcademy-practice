@@ -56,12 +56,30 @@ const newUser = async () => {
     const myHeaders = new Headers();
     myHeaders.append("Content-type", "application/json");
 
-    const request = await fetch("http://localhost:5000/user", {
+    const response = await fetch("http://localhost:5000/user", {
       method: "POST",
       headers: myHeaders,
       body: newUser,
     });
-    return request;
+    if (response.ok) {
+      document.body.querySelector("#user-form").reset();
+
+      // const successMessageEl = document.querySelector("#success-message");
+      // // successMessageEl.style.padding = "20px";
+      // successMessageEl.textContent = "User created";
+
+      // const successMessageContainer = document.querySelector(
+      //   "#success-message-container"
+      // );
+      // successMessageContainer.append(successMessageEl);
+
+      // setTimeout(() => {
+      //   successMessageContainer.replaceChildren();
+      // }, 3000);
+
+      alert("User was created");
+    }
+    return response;
   } catch (error) {
     alert(error);
   }
