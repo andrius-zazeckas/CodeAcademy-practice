@@ -67,5 +67,3 @@ const renderMemberships = async () => {
 };
 
 await renderMemberships();
-
-// export { renderMemberships };
