@@ -1,15 +1,4 @@
-const getMemberships = async () => {
-  try {
-    const response = await fetch("http://localhost:5000/memberships/");
-    const memberships = await response.json();
-
-    return memberships;
-  } catch (err) {
-    throw Error({ err });
-  }
-};
-
-// todo isvengti getmemberships su state is robots
+import { getMemberships } from "./getMemberships.js";
 
 const renderMembershipNames = async () => {
   const memberships = await getMemberships();

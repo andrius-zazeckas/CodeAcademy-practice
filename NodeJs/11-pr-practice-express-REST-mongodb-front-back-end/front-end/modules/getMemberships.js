@@ -1,16 +1,16 @@
-import { renderMemberships } from "./renderMemberships.js";
+// import { renderMemberships } from "./renderMemberships.js";
 
 const getMemberships = async () => {
   try {
     const response = await fetch("http://localhost:5000/memberships/");
     const memberships = await response.json();
 
-    renderMemberships(memberships);
+    return memberships;
   } catch (err) {
-    console.log(err);
+    throw Error({ err });
   }
 };
 
-await getMemberships();
+// await getMemberships();
 
 export { getMemberships };

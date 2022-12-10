@@ -2,7 +2,9 @@ import { getMemberships } from "./getMemberships.js";
 
 const currency = "$";
 
-const renderMemberships = (memberships) => {
+const renderMemberships = async () => {
+  const memberships = await getMemberships();
+
   const sectionContainer = document.body.querySelector("#container");
 
   sectionContainer.replaceChildren();
@@ -64,4 +66,6 @@ const renderMemberships = (memberships) => {
   });
 };
 
-export { renderMemberships };
+await renderMemberships();
+
+// export { renderMemberships };
