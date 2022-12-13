@@ -75,10 +75,10 @@ app.post("/shirts", async (req, res) => {
 app.get("/shirts", async (req, res) => {
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
-    const query = "SELECT * FROM shirts";
+    const query = "SELECT * FROM defaultdb.shirts";
 
     const result = await con.execute(query);
-    res.send(result);
+    res.send(result[0]).end();
     await con.end();
   } catch (err) {
     res.send(err).end();
