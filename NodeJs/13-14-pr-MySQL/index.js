@@ -72,57 +72,32 @@ app.post("/shirts", async (req, res) => {
   }
 });
 
-app.get("/shirts/:size", async (req, res) => {
-  const size = req.params.size;
+app.get("/shirts", async (req, res) => {
+  const size = req.query.size;
   const limit = req.query.limit;
 
-  //   const isSuchSize = async () => {
-  //     const con = await mysql.createConnection(MYSQL_CONFIG);
-
-  //     const result = await con.execute(
-  //       `SELECT count(*) FROM shirts WHERE size='${size}'`
-  //     );
-
-  //     res.send(result[0]).end();
-
-  //     await con.end();
-
-  //   };
-
-  //   if (!isSuchSize === "0") {
-  //     return res.status(404).send("Student does not exist").end();
-  //   }
-
-  //   if (!req.params.size) {
-  //     const con = await mysql.createConnection(MYSQL_CONFIG);
-
-  //     const result = await con.execute(
-  //       "SELECT * FROM defaultdb.shirts ORDER BY price LIMIT 10"
-  //     );
-
-  //     await con.end();
-  //     return res.send(result[0]).end();
-  //   }
-
-  let query = `SELECT * FROM defaultdb.shirts WHERE size='${size}' ORDER BY price LIMIT ${limit}`;
+  const query =
+    size && limit
+      ? `SELECT * FROM defaultdb.shirts WHERE size='${size}' ORDER BY price LIMIT ${limit}`
+      : `SELECT * FROM defaultdb.shirts`;
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
     const result = await con.execute(query);
 
-    res.send(result[0]).end();
-
     await con.end();
+
+    res.send(result[0]).end();
   } catch (err) {
     res.send(err).end();
     return console.error();
   }
 });
 
-// app.get("*", (_, res) => {
-//   res.status(404).send("404! This is an invalid URL.");
-// });
+app.get("*", (_, res) => {
+  res.status(404).send("404! This is an invalid URL.");
+});
 
 app.listen(PORT, () => {
   console.log(`${PORT} server is runing`);
