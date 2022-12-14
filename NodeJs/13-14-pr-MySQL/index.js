@@ -93,7 +93,7 @@ app.get("/shirts", async (req, res) => {
 
   const query =
     size && limit
-      ? `SELECT * FROM shirts WHERE size='${size}' ORDER BY price LIMIT ${limit}`
+      ? `SELECT * FROM shirts WHERE size='${size}' ORDER BY price ASC LIMIT ${limit}`
       : `SELECT * FROM shirts`;
 
   try {
