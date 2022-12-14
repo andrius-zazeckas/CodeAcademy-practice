@@ -52,11 +52,11 @@ app.post("/table", async (req, res) => {
 app.post("/shirts", async (req, res) => {
   const brand = req.body.brand.trim();
   const model = req.body.model.trim();
-  const size = req.body.size.trim();
+  const size = req.body.size.toUpperCase().trim();
   const price = req.body.price;
 
   if (!brand || !model || !size || !price) {
-    res.status(400).send("Missing data: brand, model, size, price!");
+    res.status(400).send("Please input all data: brand, model, size, price!");
   }
 
   try {
@@ -76,10 +76,20 @@ app.post("/shirts", async (req, res) => {
 });
 
 app.get("/shirts", async (req, res) => {
-  const size = req.query.size;
+  const size = req.query.size.toUpperCase();
   const limit = req.query.limit;
 
   //  /shirts?size=s&&limit=2
+
+  const sizes = ["XS", "S", "M", "L", "XL"];
+
+  if (!sizes.includes(size)) {
+    res.status(400).send("Size must be one of these: XS, S, M, L, XL").end();
+  }
+
+  if (limit < 3 || limit > 20) {
+    res.status(400).send("LIMIT is set incorectly").end();
+  }
 
   const query =
     size && limit
