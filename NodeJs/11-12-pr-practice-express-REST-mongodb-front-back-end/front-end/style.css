@@ -40,6 +40,10 @@ a {
   color: white;
 }
 
+#cars {
+  margin: 100px 0;
+}
+
 .center {
   padding-top: 80px;
   text-align: center;

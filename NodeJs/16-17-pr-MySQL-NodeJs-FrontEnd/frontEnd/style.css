@@ -1,0 +1,164 @@
+html {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+a {
+  margin: 20px 20px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #a1a1a1;
+}
+
+header {
+  background-color: #f8f8f8;
+  padding: 25px;
+}
+
+#cars {
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  gap: 40px;
+}
+
+.carContainer {
+  /* flex-basis: 24%; */
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+}
+
+.carTitleContainer {
+  padding: 20px 20px 0px 20px;
+  border-bottom: 1px rgb(232, 232, 232) solid;
+}
+
+.carImageContainer {
+  display: flex;
+  padding: 20px;
+  max-height: 250px;
+  min-height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.carImageContainer > img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+}
+
+.deleteCarContainer {
+  border-top: 1px rgb(232, 232, 232) solid;
+}
+
+.delete-button {
+  background-color: transparent;
+  padding: 20px 60px 20px 20px;
+  color: #888888;
+  border: none;
+}
+
+.delete-button:hover {
+  cursor: pointer;
+}
+
+#car-form {
+  background-color: #f8f8f8;
+  margin: 0 auto;
+  width: 70%;
+  margin-top: 60px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 7px 8px 0px rgba(104, 104, 104, 0.23);
+  padding: 40px 0 40px 0;
+}
+
+#car-form label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+#car-model-input,
+#numberplates-input,
+#price-input,
+#image-input {
+  margin-top: 20px;
+  text-indent: 40px;
+  height: 40px;
+  width: 50%;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 3px 0px rgba(179, 179, 179, 0.23);
+}
+
+::placeholder {
+  color: rgb(194, 194, 194);
+}
+
+.submit-cancel {
+  margin: 40px 0;
+  text-align: center;
+}
+
+#submit-new-car {
+  width: 180px;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #888888;
+  margin-left: 20px;
+}
+
+#submit-new-car:hover {
+  cursor: pointer;
+}
+
+.submit-cancel a {
+  color: black;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1000px) {
+  #cars {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #cars {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .carContainer {
+    width: 450px;
+    justify-items: center;
+  }
+
+  .carImageContainer {
+    padding: 40px 20px;
+  }
+}

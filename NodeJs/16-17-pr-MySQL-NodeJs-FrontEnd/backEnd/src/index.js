@@ -1,7 +1,6 @@
 const express = require("express");
 const mysql = require("mysql2/promise");
 const cors = require("cors");
-const { query } = require("express");
 
 require("./config");
 
@@ -100,7 +99,7 @@ app.post("/cars", async (req, res) => {
   const title = mysql.escape(req.body.title.trim());
   const image = mysql.escape(req.body.image.trim());
   const price = +mysql.escape(req.body.price).replaceAll("'", "");
-  const numberplates = mysql.escape(req.body.numberplates.trim());
+  const numberplates = mysql.escape(req.body.numberplates.toUpperCase().trim());
 
   if (!title || !image || !price || !numberplates) {
     return res.status(400).send({
@@ -119,7 +118,7 @@ app.post("/cars", async (req, res) => {
     });
   }
 
-  if (numberplates.length < 8) {
+  if (numberplates.length !== 8) {
     return res.status(400).send({
       error:
         "Please input numberplates correctly. Numberplates must be 6 symbols!",
