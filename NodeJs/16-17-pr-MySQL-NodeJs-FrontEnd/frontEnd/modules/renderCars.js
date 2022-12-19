@@ -73,6 +73,8 @@ const renderCars = async () => {
           }
         );
 
+        // console.log(await response.json()); keista klaida
+
         const isPostDeleted = response.ok;
 
         if (isPostDeleted) {

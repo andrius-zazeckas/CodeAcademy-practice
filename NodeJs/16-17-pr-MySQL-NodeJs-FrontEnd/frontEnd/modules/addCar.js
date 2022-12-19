@@ -47,8 +47,10 @@ const addCar = async () => {
       alert("New car was created");
     }
 
+    const msg = await response.json();
+
     if (!response.ok) {
-      alert("Please check your input");
+      alert(msg.error);
     }
 
     return response;
@@ -56,6 +58,7 @@ const addCar = async () => {
     if (error.message === "Failed to fetch") {
       alert("No connection with server!");
     }
+    console.log(error);
   }
 };
 

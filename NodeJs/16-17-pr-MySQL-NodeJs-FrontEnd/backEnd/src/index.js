@@ -31,7 +31,7 @@ app.post("/table", async (_, res) => {
     await con.end();
   } catch (err) {
     res.status(500).send(err).end();
-    return console.error();
+    return console.error(err);
   }
   res.send("Table was created").end();
 });
@@ -42,14 +42,14 @@ app.get("/cars", async (req, res) => {
 
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
-    const result = await con.execute(query);
+    const result = (await con.execute(query))[0];
 
     await con.end();
 
-    res.status(200).send(result[0]).end();
+    res.status(200).send(result).end();
   } catch (err) {
     res.status(500).send(err).end();
-    return console.error();
+    return console.error(err);
   }
 });
 
@@ -68,6 +68,9 @@ app.get("/cars/:id", async (req, res) => {
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
     const query = `SELECT * FROM cars WHERE id = ${id}`;
+    const idExists = (
+      await con.execute(`SELECT * FROM cars WHERE id = ${id}`)
+    )[0];
 
     // const idExistsQuery = `SELECT EXISTS (SELECT id FROM cars WHERE id = ${id}) AS output`;
     // const idExists = await con.execute(idExistsQuery);
@@ -80,15 +83,14 @@ app.get("/cars/:id", async (req, res) => {
     //   console.log("no");
     // }
 
-    const result = await con.execute(query);
-
-    await con.end();
-
-    if (result[0].length === 0) {
-      return res.status(500).send(`ID - ${id} not found`).end();
+    if (!idExists.length) {
+      return res.status(404).send(`ID - ${id} not found`).end();
     }
 
-    res.status(200).send(result[0]).end();
+    const result = (await con.execute(query))[0];
+    await con.end();
+
+    res.status(200).send(result).end();
   } catch (err) {
     res.status(500).send(err).end();
     return console.error(err);
@@ -143,7 +145,7 @@ app.post("/cars", async (req, res) => {
     res.status(200).send("Provided data was inserted into table");
   } catch (err) {
     res.status(500).send(err).end();
-    return console.error();
+    return console.error(err);
   }
 });
 
@@ -162,19 +164,19 @@ app.delete("/cars/:id", async (req, res) => {
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
     const query = `DELETE FROM cars WHERE id = ${id}`;
-    const idExistsQuery = `SELECT * FROM cars WHERE id = ${id}`;
+    const idExists = (
+      await con.execute(`SELECT * FROM cars WHERE id = ${id}`)
+    )[0];
 
-    const result = await con.execute(idExistsQuery);
-
-    if (result[0].length === 0) {
-      return res.status(500).send(`ID - ${id} not found`).end();
+    if (!idExists.length) {
+      return res.status(404).send(`ID - ${id} not found`).end();
     }
 
     await con.execute(query);
 
     await con.end();
 
-    res.status(200).send("Item was deleted").end();
+    res.status(202).send("Item was deleted").end();
   } catch (err) {
     res.status(500).send(err).end();
     return console.error(err);
