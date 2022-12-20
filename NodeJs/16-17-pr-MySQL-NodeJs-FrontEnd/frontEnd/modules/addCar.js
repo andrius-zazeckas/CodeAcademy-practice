@@ -18,10 +18,10 @@ const addCar = async () => {
     numberplates: numberplatesInputValue,
   });
 
-  try {
-    const myHeaders = new Headers();
-    myHeaders.append("Content-type", "application/json");
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
 
+  try {
     const response = await fetch("http://localhost:5000/cars", {
       method: "POST",
       headers: myHeaders,
@@ -31,34 +31,20 @@ const addCar = async () => {
     if (response.ok) {
       document.body.querySelector("#car-form").reset();
 
-      // const successMessageEl = document.querySelector("#success-message");
-      // // successMessageEl.style.padding = "20px";
-      // successMessageEl.textContent = "User created";
-
-      // const successMessageContainer = document.querySelector(
-      //   "#success-message-container"
-      // );
-      // successMessageContainer.append(successMessageEl);
-
-      // setTimeout(() => {
-      //   successMessageContainer.replaceChildren();
-      // }, 3000);
-
       alert("New car was created");
     }
 
-    const msg = await response.json();
+    if (response.status >= 400) {
+      const msg = await response.json();
 
-    if (!response.ok) {
       alert(msg.error);
     }
-
-    return response;
   } catch (error) {
+    alert(error.message);
+
     if (error.message === "Failed to fetch") {
       alert("No connection with server!");
     }
-    console.log(error);
   }
 };
 

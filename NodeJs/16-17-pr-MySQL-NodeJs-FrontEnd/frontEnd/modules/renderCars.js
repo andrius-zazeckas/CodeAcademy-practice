@@ -2,10 +2,6 @@ import { getCars } from "./getCars.js";
 
 const renderCars = async () => {
   const cars = await getCars();
-  //   console.log(isResponseOk);
-
-  //   const resp = cars.status;
-  //   console.log(resp);
 
   const sectionContainer = document.body.querySelector("#cars");
   sectionContainer.replaceChildren();
@@ -43,6 +39,7 @@ const renderCars = async () => {
 
     const carImageEl = document.createElement("img");
     carImageEl.src = image;
+    carImageEl.alt = "car-photo";
 
     const deleteCarContainer = document.createElement("div");
     deleteCarContainer.className = "deleteCarContainer";
@@ -72,8 +69,6 @@ const renderCars = async () => {
             method: "DELETE",
           }
         );
-
-        // console.log(await response.json()); keista klaida
 
         const isPostDeleted = response.ok;
 

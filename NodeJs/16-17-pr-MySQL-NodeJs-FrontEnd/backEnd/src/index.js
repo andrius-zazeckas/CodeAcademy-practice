@@ -36,10 +36,10 @@ app.post("/table", async (_, res) => {
   res.send("Table was created").end();
 });
 
-app.get("/cars", async (req, res) => {
-  try {
-    const query = "SELECT * FROM cars";
+app.get("/cars", async (_, res) => {
+  const query = "SELECT * FROM cars";
 
+  try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
     const result = (await con.execute(query))[0];
@@ -55,8 +55,9 @@ app.get("/cars", async (req, res) => {
 
 app.get("/cars/:id", async (req, res) => {
   const id = +mysql.escape(req.params.id.trim()).replaceAll("'", "");
+  const query = `SELECT * FROM cars WHERE id = ${id}`;
 
-  if (!id || id < 0 || Number.isNaN(id) || typeof id !== "number") {
+  if (id < 0 || Number.isNaN(id) || typeof id !== "number") {
     return res
       .status(400)
       .send({
@@ -67,27 +68,13 @@ app.get("/cars/:id", async (req, res) => {
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
-    const query = `SELECT * FROM cars WHERE id = ${id}`;
-    const idExists = (
-      await con.execute(`SELECT * FROM cars WHERE id = ${id}`)
-    )[0];
 
-    // const idExistsQuery = `SELECT EXISTS (SELECT id FROM cars WHERE id = ${id}) AS output`;
-    // const idExists = await con.execute(idExistsQuery);
+    const result = (await con.execute(query))[0];
 
-    // const findId = idExists[0].map((found) => found.output);
-    // console.log({ findId });
-
-    // if (findId === 0) {
-    //   // return res.status(500).send(`ID - ${id} not found`).end();
-    //   console.log("no");
-    // }
-
-    if (!idExists.length) {
+    if (!result.length) {
       return res.status(404).send(`ID - ${id} not found`).end();
     }
 
-    const result = (await con.execute(query))[0];
     await con.end();
 
     res.status(200).send(result).end();
@@ -98,44 +85,55 @@ app.get("/cars/:id", async (req, res) => {
 });
 
 app.post("/cars", async (req, res) => {
-  const title = mysql.escape(req.body.title.trim());
-  const image = mysql.escape(req.body.image.trim());
-  const price = +mysql.escape(req.body.price).replaceAll("'", "");
-  const numberplates = mysql.escape(req.body.numberplates.toUpperCase().trim());
+  const { title, image, price, numberplates } = req.body;
+
+  const sendBadReqResponse = (message) => {
+    res
+      .status(400)
+      .send({
+        error: message,
+      })
+      .end();
+  };
 
   if (!title || !image || !price || !numberplates) {
-    return res.status(400).send({
-      error:
-        "Please input all data for car: title, image URL, price, numberplates!",
-    });
+    return sendBadReqResponse(
+      "Please input all data for car: title, image URL, price, numberplates!"
+    );
   }
+
+  const cleanTitle = mysql.escape(req.body.title?.trim());
+  const cleanImage = mysql.escape(req.body.image?.trim());
+  const cleanPrice = +mysql.escape(req.body.price).replaceAll("'", "");
+  const cleanNumberplates = mysql.escape(
+    req.body.numberplates.toUpperCase().trim()
+  );
 
   if (
-    typeof title !== "string" ||
-    typeof image !== "string" ||
-    typeof numberplates !== "string"
+    typeof cleanTitle !== "string" ||
+    typeof cleanImage !== "string" ||
+    typeof cleanNumberplates !== "string"
   ) {
-    return res.status(400).send({
-      error: "Please input title, image and numberplates as a string!",
-    });
+    return sendBadReqResponse(
+      "Please input title, image and numberplates as a string!"
+    );
   }
 
-  if (numberplates.length !== 8) {
-    return res.status(400).send({
-      error:
-        "Please input numberplates correctly. Numberplates must be 6 symbols!",
-    });
+  if (cleanNumberplates.length !== 8) {
+    return sendBadReqResponse(
+      "Please input numberplates correctly. Numberplates must be 6 symbols!"
+    );
   }
 
-  if (Number.isNaN(price) || typeof price !== "number") {
-    return res.status(400).send({
-      error: `Price should be only numbers: current price ${price} is incorrect.`,
-    });
+  if (Number.isNaN(cleanPrice) || typeof cleanPrice !== "number") {
+    return sendBadReqResponse(
+      `Price should be only numbers: current price ${cleanPrice} is incorrect.`
+    );
   }
+
+  const query = `INSERT INTO cars (title, image, price, numberplates) VALUES (${cleanTitle}, ${cleanImage}, ${cleanPrice}, ${cleanNumberplates})`;
 
   try {
-    const query = `INSERT INTO cars (title, image, price, numberplates) VALUES (${title}, ${image}, ${price}, ${numberplates})`;
-
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
     await con.execute(query);
@@ -151,8 +149,9 @@ app.post("/cars", async (req, res) => {
 
 app.delete("/cars/:id", async (req, res) => {
   const id = +mysql.escape(req.params.id.trim()).replaceAll("'", "");
+  const query = `DELETE FROM cars WHERE id = ${id}`;
 
-  if (!id || id < 0 || Number.isNaN(id) || typeof id !== "number") {
+  if (id < 0 || Number.isNaN(id) || typeof id !== "number") {
     return res
       .status(400)
       .send({
@@ -163,7 +162,6 @@ app.delete("/cars/:id", async (req, res) => {
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
-    const query = `DELETE FROM cars WHERE id = ${id}`;
     const idExists = (
       await con.execute(`SELECT * FROM cars WHERE id = ${id}`)
     )[0];
