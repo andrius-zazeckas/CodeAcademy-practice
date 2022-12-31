@@ -11,9 +11,9 @@ const MYSQL_CONFIG = {
 };
 
 const getLogs = async (req, res) => {
-  const pet = +mysql.escape(req.query.pet?.trim()).replaceAll("'", " ");
+  const id = +mysql.escape(req.query.id?.trim()).replaceAll("'", " ");
 
-  const query = `SELECT logs.id, logs.pet_id, logs.description, logs.status, pets.name, pets.dob, pets.client_email FROM logs LEFT JOIN pets ON pets.id = logs.pet_id WHERE pets.id = ${pet} AND pets.isArchived = 0`;
+  const query = `SELECT logs.id, logs.pet_id, logs.description, logs.status, pets.name, pets.dob, pets.client_email FROM logs LEFT JOIN pets ON pets.id = logs.pet_id WHERE pets.id = ${id} AND pets.isArchived = 0`;
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
@@ -21,7 +21,7 @@ const getLogs = async (req, res) => {
     const [result] = await con.execute(query);
 
     if (!result.length) {
-      return res.status(404).send(`Pet not found`).end();
+      return res.status(404).send({ error: "No records found" }).end();
     }
 
     await con.end();
@@ -52,12 +52,9 @@ const postLogs = async (req, res) => {
   }
 
   if (pet_id < 0 || Number.isNaN(pet_id) || typeof pet_id !== "number") {
-    return res
-      .status(400)
-      .send({
-        error: `Please provide a pet id as a number: current pet id ${pet_id} is incorrect.`,
-      })
-      .end();
+    return sendBadReqResponse(
+      `Please provide a pet id as a number: current pet id ${pet_id} is incorrect.`
+    );
   }
 
   const cleanPet_id = +mysql.escape(req.body.pet_id).replaceAll("'", "");
@@ -78,10 +75,7 @@ const postLogs = async (req, res) => {
     );
 
     if (!petExists.length) {
-      return res
-        .status(404)
-        .send(`Pet with ID - ${cleanPet_id} not found`)
-        .end();
+      return sendBadReqResponse(`Pet with ID - ${cleanPet_id} not found`);
     }
 
     await con.execute(query);

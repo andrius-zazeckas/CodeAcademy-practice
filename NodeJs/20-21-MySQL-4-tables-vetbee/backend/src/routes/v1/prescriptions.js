@@ -11,9 +11,9 @@ const MYSQL_CONFIG = {
 };
 
 const getPrescriptions = async (req, res) => {
-  const pet = +mysql.escape(req.query.pet?.trim()).replaceAll("'", " ");
-  //change this:
-  const query = `SELECT logs.id, logs.pet_id, logs.description, logs.status, pets.name, pets.dob, pets.client_email FROM logs LEFT JOIN pets ON pets.id = logs.pet_id WHERE pets.id = ${pet} AND pets.isArchived = 0`;
+  const id = +mysql.escape(req.query.id?.trim()).replaceAll("'", " ");
+
+  const query = `SELECT prescriptions.id, prescriptions.medication_id, prescriptions.pet_id, prescriptions.comment AS prescriptions_comment, prescriptions.timestamp AS prescriptions_timestamp, medications.name AS meds_name, medications.description AS meds_description, pets.name AS pet_name, pets.dob, pets.client_email FROM ((prescriptions LEFT JOIN pets ON pets.id = prescriptions.pet_id) LEFT JOIN medications ON prescriptions.medication_id = medications.id) WHERE pets.id = ${id} AND pets.isArchived = 0`;
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
@@ -21,7 +21,7 @@ const getPrescriptions = async (req, res) => {
     const [result] = await con.execute(query);
 
     if (!result.length) {
-      return res.status(404).send(`Pet not found`).end();
+      return res.status(404).send({ error: `No records found` }).end();
     }
 
     await con.end();

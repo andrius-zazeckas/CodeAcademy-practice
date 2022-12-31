@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pets</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="wrapper">
+      <div id="logo">
+        <a href="./index.html"><img
+          src="./img/Screenshot 2022-12-22 at 19.08.25.png"
+          alt="vetbee-logo"
+        /></a>
+        
+      </div>
+      <nav>
+        <a href="./index.html">Pets</a>
+        <a href="#">Medications</a>
+      </nav>
+    </header>
+    <div class="full-bottom-border"></div>
+
+    <main class="wrapper">
+      <div id="pet-list">
+        <h1>ADD PET</h1>
+      </div>
+      <section id="form-section">
+        <form id="pet-form">
+          <div>
+            <label for="pet-name">Pets name:</label>
+            <input
+              name="pet-name"
+              id="pet-name-input"
+              placeholder="Mopsas"
+              required
+            />
+          </div>
+          <div>
+            <label for="pet-dob">Pets date of birth:</label>
+            <input
+            type="date"
+              name="pet-dob"
+              id="pet-dob-input"
+              required
+            />
+          </div>
+          <div>
+            <label for="client-email">Clients email:</label>
+            <input type="email" name="client-email" id="client-email-input" placeholder="client@email.com" required>
+          </div>
+          
+          <div id="submit-cancel">
+            <a href="./index.html">Cancel</a>
+            <button type="submit" class="color-button" id="submit-add-pet">ADD PET</button>
+          </div>
+        </form>
+      <section id="pets"></section>
+    </main>
+
+    <script type="module" src="./modules/addPet.js"></script>
+  </body>
+</html>
