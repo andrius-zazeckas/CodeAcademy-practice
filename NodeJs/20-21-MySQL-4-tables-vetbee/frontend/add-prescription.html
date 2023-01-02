@@ -29,43 +29,53 @@
   <body>
     <header class="wrapper">
       <div id="logo">
-        <a href="./index.html"
-          ><img
-            src="./img/Screenshot 2022-12-22 at 19.08.25.png"
-            alt="vetbee-logo"
+        <a href="./index.html"><img
+          src="./img/Screenshot 2022-12-22 at 19.08.25.png"
+          alt="vetbee-logo"
         /></a>
+        
       </div>
       <nav>
         <a href="./index.html">Pets</a>
-        <a href="#">Logs</a>
+        <a href="#">Medications</a>
       </nav>
     </header>
     <div class="full-bottom-border"></div>
 
     <main class="wrapper">
-      <section>
-        <div id="pet-log">
-          <h1 id="pet-name"></h1>
-          <div class="btn-container">
-            <button class="color-button" id="add-prescription">
-              ADD PRESCRIPTION
-            </button>
-            <button class="transparent-button" id="add-log">ADD LOG</button>
+      <div id="pet-list">
+        <h1>ADD PET PRESCRIPTION</h1>
+      </div>
+      <section id="form-section">
+        <form id="prescription-form">
+
+          <div>
+            <label for="medication">Medication:</label>
+            <select
+              name="medication"
+              id="medication-input"
+              required
+            ></select>
           </div>
-        </div>
-        <div id="filter-container">
-          <p>Display:</p>
-          <div class="btn-container">
-            <button class="color-button" id="logs-filter">LOGS</button>
-            <button class="color-button" id="prescriptions-filter">
-              PRESCRIPTIONS
-            </button>
+
+          <div>
+            <label for="comment">Comment:</label>
+            <input
+              name="comment"
+              id="comment-input"
+              placeholder="Leave a comment"
+              required
+            />
           </div>
-        </div>
-      </section>
-      <section id="logs"></section>
+
+          <div id="submit-cancel">
+            <a href="./index.html">Cancel</a>
+            <button type="submit" class="color-button" id="submit-add-prescription">ADD PRESCRIPTION</button>
+          </div>
+        </form>
+      <section id="pets"></section>
     </main>
 
-    <script type="module" src="./modules/renderLogs.js"></script>
+    <script type="module" src="./modules/addPrescription.js"></script>
   </body>
 </html>

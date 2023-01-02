@@ -157,7 +157,10 @@ button > a {
 }
 
 #pet-form,
-#med-form {
+#med-form,
+#log-form,
+#prescription-form,
+#prescription-form {
   margin: 0 auto;
   width: 70%;
   margin-top: 60px;
@@ -168,7 +171,10 @@ button > a {
 }
 
 #pet-form label,
-#med-form label {
+#med-form label,
+#log-form label,
+#prescription-form label,
+#prescription-form label {
   display: inline-block;
   width: 140px;
   text-align: right;
@@ -182,7 +188,11 @@ textarea {
 #pet-name-input,
 #pet-dob-input,
 #client-email-input,
-#med-name-input {
+#med-name-input,
+#log-status-input,
+#prescription-form-input,
+#prescription-form input,
+#prescription-form select {
   margin-top: 20px;
   text-indent: 40px;
   height: 40px;
@@ -192,7 +202,8 @@ textarea {
   box-shadow: 0px 2px 3px 0px rgba(179, 179, 179, 0.23);
 }
 
-#med-description-input {
+#med-description-input,
+#log-description-input {
   width: 50%;
   text-indent: 40px;
   margin-top: 20px;

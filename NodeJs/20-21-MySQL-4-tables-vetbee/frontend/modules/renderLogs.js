@@ -41,11 +41,20 @@ const getPrescriptions = async () => {
 };
 
 const nameEl = document.querySelector("#pet-name");
+
 const logs = await getLog();
 const prescriptions = await getPrescriptions();
 
 const logFilter = document.querySelector("#logs-filter");
 const prescrFilter = document.querySelector("#prescriptions-filter");
+
+document.querySelector("#add-log").addEventListener("click", () => {
+  window.open(`./add-log.html?id=${petId}`, "_self");
+});
+
+document.querySelector("#add-prescription").addEventListener("click", () => {
+  window.open(`./add-prescription.html?id=${petId}`, "_self");
+});
 
 const renderLog = async () => {
   const sectionContainer = document.body.querySelector("#logs");
@@ -54,11 +63,7 @@ const renderLog = async () => {
 
   const logs = await getLog();
 
-  const logFilter = document.querySelector("#logs-filter");
-
   if (typeof logs === "string") {
-    logFilter.style.display = "none";
-
     return (nameEl.textContent = logs);
   }
 
@@ -92,11 +97,7 @@ const renderPrescription = async () => {
 
   const prescriptions = await getPrescriptions();
 
-  const prescrFilter = document.querySelector("#prescriptions-filter");
-
   if (typeof prescriptions === "string") {
-    prescrFilter.style.display = "none";
-
     return (nameEl.textContent = prescriptions);
   }
 
@@ -139,9 +140,7 @@ const renderPrescription = async () => {
 
 const checkLogs = async () => {
   if (typeof logs === "string") {
-    logFilter.style.display = "none";
-
-    return (nameEl.textContent = logs);
+    return (logFilter.style.display = "none");
   } else {
     await renderLog();
     const pet_name = logs[0].name;
@@ -153,9 +152,7 @@ console.log(logs);
 
 const checkPrescriptions = async () => {
   if (typeof prescriptions === "string") {
-    prescrFilter.style.display = "none";
-
-    return (nameEl.textContent = prescriptions);
+    return (prescrFilter.style.display = "none");
   } else {
     await renderPrescription();
     const pet_name = prescriptions[0].pet_name;
@@ -163,8 +160,18 @@ const checkPrescriptions = async () => {
   }
 };
 
+const noRec = () => {
+  if (typeof logs === "string" && typeof prescriptions === "string") {
+    return (
+      (nameEl.textContent = prescriptions),
+      (document.querySelector("#filter-container").style.display = "none")
+    );
+  }
+};
+
 await checkPrescriptions();
 await checkLogs();
+noRec();
 
 logFilter.addEventListener("click", () => {
   const logContainer = document.querySelectorAll(".log-container");

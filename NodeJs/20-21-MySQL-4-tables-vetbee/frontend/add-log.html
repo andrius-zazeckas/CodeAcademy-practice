@@ -29,43 +29,50 @@
   <body>
     <header class="wrapper">
       <div id="logo">
-        <a href="./index.html"
-          ><img
-            src="./img/Screenshot 2022-12-22 at 19.08.25.png"
-            alt="vetbee-logo"
+        <a href="./index.html"><img
+          src="./img/Screenshot 2022-12-22 at 19.08.25.png"
+          alt="vetbee-logo"
         /></a>
+        
       </div>
       <nav>
         <a href="./index.html">Pets</a>
-        <a href="#">Logs</a>
+        <a href="#">Medications</a>
       </nav>
     </header>
     <div class="full-bottom-border"></div>
 
     <main class="wrapper">
-      <section>
-        <div id="pet-log">
-          <h1 id="pet-name"></h1>
-          <div class="btn-container">
-            <button class="color-button" id="add-prescription">
-              ADD PRESCRIPTION
-            </button>
-            <button class="transparent-button" id="add-log">ADD LOG</button>
+      <div id="pet-list">
+        <h1>ADD PET LOG</h1>
+      </div>
+      <section id="form-section">
+        <form id="log-form">
+          <div>
+            <label for="log-status">Status:</label>
+            <input
+              name="log-status"
+              id="log-status-input"
+              placeholder="Enter status"
+              required
+            />
           </div>
-        </div>
-        <div id="filter-container">
-          <p>Display:</p>
-          <div class="btn-container">
-            <button class="color-button" id="logs-filter">LOGS</button>
-            <button class="color-button" id="prescriptions-filter">
-              PRESCRIPTIONS
-            </button>
+
+          <div>
+            <label for="log-description">Description:</label>
+            <textarea name="log-description" id="log-description-input" cols="39" rows="10" required></textarea>
+           
           </div>
-        </div>
-      </section>
-      <section id="logs"></section>
+
+          
+          <div id="submit-cancel">
+            <a href="./index.html">Cancel</a>
+            <button type="submit" class="color-button" id="submit-add-log">ADD LOG</button>
+          </div>
+        </form>
+      <section id="pets"></section>
     </main>
 
-    <script type="module" src="./modules/renderLogs.js"></script>
+    <script type="module" src="./modules/addLog.js"></script>
   </body>
 </html>

@@ -4,7 +4,7 @@ const getMeds = async () => {
     const meds = await response.json();
 
     if (!response.status >= 400) {
-      return alert(pets.error);
+      return alert(meds.error);
     }
 
     return meds;

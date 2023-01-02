@@ -47,7 +47,7 @@ const postLogs = async (req, res) => {
 
   if (!pet_id || !description || !status) {
     return sendBadReqResponse(
-      "Please input all data for medications: name and description!"
+      "Please input all data for medications: status and description!"
     );
   }
 
