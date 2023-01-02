@@ -219,3 +219,7 @@ textarea {
 #submit-cancel {
   margin: 30px 0;
 }
+
+#submit-cancel a:hover {
+  cursor: pointer;
+}

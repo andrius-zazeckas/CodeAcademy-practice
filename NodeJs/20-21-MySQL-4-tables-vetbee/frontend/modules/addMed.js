@@ -49,3 +49,7 @@ document.body
 
     await addMed();
   });
+
+document.body.querySelector("#cancel").addEventListener("click", () => {
+  history.back();
+});

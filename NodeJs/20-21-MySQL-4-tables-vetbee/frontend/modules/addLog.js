@@ -54,3 +54,7 @@ document.body
 
     await addLog();
   });
+
+document.body.querySelector("#cancel").addEventListener("click", () => {
+  history.back();
+});

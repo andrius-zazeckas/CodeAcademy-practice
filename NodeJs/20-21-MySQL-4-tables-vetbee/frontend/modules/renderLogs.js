@@ -148,7 +148,7 @@ const checkLogs = async () => {
   }
 };
 
-console.log(logs);
+console.log(await getLog());
 
 const checkPrescriptions = async () => {
   if (typeof prescriptions === "string") {

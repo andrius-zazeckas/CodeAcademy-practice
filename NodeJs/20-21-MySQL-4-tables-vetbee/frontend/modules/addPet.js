@@ -54,3 +54,7 @@ document.body
 
     await addPet();
   });
+
+document.body.querySelector("#cancel").addEventListener("click", () => {
+  history.back();
+});

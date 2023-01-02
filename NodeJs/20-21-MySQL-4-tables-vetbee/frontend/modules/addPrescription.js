@@ -75,3 +75,7 @@ document.body
 
     await addPrescription();
   });
+
+document.body.querySelector("#cancel").addEventListener("click", () => {
+  history.back();
+});
