@@ -21,7 +21,7 @@ const addPet = async () => {
   myHeaders.append("Content-Type", "application/json");
 
   try {
-    const response = await fetch("http://localhost:5000/pets", {
+    const response = await fetch("http://localhost:5000/v1/pets", {
       method: "POST",
       headers: myHeaders,
       body: newPet,

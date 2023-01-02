@@ -1,5 +1,4 @@
 const express = require("express");
-
 const cors = require("cors");
 
 const pets = require("./routes/v1/pets");
@@ -15,13 +14,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/pets", pets.getPets);
+console.log(pets);
 
-app.post("/pets", pets.postPet);
+app.use("/v1/pets", pets);
 
-app.delete("/pets/:id", pets.deletePet);
+// app.get("/pets", pets.getPets);
 
-app.delete("/pets/recover/:id", pets.recoverPet);
+// app.post("/pets", pets.postPet);
+
+// app.delete("/pets/:id", pets.deletePet);
+
+// app.delete("/pets/recover/:id", pets.recoverPet);
 
 app.get("/meds", meds.getMeds);
 

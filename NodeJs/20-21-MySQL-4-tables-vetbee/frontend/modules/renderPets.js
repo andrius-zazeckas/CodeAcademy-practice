@@ -68,7 +68,8 @@ const renderPets = async () => {
       //     }
 
       //     if (response.ok) {
-      window.open(`./log.html?id=${viewLogButton.id}`, "_self");
+      // window.open(`./log.html?id=${viewLogButton.id}`, "_self");
+      window.location.assign(`./log.html?id=${viewLogButton.id}`);
 
       //   return petLog;
       //     }
@@ -80,7 +81,7 @@ const renderPets = async () => {
     const deletePet = async () => {
       try {
         const response = await fetch(
-          `http://localhost:5000/pets/${deletePetButton.id}`,
+          `http://localhost:5000/v1/pets/${deletePetButton.id}`,
           {
             method: "DELETE",
           }

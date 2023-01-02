@@ -6,6 +6,9 @@ const getLog = async () => {
   try {
     const response = await fetch(`http://localhost:5000/logs?id=${petId}`);
 
+    if (response.status === 404) {
+      return console.log("logs do not exist");
+    }
     const petLog = await response.json();
 
     if (response.status >= 400) {
@@ -57,15 +60,19 @@ document.querySelector("#add-prescription").addEventListener("click", () => {
 });
 
 const renderLog = async () => {
+  if (!logs) {
+    return;
+  }
+
   const sectionContainer = document.body.querySelector("#logs");
 
   const nameEl = document.querySelector("#pet-name");
 
-  const logs = await getLog();
+  // if (typeof logs === "string") {
+  //   return (nameEl.textContent = logs);
+  // }
 
-  if (typeof logs === "string") {
-    return (nameEl.textContent = logs);
-  }
+  console.log(logs);
 
   logs.forEach((log) => {
     const { description, status, name, dob, client_email } = log;
@@ -94,8 +101,6 @@ const renderPrescription = async () => {
   const sectionContainer = document.body.querySelector("#logs");
 
   const nameEl = document.querySelector("#pet-name");
-
-  const prescriptions = await getPrescriptions();
 
   if (typeof prescriptions === "string") {
     return (nameEl.textContent = prescriptions);
@@ -147,8 +152,6 @@ const checkLogs = async () => {
     nameEl.textContent = `${pet_name}: Health Records`;
   }
 };
-
-console.log(await getLog());
 
 const checkPrescriptions = async () => {
   if (typeof prescriptions === "string") {

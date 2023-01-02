@@ -1,6 +1,6 @@
 const getPets = async () => {
   try {
-    const response = await fetch("http://localhost:5000/pets/");
+    const response = await fetch("http://localhost:5000/v1/pets/");
     const pets = await response.json();
 
     if (!response.status >= 400) {
