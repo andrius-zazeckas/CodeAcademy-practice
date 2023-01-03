@@ -18,14 +18,6 @@ console.log(pets);
 
 app.use("/v1/pets", pets);
 
-// app.get("/pets", pets.getPets);
-
-// app.post("/pets", pets.postPet);
-
-// app.delete("/pets/:id", pets.deletePet);
-
-// app.delete("/pets/recover/:id", pets.recoverPet);
-
 app.get("/meds", meds.getMeds);
 
 app.post("/meds", meds.postMeds);

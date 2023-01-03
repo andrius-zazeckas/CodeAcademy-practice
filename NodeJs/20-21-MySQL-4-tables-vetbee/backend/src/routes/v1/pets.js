@@ -129,46 +129,46 @@ const deletePet = async (req, res) => {
   }
 };
 
-// const recoverPet = async (req, res) => {
-//   const id = +mysql.escape(req.params.id.trim()).replaceAll("'", "");
-//   const query = `UPDATE pets SET isArchived = 0 WHERE id = ${id}`;
+const recoverPet = async (req, res) => {
+  const id = +mysql.escape(req.params.id.trim()).replaceAll("'", "");
+  const query = `UPDATE pets SET isArchived = 0 WHERE id = ${id}`;
 
-//   if (id < 0 || Number.isNaN(id) || typeof id !== "number") {
-//     return res
-//       .status(400)
-//       .send({
-//         error: `Please provide a id as a number in the URL: current id ${id} incorrect.`,
-//       })
-//       .end();
-//   }
+  if (id < 0 || Number.isNaN(id) || typeof id !== "number") {
+    return res
+      .status(400)
+      .send({
+        error: `Please provide a id as a number in the URL: current id ${id} incorrect.`,
+      })
+      .end();
+  }
 
-//   try {
-//     const con = await mysql.createConnection(MYSQL_CONFIG);
-//     const [idExists] = await con.execute(
-//       `SELECT * FROM pets WHERE isArchived = 1 AND id = ${id}`
-//     );
+  try {
+    const con = await mysql.createConnection(MYSQL_CONFIG);
+    const [idExists] = await con.execute(
+      `SELECT * FROM pets WHERE isArchived = 1 AND id = ${id}`
+    );
 
-//     if (!idExists.length) {
-//       return res.status(404).send(`ID - ${id} not found`).end();
-//     }
+    if (!idExists.length) {
+      return res.status(404).send(`ID - ${id} not found`).end();
+    }
 
-//     await con.execute(query);
+    await con.execute(query);
 
-//     await con.end();
+    await con.end();
 
-//     res.status(202).send("Pet was recovered from archive").end();
-//   } catch (err) {
-//     res.status(500).send(err).end();
-//     return console.error(err);
-//   }
-// };
+    res.status(202).send("Pet was recovered from archive").end();
+  } catch (err) {
+    res.status(500).send(err).end();
+    return console.error(err);
+  }
+};
 
 router.get("/", getPets);
 
 router.delete("/:id", deletePet);
 
+router.delete("/recover/:id", recoverPet);
+
 router.post("/", postPet);
 
 module.exports = router;
-
-// module.exports = { getPets, postPet, deletePet, recoverPet };

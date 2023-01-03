@@ -1,17 +1,8 @@
-const express = require("express");
-const mysql = require("mysql2/promise");
-const Joi = require("joi");
-const bcrypt = require("bcryptjs");
-
-require("./config");
-
-const MYSQL_CONFIG = {
-  host: process.env.host,
-  user: process.env.user,
-  password: process.env.password,
-  database: process.env.database,
-  port: +process.env.port,
-};
+import express from "express";
+import mysql from "mysql2/promise";
+import Joi from "joi";
+import bcrypt from "bcryptjs";
+import { MYSQL_CONFIG } from "../../config.js";
 
 const router = express.Router();
 
@@ -81,4 +72,4 @@ router.post("/login", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
