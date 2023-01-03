@@ -8,6 +8,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/", auth);
+app.use("/v1/auth", auth);
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
