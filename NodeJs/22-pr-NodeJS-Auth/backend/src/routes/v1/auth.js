@@ -3,6 +3,8 @@ import mysql from "mysql2/promise";
 import Joi from "joi";
 import bcrypt from "bcryptjs";
 import { MYSQL_CONFIG } from "../../config.js";
+import { jwtSecret } from "../../config.js";
+import jwt from "jsonwebtoken";
 
 const router = express.Router();
 
@@ -33,6 +35,7 @@ router.post("/register", async (req, res) => {
 
     return res.send(data).end();
   } catch (error) {
+    console.log(error);
     return res.status(500).send({ error: "Unexpected error" });
   }
 });
@@ -42,6 +45,7 @@ router.post("/login", async (req, res) => {
   try {
     userData = await userSchema.validateAsync(userData);
   } catch (error) {
+    console.log(error);
     return res.status(400).send({ error: "Incorrect email or password" }).end();
   }
 
@@ -53,7 +57,7 @@ router.post("/login", async (req, res) => {
 
     await con.end();
 
-    if (data.length === 0) {
+    if (!data.length) {
       return res
         .status(400)
         .send({ error: "Incorrect email or password" })
@@ -63,7 +67,11 @@ router.post("/login", async (req, res) => {
     const isAuthed = bcrypt.compareSync(userData.password, data[0].password);
 
     if (isAuthed) {
-      return res.send("OK").end();
+      const token = jwt.sign(
+        { id: data[0].id, email: data[0].email },
+        jwtSecret
+      );
+      return res.send({ message: "Succesfully logged in", token }).end();
     }
 
     return res.status(400).send({ error: "Incorrect email or password" }).end();

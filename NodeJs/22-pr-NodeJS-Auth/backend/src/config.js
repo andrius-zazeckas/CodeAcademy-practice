@@ -11,3 +11,5 @@ export const MYSQL_CONFIG = {
   database: process.env.database,
   port: +process.env.port,
 };
+
+export const jwtSecret = process.env.jwtSecret;
