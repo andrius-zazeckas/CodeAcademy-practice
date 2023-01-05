@@ -8,7 +8,7 @@ const app = express();
 
 const PORT = 5000;
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cookieParser());
 
 app.get("/home", getHome);

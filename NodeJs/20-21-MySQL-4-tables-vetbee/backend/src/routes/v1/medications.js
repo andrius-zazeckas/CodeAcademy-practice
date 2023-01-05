@@ -1,6 +1,6 @@
 const mysql = require("mysql2/promise");
 
-require("../../config");
+// require("../../config");
 
 const MYSQL_CONFIG = {
   host: process.env.host,
@@ -9,6 +9,8 @@ const MYSQL_CONFIG = {
   database: process.env.database,
   port: +process.env.port,
 };
+
+console.log(MYSQL_CONFIG);
 
 const getMeds = async (_, res) => {
   const query = "SELECT * FROM medications";
