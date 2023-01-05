@@ -2,7 +2,7 @@ import { getPets } from "./getPets.js";
 
 const renderPets = async () => {
   const pets = await getPets();
-
+  console.log(pets);
   const sectionContainer = document.body.querySelector("#pets");
   sectionContainer.replaceChildren();
 
