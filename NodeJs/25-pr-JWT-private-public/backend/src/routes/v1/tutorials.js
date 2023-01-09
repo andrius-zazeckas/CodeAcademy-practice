@@ -108,7 +108,6 @@ export const postTutorial = async (req, res) => {
   let payload = null;
 
   if (!token) {
-    // console.log(token);
     return res.status(401).send({ error: "User unauthorised" }).end();
   }
 

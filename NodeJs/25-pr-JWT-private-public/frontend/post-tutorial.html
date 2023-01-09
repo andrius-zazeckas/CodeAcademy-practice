@@ -28,7 +28,7 @@
   </head>
   <body class="wrapper">
     <header>
-      <h1>Home page</h1>
+      <h1>Post Tutorial:</h1>
       <nav>
         <a href="./index.html">Home</a>
         <a href="./login.html">Login</a>
@@ -38,10 +38,12 @@
         <a href="./post-tutorial.html">Post Tutorial</a>
       </nav>
     </header>
-    <main class="wrapper">
-      <section id="content"></section>
-    </main>
+    <form id="tutorial-form">
+      <input id="title-input" placeholder="Title" required />
+      <input id="content-input" placeholder="content" required />
+      <button type="submit">ADD</button>
+    </form>
 
-    <script type="module" src="./modules/renderContent.js"></script>
+    <script type="module" src="./modules/postTutorial.js"></script>
   </body>
 </html>

@@ -4,7 +4,11 @@ const renderContent = async () => {
   const tutorials = await getUserTutorials();
 
   if (!tutorials) {
-    return console.log("err");
+    return null;
+  }
+
+  if (tutorials.error) {
+    return null;
   }
 
   const sectionContainer = document.body.querySelector("#content");
