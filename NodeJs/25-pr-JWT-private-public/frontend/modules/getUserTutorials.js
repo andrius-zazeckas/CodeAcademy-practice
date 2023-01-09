@@ -1,6 +1,10 @@
 const getUserTutorials = async () => {
   const id = document.cookie.split("id=")[1];
 
+  if (!id) {
+    return alert("Please login to see your private tutorials");
+  }
+
   try {
     const response = await fetch(
       `http://localhost:5000/v1/user-tutorials/${id}`,

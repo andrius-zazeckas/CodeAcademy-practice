@@ -67,7 +67,6 @@ export const loginUser = async (req, res) => {
         { id: data[0].id, email: data[0].email },
         jwtSecret
       );
-      // res.cookie(data[0].id);
 
       return res
         .send({ id: data[0].id, message: "Succesfully logged in", token })

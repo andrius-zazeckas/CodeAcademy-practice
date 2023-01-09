@@ -6,8 +6,6 @@ const renderContent = async () => {
   const sectionContainer = document.body.querySelector("#content");
   sectionContainer.replaceChildren();
 
-  console.log(tutorials);
-
   if (!tutorials.length) {
     const noDataEl = document.createElement("h2");
     noDataEl.textContent = "No data in database";
@@ -16,7 +14,8 @@ const renderContent = async () => {
   }
 
   tutorials.forEach((tutorial) => {
-    const { title, content, isPrivate } = tutorial;
+    const { title, content } = tutorial;
+    let isPrivate = tutorial.isPrivate;
 
     const contentContainer = document.createElement("div");
     contentContainer.className = "contentContainer";
@@ -36,6 +35,8 @@ const renderContent = async () => {
 
     if (!isPrivate) {
       isPrivate = "no";
+    } else {
+      isPrivate = "yes";
     }
 
     privateEl.textContent = `Is it private: ${isPrivate}`;
