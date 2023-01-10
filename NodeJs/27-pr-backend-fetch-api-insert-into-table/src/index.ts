@@ -18,17 +18,29 @@ app.get("/users", (_, res) => {
     .get("https://randomuser.me/api/")
     .then(async (usersResponse) => {
       const user = usersResponse.data.results[0].name.first;
+      const userIdName = usersResponse.data.results[0].id.name;
+      const userIdValue = usersResponse.data.results[0].id.value;
+      const user_id = `${userIdName}-${userIdValue}`;
 
       try {
         const con = await mysql.createConnection(MYSQL_CONFIG);
+        const existingUser = `SELECT * FROM users WHERE user_id = '${user_id}'`;
         const query = "SELECT * FROM users";
-        const newUser = `INSERT INTO users (user) VALUES ('${user}')`;
+        const newUser = `INSERT INTO users (user_id, user) VALUES ('${user_id}', '${user}')`;
+
+        const [userExists] = await con.execute(existingUser);
+
+        let userExistsRes: any = userExists;
+
+        if (userExistsRes.length) {
+          return res.send("user exists");
+        }
 
         await con.execute(newUser);
-        const [result] = await con.execute(query);
+        const [users] = await con.execute(query);
         await con.end();
 
-        res.status(200).send(result).end();
+        res.status(200).send(users).end();
       } catch (err) {
         res.status(500).send(err).end();
         return console.error(err);
