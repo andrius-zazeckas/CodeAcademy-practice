@@ -1,5 +1,8 @@
 const getUserTutorials = async () => {
-  const id = document.cookie.split("id=")[1];
+  const id = document.cookie
+    .split("; ")
+    .find((cookie) => cookie.startsWith("id="))
+    ?.split("=")[1];
 
   if (!id) {
     return alert("Please login to see your private tutorials");
@@ -14,8 +17,8 @@ const getUserTutorials = async () => {
     );
     const content = await response.json();
 
-    if (response.status >= 400) {
-      alert(content.error);
+    if (!response.ok || response.status >= 400) {
+      return alert(content.error);
       // return window.location.assign(`./login.html`);
     }
 

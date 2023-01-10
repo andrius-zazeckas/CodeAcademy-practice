@@ -23,19 +23,20 @@ loginForm.addEventListener("submit", async (e) => {
 
     if (response.ok) {
       loginForm.reset();
-      const data = await response.json();
+      const userData = await response.json();
 
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("token", userData.token);
 
-      document.cookie = `id=${data.id}`;
+      document.cookie = `id=${userData.id}`;
 
       window.location.assign(`./index.html`);
+      return;
     }
 
-    if (response.status >= 400) {
+    if (!response.ok || response.status >= 400) {
       const msg = await response.json();
 
-      alert(msg.error);
+      return alert(msg.error || msg.statusText);
     }
   } catch (error) {
     alert(error.message);
