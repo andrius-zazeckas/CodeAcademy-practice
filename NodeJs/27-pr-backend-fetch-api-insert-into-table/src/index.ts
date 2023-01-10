@@ -28,11 +28,9 @@ app.get("/users", (_, res) => {
         const query = "SELECT * FROM users";
         const newUser = `INSERT INTO users (user_id, user) VALUES ('${user_id}', '${user}')`;
 
-        const [userExists] = await con.execute(existingUser);
+        const [userExists] = (await con.execute(existingUser)) as any;
 
-        let userExistsRes: any = userExists;
-
-        if (userExistsRes.length) {
+        if (userExists.length) {
           return res.send("user exists");
         }
 
