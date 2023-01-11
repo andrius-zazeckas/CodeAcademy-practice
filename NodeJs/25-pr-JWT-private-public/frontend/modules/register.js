@@ -32,7 +32,7 @@ registerForm.addEventListener("submit", async (e) => {
     if (!response.ok || response.status >= 400) {
       const data = await response.json();
 
-      alert(data.error);
+      return alert(data.error || data.statusText);
     }
   } catch (error) {
     console.log(error);

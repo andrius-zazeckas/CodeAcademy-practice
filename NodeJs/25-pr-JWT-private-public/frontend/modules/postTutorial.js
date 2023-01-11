@@ -31,10 +31,10 @@ registerForm.addEventListener("submit", async (e) => {
       window.location.assign(`./user-tutorials.html`);
     }
 
-    if (response.status >= 400) {
-      const msg = await response.json();
+    if (!response.ok || response.status >= 400) {
+      const data = await response.json();
 
-      alert(msg.error);
+      return alert(data.error || data.statusText);
     }
   } catch (error) {
     console.log(error);

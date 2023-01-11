@@ -33,12 +33,6 @@ export const getTutorials = async (req, res) => {
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
-    // if (!token) {
-    //   const [result] = await con.execute(
-    //     "SELECT * FROM tutorials WHERE isPrivate=0"
-    //   );
-    //   return [result];
-    // }
     const [result] = await con.execute("SELECT * FROM tutorials");
 
     await con.end();

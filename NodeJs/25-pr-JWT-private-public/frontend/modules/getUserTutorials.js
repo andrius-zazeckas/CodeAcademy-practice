@@ -18,7 +18,7 @@ const getUserTutorials = async () => {
     const content = await response.json();
 
     if (!response.ok || response.status >= 400) {
-      return alert(content.error);
+      return alert(content.error || content.statusText);
       // return window.location.assign(`./login.html`);
     }
 

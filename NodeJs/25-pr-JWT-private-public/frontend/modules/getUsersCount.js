@@ -4,7 +4,7 @@ const getUsersCount = async () => {
     const usersCount = await response.json();
 
     if (!response.ok || response.status >= 400) {
-      alert(content.error);
+      alert(content.error || content.statusText);
     }
 
     return usersCount;
