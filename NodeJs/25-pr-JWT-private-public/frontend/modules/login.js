@@ -21,9 +21,10 @@ loginForm.addEventListener("submit", async (e) => {
       body: user,
     });
 
+    const userData = await response.json();
+
     if (response.ok) {
       loginForm.reset();
-      const userData = await response.json();
 
       localStorage.setItem("token", userData.token);
 
@@ -34,9 +35,7 @@ loginForm.addEventListener("submit", async (e) => {
     }
 
     if (!response.ok || response.status >= 400) {
-      const msg = await response.json();
-
-      return alert(msg.error || msg.statusText);
+      return alert(userData.error || userData.statusText);
     }
   } catch (error) {
     alert(error.message);

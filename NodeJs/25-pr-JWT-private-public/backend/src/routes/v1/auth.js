@@ -32,7 +32,7 @@ export const registerUser = async (req, res) => {
 
     return res.status(200).send("User registered successfully").end(); // res.send(data)
   } catch (error) {
-    return res.status(500).send(error.message);
+    return res.status(500).send({ error: error.message });
   }
 };
 
@@ -41,7 +41,6 @@ export const loginUser = async (req, res) => {
   try {
     userData = await userSchema.validateAsync(userData);
   } catch (error) {
-    console.log(error.message);
     return res.status(400).send({ error: "Incorrect email or password" }).end();
   }
 

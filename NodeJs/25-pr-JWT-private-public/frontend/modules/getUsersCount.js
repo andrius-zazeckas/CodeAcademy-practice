@@ -3,9 +3,8 @@ const getUsersCount = async () => {
     const response = await fetch("http://localhost:5000/v1/auth/users");
     const usersCount = await response.json();
 
-    if (response.status >= 400) {
+    if (!response.ok || response.status >= 400) {
       alert(content.error);
-      //   return window.location.assign(`./login.html`);
     }
 
     return usersCount;

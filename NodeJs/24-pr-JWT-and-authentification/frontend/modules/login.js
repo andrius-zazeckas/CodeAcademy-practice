@@ -32,7 +32,7 @@ loginForm.addEventListener("submit", async (e) => {
     }
 
     if (!response.ok || response.status >= 400) {
-      alert(data.error);
+      alert(data.error || data.statusText);
     }
   } catch (error) {
     alert(error.message);

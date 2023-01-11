@@ -5,14 +5,15 @@ const getContent = async () => {
     });
     const content = await response.json();
 
-    if (response.status >= 400) {
+    if (!response.ok || response.status >= 400) {
       alert(content.error);
       return window.location.assign(`./login.html`);
     }
 
-    return content;
+    if (response.ok) {
+      return content;
+    }
   } catch (error) {
-    // alert(error.message);
     console.log(error);
   }
 };

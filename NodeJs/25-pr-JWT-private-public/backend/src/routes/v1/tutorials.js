@@ -10,13 +10,8 @@ export const getTutorials = async (req, res) => {
 
   try {
     payload = jwt.verify(token, jwtSecret);
-  } catch (err) {
-    if (err instanceof jwt.JsonWebTokenError) {
-      // res
-      //   .status(401)
-      //   .send({ error: "User unauthorised: login to see all tutorials" })
-      //   .end();
-
+  } catch (error) {
+    if (error instanceof jwt.JsonWebTokenError) {
       try {
         const con = await mysql.createConnection(MYSQL_CONFIG);
 
@@ -32,18 +27,18 @@ export const getTutorials = async (req, res) => {
         return console.error(error);
       }
     }
-    return res.status(400).send(err).end();
+    return res.status(400).send(error).end();
   }
 
   try {
     const con = await mysql.createConnection(MYSQL_CONFIG);
 
-    if (!token) {
-      const [result] = await con.execute(
-        "SELECT * FROM tutorials WHERE isPrivate=0"
-      );
-      return [result];
-    }
+    // if (!token) {
+    //   const [result] = await con.execute(
+    //     "SELECT * FROM tutorials WHERE isPrivate=0"
+    //   );
+    //   return [result];
+    // }
     const [result] = await con.execute("SELECT * FROM tutorials");
 
     await con.end();
@@ -72,7 +67,6 @@ export const getUserTutorials = async (req, res) => {
   let payload = null;
 
   if (!token) {
-    // console.log(token);
     return res.status(401).send({ error: "User unauthorised" }).end();
   }
 
