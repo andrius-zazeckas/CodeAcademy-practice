@@ -21,21 +21,18 @@ loginForm.addEventListener("submit", async (e) => {
       body: user,
     });
 
+    const data = await response.json();
+
     if (response.ok) {
       loginForm.reset();
-      const data = await response.json();
 
-      // localStorage.setItem(`${emailInputValue}`, data.token);
       localStorage.setItem("token", data.token);
 
-      // window.location.assign(`./index.html?email=${emailInputValue}`);
       window.location.assign(`./index.html`);
     }
 
-    if (response.status >= 400) {
-      const msg = await response.json();
-
-      alert(msg.error);
+    if (!response.ok || response.status >= 400) {
+      alert(data.error);
     }
   } catch (error) {
     alert(error.message);

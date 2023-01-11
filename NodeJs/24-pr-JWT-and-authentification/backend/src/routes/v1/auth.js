@@ -32,7 +32,7 @@ export const registerUser = async (req, res) => {
 
     return res.status(200).send("User registered successfully").end(); // res.send(data)
   } catch (error) {
-    return res.status(500).send(error.message);
+    return res.status(500).send({ error: error.message });
   }
 };
 
@@ -67,7 +67,7 @@ export const loginUser = async (req, res) => {
         { id: data[0].id, email: data[0].email },
         jwtSecret
       );
-      res.cookie("token", token);
+
       return res.send({ message: "Succesfully logged in", token }).end();
     }
 

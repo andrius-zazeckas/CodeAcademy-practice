@@ -26,13 +26,12 @@ registerForm.addEventListener("submit", async (e) => {
 
       alert("Registered successfuly");
 
-      window.location.assign(`./login.html`);
+      return window.location.assign(`./login.html`);
     }
 
-    if (response.status >= 400) {
-      const msg = await response.json();
-
-      alert(msg.error);
+    if (!response.ok || response.status >= 400) {
+      const data = await response.json();
+      alert(data.error);
     }
   } catch (error) {
     console.log(error);
