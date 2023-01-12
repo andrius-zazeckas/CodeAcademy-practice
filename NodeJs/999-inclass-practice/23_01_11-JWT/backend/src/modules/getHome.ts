@@ -5,7 +5,7 @@ export type TUserPayload = { userName: string; issuedAt: number };
 const jwtSecret = "slaptazodis";
 
 export const getHome = (req, res) => {
-  console.log(req.headers.authorization);
+  // console.log(req.headers.authorization);
   try {
     const payload: TUserPayload = jwt.verify(
       req.headers.authorization.replace("Bearer ", ""),

@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { TUserPayload } from "./getHome.js";
+import { TUserPayload } from "./getHome";
 
 const jwtSecret = "slaptazodis"; //reiksme turi buti nuskaitom is .env
 
