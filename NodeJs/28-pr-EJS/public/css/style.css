@@ -1,0 +1,23 @@
+#container {
+  display: flex;
+  gap: 30px;
+}
+
+#wrapper {
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(240, 248, 255, 0.543);
+}
+
+#separator {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  width: 300px;
+  background-color: bisque;
+}
+
+.user-name {
+  font-size: 19px;
+  font-weight: 700;
+}
