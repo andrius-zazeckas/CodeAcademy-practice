@@ -16,8 +16,8 @@
 
 .img-container {
   padding: 20px;
-  width: 150px;
-  min-height: 200px;
+  max-width: 150px;
+  max-height: 100px;
 }
 
 #articles {
