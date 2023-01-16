@@ -6,12 +6,9 @@ const getLog = async () => {
   try {
     const response = await fetch(`http://localhost:5000/logs?id=${petId}`);
 
-    if (response.status === 404) {
-      return console.log("logs do not exist");
-    }
     const petLog = await response.json();
 
-    if (response.status >= 400) {
+    if (!response.ok || response.status >= 400) {
       return petLog.error;
     }
 
@@ -31,7 +28,7 @@ const getPrescriptions = async () => {
 
     const petPrescription = await response.json();
 
-    if (response.status >= 400) {
+    if (!response.ok || response.status >= 400) {
       return petPrescription.error;
     }
 
@@ -68,11 +65,9 @@ const renderLog = async () => {
 
   const nameEl = document.querySelector("#pet-name");
 
-  // if (typeof logs === "string") {
-  //   return (nameEl.textContent = logs);
-  // }
-
-  console.log(logs);
+  if (typeof logs === "string") {
+    return (nameEl.textContent = logs);
+  }
 
   logs.forEach((log) => {
     const { description, status, name, dob, client_email } = log;
@@ -163,18 +158,18 @@ const checkPrescriptions = async () => {
   }
 };
 
-const noRec = () => {
-  if (typeof logs === "string" && typeof prescriptions === "string") {
-    return (
-      (nameEl.textContent = prescriptions),
-      (document.querySelector("#filter-container").style.display = "none")
-    );
-  }
-};
+// const noRec = () => {
+//   if (typeof logs === "string" && typeof prescriptions === "string") {
+//     return (
+//       (nameEl.textContent = prescriptions),
+//       (document.querySelector("#filter-container").style.display = "none")
+//     );
+//   }
+// };
 
 await checkPrescriptions();
 await checkLogs();
-noRec();
+// noRec();
 
 logFilter.addEventListener("click", () => {
   const logContainer = document.querySelectorAll(".log-container");

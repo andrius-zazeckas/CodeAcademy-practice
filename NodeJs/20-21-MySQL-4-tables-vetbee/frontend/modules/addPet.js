@@ -31,12 +31,13 @@ const addPet = async () => {
       document.body.querySelector("#pet-form").reset();
 
       alert("A pet was added");
+      window.history.back();
     }
 
-    if (response.status >= 400) {
-      const msg = await response.json();
+    if (!response.ok || response.status >= 400) {
+      const data = await response.json();
 
-      alert(msg.error);
+      alert(data.error || data.statusText);
     }
   } catch (error) {
     alert(error.message);
@@ -56,5 +57,5 @@ document.body
   });
 
 document.body.querySelector("#cancel").addEventListener("click", () => {
-  history.back();
+  window.history.back();
 });

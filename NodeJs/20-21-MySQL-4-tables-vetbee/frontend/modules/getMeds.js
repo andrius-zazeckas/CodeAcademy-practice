@@ -3,8 +3,8 @@ const getMeds = async () => {
     const response = await fetch("http://localhost:5000/meds/");
     const meds = await response.json();
 
-    if (!response.status >= 400) {
-      return alert(meds.error);
+    if (!response.ok || response.status >= 400) {
+      return alert(meds.error || meds.statusText);
     }
 
     return meds;

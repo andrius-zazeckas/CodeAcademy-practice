@@ -3,8 +3,8 @@ const getPets = async () => {
     const response = await fetch("http://localhost:5000/v1/pets/");
     const pets = await response.json();
 
-    if (!response.status >= 400) {
-      return alert(pets.error);
+    if (!response.ok || response.status >= 400) {
+      return alert(pets.error || pets.statusText);
     }
 
     return pets;

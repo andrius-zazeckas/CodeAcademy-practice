@@ -56,26 +56,7 @@ const renderPets = async () => {
     sectionContainer.append(petContainer);
 
     const viewPetLog = () => {
-      //   try {
-      //     const response = await fetch(
-      //       `http://localhost:5000/logs?id=${viewLogButton.id}`
-      //     );
-
-      //     const petLog = await response.json();
-
-      //     if (response.status >= 400) {
-      //       alert(petLog.error);
-      //     }
-
-      //     if (response.ok) {
-      // window.open(`./log.html?id=${viewLogButton.id}`, "_self");
       window.location.assign(`./log.html?id=${viewLogButton.id}`);
-
-      //   return petLog;
-      //     }
-      //   } catch (err) {
-      //     console.log(err);
-      //   }
     };
 
     const deletePet = async () => {
