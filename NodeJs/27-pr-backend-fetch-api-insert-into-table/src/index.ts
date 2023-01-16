@@ -24,13 +24,11 @@ app.get("/users", (_, res) => {
 
       try {
         const con = await mysql.createConnection(MYSQL_CONFIG);
-        const existingUser = `SELECT * FROM users WHERE user_id = '${user_id}'`;
+        const userExists = `SELECT * FROM users WHERE user_id = '${user_id}'`;
         const query = "SELECT * FROM users";
         const newUser = `INSERT INTO users (user_id, user) VALUES ('${user_id}', '${user}')`;
 
-        const [userExists] = (await con.execute(existingUser)) as any;
-
-        if (userExists.length) {
+        if (Array.isArray(userExists) && userExists.length) {
           return res.send("user exists");
         }
 
