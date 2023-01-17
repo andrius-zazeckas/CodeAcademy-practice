@@ -52,7 +52,8 @@ const addPrescription = async () => {
       document.body.querySelector("#prescription-form").reset();
 
       alert("New prescription was added");
-      window.history.back();
+
+      window.location = document.referrer;
     }
 
     if (!response.ok || response.status >= 400) {
@@ -78,5 +79,5 @@ document.body
   });
 
 document.body.querySelector("#cancel").addEventListener("click", () => {
-  window.history.back();
+  window.location = document.referrer;
 });

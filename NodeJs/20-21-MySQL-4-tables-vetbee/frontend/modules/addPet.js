@@ -31,7 +31,8 @@ const addPet = async () => {
       document.body.querySelector("#pet-form").reset();
 
       alert("A pet was added");
-      window.history.back();
+
+      window.location = document.referrer;
     }
 
     if (!response.ok || response.status >= 400) {
@@ -57,5 +58,5 @@ document.body
   });
 
 document.body.querySelector("#cancel").addEventListener("click", () => {
-  window.history.back();
+  window.location = document.referrer;
 });

@@ -158,18 +158,18 @@ const checkPrescriptions = async () => {
   }
 };
 
-// const noRec = () => {
-//   if (typeof logs === "string" && typeof prescriptions === "string") {
-//     return (
-//       (nameEl.textContent = prescriptions),
-//       (document.querySelector("#filter-container").style.display = "none")
-//     );
-//   }
-// };
+const noRec = () => {
+  if (typeof logs === "string" && typeof prescriptions === "string") {
+    return (
+      (nameEl.textContent = prescriptions),
+      (document.querySelector("#filter-container").style.display = "none")
+    );
+  }
+};
 
 await checkPrescriptions();
 await checkLogs();
-// noRec();
+noRec();
 
 logFilter.addEventListener("click", () => {
   const logContainer = document.querySelectorAll(".log-container");
