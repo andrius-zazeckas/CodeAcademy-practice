@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import { createProduct, getProducts } from "./src/services/productsService.js";
+import { orderController } from "./src/controllers/ordersController.js";
 
 dotenv.config();
 
@@ -10,15 +10,6 @@ const app = express();
 
 app.use(express.json());
 
-console.log(getProducts());
-
-createProduct({
-  name: "Audi A4",
-  price: 20_000,
-  isAvailable: true,
-  imagerUrl: "https://jp.lt/wp-content/uploads/2019/05/AudiA4_3.jpg",
-});
-
-console.log(getProducts());
+app.use("/orders", orderController);
 
 app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));

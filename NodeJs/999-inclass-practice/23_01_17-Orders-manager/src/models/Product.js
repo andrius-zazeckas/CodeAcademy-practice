@@ -1,6 +1,7 @@
 import Joi from "joi";
 
 const productSchema = Joi.object({
+  id: Joi.number(),
   name: Joi.string().trim().required(),
   price: Joi.number().required(),
   isAvailable: Joi.boolean().required(),
@@ -15,9 +16,9 @@ export class Product {
   imageUrl;
 
   constructor(name, price, isAvailable, imageUrl, id) {
-    let productData = { name, price, isAvailable, imageUrl };
+    const newProductData = { id, name, price, isAvailable, imageUrl };
 
-    const validationResult = productSchema.validate(productData);
+    const validationResult = productSchema.validate(newProductData);
 
     if (validationResult.error) {
       throw Error(validationResult.error);
