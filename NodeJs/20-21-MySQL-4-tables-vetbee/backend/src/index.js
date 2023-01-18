@@ -14,20 +14,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-console.log(pets);
-
 app.use("/v1/pets", pets);
 
-app.get("/meds", meds.getMeds);
+app.use("/v1/meds", meds);
 
-app.post("/meds", meds.postMeds);
+app.use("/v1/logs", logs);
 
-app.get("/logs", logs.getLogs);
-
-app.post("/logs", logs.postLogs);
-
-app.get("/prescriptions", prescriptions.getPrescriptions);
-
-app.post("/prescriptions", prescriptions.postPrescriptions);
+app.use("/v1/prescriptions", prescriptions);
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));

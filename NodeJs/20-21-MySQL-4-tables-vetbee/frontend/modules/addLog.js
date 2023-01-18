@@ -21,7 +21,7 @@ const addLog = async () => {
   myHeaders.append("Content-Type", "application/json");
 
   try {
-    const response = await fetch("http://localhost:5000/logs", {
+    const response = await fetch("http://localhost:5000/v1/logs", {
       method: "POST",
       headers: myHeaders,
       body: newLog,

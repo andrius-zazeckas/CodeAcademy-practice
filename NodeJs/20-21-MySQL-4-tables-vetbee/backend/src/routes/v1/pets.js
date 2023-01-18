@@ -24,7 +24,7 @@ const getPets = async (_, res) => {
 
     res.status(200).send(result).end();
   } catch (err) {
-    res.status(500).send(err).end();
+    res.status(500).send({ err }).end();
     return console.error(err);
   }
 };

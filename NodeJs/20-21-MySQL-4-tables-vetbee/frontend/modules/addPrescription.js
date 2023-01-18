@@ -42,7 +42,7 @@ const addPrescription = async () => {
   myHeaders.append("Content-Type", "application/json");
 
   try {
-    const response = await fetch("http://localhost:5000/prescriptions", {
+    const response = await fetch("http://localhost:5000/v1/prescriptions", {
       method: "POST",
       headers: myHeaders,
       body: newPrescription,

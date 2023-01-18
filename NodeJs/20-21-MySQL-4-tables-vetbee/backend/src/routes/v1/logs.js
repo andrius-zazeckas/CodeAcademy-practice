@@ -1,3 +1,5 @@
+const express = require("express");
+const router = express.Router();
 const mysql = require("mysql2/promise");
 
 require("../../config");
@@ -89,4 +91,7 @@ const postLogs = async (req, res) => {
   }
 };
 
-module.exports = { getLogs, postLogs };
+router.get("/", getLogs);
+router.post("/", postLogs);
+
+module.exports = router;

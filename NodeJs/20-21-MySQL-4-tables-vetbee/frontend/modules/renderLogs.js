@@ -4,7 +4,7 @@ const petId = urlParams.get("id");
 
 const getLog = async () => {
   try {
-    const response = await fetch(`http://localhost:5000/logs?id=${petId}`);
+    const response = await fetch(`http://localhost:5000/v1/logs?id=${petId}`);
 
     const petLog = await response.json();
 
@@ -23,7 +23,7 @@ const getLog = async () => {
 const getPrescriptions = async () => {
   try {
     const response = await fetch(
-      `http://localhost:5000/prescriptions?id=${petId}`
+      `http://localhost:5000/v1/prescriptions?id=${petId}`
     );
 
     const petPrescription = await response.json();

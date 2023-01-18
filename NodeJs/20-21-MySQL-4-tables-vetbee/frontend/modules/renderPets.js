@@ -2,7 +2,7 @@ import { getPets } from "./getPets.js";
 
 const renderPets = async () => {
   const pets = await getPets();
-  console.log(pets);
+
   const sectionContainer = document.body.querySelector("#pets");
   sectionContainer.replaceChildren();
 
@@ -76,7 +76,7 @@ const renderPets = async () => {
           window.location.reload();
         }
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
     };
 

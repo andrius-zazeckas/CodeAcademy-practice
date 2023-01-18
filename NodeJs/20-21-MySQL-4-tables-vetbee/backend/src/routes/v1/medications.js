@@ -1,3 +1,5 @@
+const express = require("express");
+const router = express.Router();
 const mysql = require("mysql2/promise");
 
 // require("../../config");
@@ -9,8 +11,6 @@ const MYSQL_CONFIG = {
   database: process.env.database,
   port: +process.env.port,
 };
-
-console.log(MYSQL_CONFIG);
 
 const getMeds = async (_, res) => {
   const query = "SELECT * FROM medications";
@@ -71,4 +71,7 @@ const postMeds = async (req, res) => {
   }
 };
 
-module.exports = { getMeds, postMeds };
+router.get("/", getMeds);
+router.post("/", postMeds);
+
+module.exports = router;

@@ -9,8 +9,6 @@ const getPets = async () => {
 
     return pets;
   } catch (err) {
-    console.log(err);
-
     if (err.message === "Failed to fetch") {
       const sectionContainer = document.body.querySelector("#pets");
       sectionContainer.replaceChildren();

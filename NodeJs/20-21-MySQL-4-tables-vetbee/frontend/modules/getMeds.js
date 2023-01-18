@@ -1,6 +1,6 @@
 const getMeds = async () => {
   try {
-    const response = await fetch("http://localhost:5000/meds/");
+    const response = await fetch("http://localhost:5000/v1/meds/");
     const meds = await response.json();
 
     if (!response.ok || response.status >= 400) {
