@@ -1,8 +1,8 @@
 import express from "express";
-import { renderHome } from "./modules/renderHome.js";
+
+const PORT = process.env.serverPort || 5000;
 
 const app = express();
-const PORT = 5000;
 
 app.use(express.json());
 
@@ -11,8 +11,6 @@ app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
-app.get("/", renderBars);
+app.get("/", renderHome);
 
-app.listen(PORT, () => {
-  console.log(`Server runing on: ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
