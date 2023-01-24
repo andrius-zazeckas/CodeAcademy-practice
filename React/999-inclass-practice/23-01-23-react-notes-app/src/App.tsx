@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { Form } from "./Form";
 
 function App() {
   const [i, setI] = useState(0);
@@ -17,6 +18,10 @@ function App() {
       <button onClick={() => setI(i + 1)}>Submit</button>
 
       <p>i antruoju - {i ** 2}</p>
+
+      <div>
+        <Form />
+      </div>
 
       <p>{description}</p>
     </div> //naudoti tik pradiniams projektams
