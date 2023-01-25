@@ -1,0 +1,16 @@
+.blue {
+  background-color: #3f8fcf;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 170px;
+  justify-content: center;
+  padding-left: 30px;
+}
+
+h1,
+h2 {
+  font-weight: 500;
+  margin: 3px;
+  color: white;
+}
