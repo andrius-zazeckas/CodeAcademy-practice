@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { Form } from "./Form";
+import { NoteForm } from "./NoteForm";
 
 function App() {
   const [i, setI] = useState(0);
@@ -10,21 +11,27 @@ function App() {
   console.log(i);
 
   return (
-    <div className="App">
-      <input
-        value={description}
-        onChange={(event) => setDescription(event.target.value)}
-      />
-      <button onClick={() => setI(i + 1)}>Submit</button>
+    <>
+      <div className="App">
+        <input
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
+        />
+        <button onClick={() => setI(i + 1)}>Submit</button>
 
-      <p>i antruoju - {i ** 2}</p>
+        <p>i antruoju - {i ** 2}</p>
+        <p>{description}</p>
 
-      <div>
-        <Form />
+        <div>
+          <NoteForm>
+            <h1>Notes App</h1>
+            <h2>Welcome</h2>
+          </NoteForm>
+
+          {/* <div><Form /></div> */}
+        </div>
       </div>
-
-      <p>{description}</p>
-    </div> //naudoti tik pradiniams projektams
+    </>
   );
 }
 
