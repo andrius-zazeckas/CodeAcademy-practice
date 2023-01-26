@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { RandomNumberGenerator } from "./components/RandomNumberGenerator";
 import { Form } from "./Form";
 import { NoteForm } from "./NoteForm";
 
@@ -27,6 +28,9 @@ function App() {
             <h1>Notes App</h1>
             <h2>Welcome</h2>
           </NoteForm>
+
+          <p>Random number generator:</p>
+          <RandomNumberGenerator />
 
           {/* <div><Form /></div> */}
         </div>
