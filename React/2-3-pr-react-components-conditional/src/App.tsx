@@ -4,7 +4,7 @@ import "./App.css";
 import { Button } from "./components/Button/Button";
 import { Hero } from "./components/Hero/Hero";
 import { Header } from "./components/Header/Header";
-import { Image, Portfolio } from "./components/Portfolio/Portfolio";
+import { Image, ImageArray, Portfolio } from "./components/Portfolio/Portfolio";
 
 function App() {
   return (
@@ -24,7 +24,9 @@ function App() {
       />
 
       <div className="container">
-        <Image
+        <ImageArray />
+
+        {/* <Image
           image="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2025&q=80"
           description="Ipsum Feugiat"
         />
@@ -48,10 +50,9 @@ function App() {
         <Image
           image="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
           description="Rhoncus Semper"
-        />
-
-        {/* <Hero title="Info hero" subtitle="Info subtitle" color="blue" /> */}
+        /> */}
       </div>
+      <Hero title="" subtitle="Info subtitle" color="blue" />
     </div>
   );
 }

@@ -9,11 +9,11 @@ body {
 }
 
 .container {
-  width: 70%;
+  width: 60%;
   margin: 60px auto;
-
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+  display: flex;
+  flex-wrap: wrap;
+  /* grid-template-columns: repeat(3, auto); */
   justify-content: space-between;
   gap: 40px;
 }
