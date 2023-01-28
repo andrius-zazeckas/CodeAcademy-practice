@@ -15,7 +15,7 @@ export const Image = ({ image, description }: any) => {
   return (
     <>
       <div className="img-container">
-        <img src={image} alt="image" />
+        <img src={image} alt="car" />
         <div className="description">
           <p>{description}</p>
         </div>
@@ -63,7 +63,7 @@ export const ImageArray = () => {
       {images.map(({ image, description }) => {
         return (
           <div className="img-container">
-            <img src={image} alt="image" />
+            <img src={image} alt="car" />
             <div className="description">
               <p>{description}</p>
             </div>
