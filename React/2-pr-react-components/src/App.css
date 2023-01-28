@@ -4,4 +4,16 @@ body {
 
 .App {
   text-align: center;
+
+  margin: 0 auto;
+}
+
+.container {
+  width: 70%;
+  margin: 60px auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+  gap: 40px;
 }
