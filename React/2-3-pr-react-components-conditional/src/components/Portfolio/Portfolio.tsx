@@ -15,7 +15,7 @@ export const Image = ({ image, description }: any) => {
   return (
     <>
       <div className="img-container">
-        <img src={image} alt="car" />
+        <img src={image} alt="car-title" />
         <div className="description">
           <p>{description}</p>
         </div>
