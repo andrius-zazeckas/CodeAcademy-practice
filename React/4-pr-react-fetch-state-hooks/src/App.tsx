@@ -1,4 +1,5 @@
 import "./App.css";
+import { PostProduct } from "./components/PostProduct";
 import { Products } from "./components/Products";
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
         <h1>Barbora</h1>
       </header>
       <Products />
+
+      <PostProduct />
     </div>
   );
 }

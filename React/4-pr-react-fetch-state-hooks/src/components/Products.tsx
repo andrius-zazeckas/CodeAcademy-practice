@@ -4,7 +4,7 @@ export const Products = () => {
   const [products, setProducts] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const removeElement = (id: any) => {
+  const removeProduct = (id: any) => {
     const newProducts = products.filter((product) => product.id !== id);
     setProducts(newProducts);
   };
@@ -12,7 +12,10 @@ export const Products = () => {
   useEffect(() => {
     const products = fetch("https://golden-whispering-show.glitch.me")
       .then((response) => response.json())
-      .then((data) => setProducts(data));
+      .then((data) => setProducts(data))
+      .catch((err) => {
+        console.error(err.message);
+      });
 
     setTimeout(() => {
       setIsLoading(false);
@@ -33,7 +36,7 @@ export const Products = () => {
                 <h2>{product.price}</h2>
                 <button
                   onClick={() => {
-                    removeElement(product.id);
+                    removeProduct(product.id);
                   }}
                 >
                   Delete
