@@ -22,7 +22,11 @@ export const PostProduct = () => {
       method: "POST",
       headers: myHeaders,
       body: JSON.stringify(postData),
-    }).then((response) => response.json());
+    })
+      .then((response) => response.json())
+      .catch((err) => {
+        console.error(err.message);
+      });
     //   .then((data) => setProducts(data));
     // }, []);
   };
