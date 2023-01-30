@@ -1,5 +1,6 @@
 import "./App.css";
 import { PostProduct } from "./components/PostProduct";
+import { PostProductAxios } from "./components/PostProduct-axios-state-obejct";
 import { Products } from "./components/Products";
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
       <Products />
 
       <PostProduct />
+
+      <p>Axios POST with useState as object:</p>
+      <PostProductAxios />
     </div>
   );
 }

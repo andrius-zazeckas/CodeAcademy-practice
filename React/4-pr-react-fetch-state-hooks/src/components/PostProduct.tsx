@@ -1,11 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 export const PostProduct = () => {
   const post_image = useRef<HTMLInputElement>(null);
   const post_title = useRef<HTMLInputElement>(null);
   const post_price = useRef<HTMLInputElement>(null);
-
-  //   const [products, setProducts] = useState<any[]>([]);
 
   const postData = () => {
     const postData = {
@@ -17,7 +15,6 @@ export const PostProduct = () => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    // useEffect(() => {
     const products = fetch("https://golden-whispering-show.glitch.me", {
       method: "POST",
       headers: myHeaders,
@@ -27,8 +24,6 @@ export const PostProduct = () => {
       .catch((err) => {
         console.error(err.message);
       });
-    //   .then((data) => setProducts(data));
-    // }, []);
   };
 
   return (
