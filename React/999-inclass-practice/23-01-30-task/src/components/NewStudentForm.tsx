@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 export const NewStudentForm = () => {
-  const [newStudent, setNewStudent] = useState<any[]>([]);
+  //   const [newStudent, setNewStudent] = useState<any[]>([]); // todo vienas
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
