@@ -21,13 +21,13 @@ export const Products = ({
 
   useEffect(() => {
     if (filterTitle) {
-      const filteredProducts = products.filter((product: any) =>
-        product.title
-          .toLocaleLowerCase()
-          .includes(filterTitle.toLocaleLowerCase())
+      setProducts((prevProducts: any) =>
+        prevProducts.filter((prevProduct: any) =>
+          prevProduct.title
+            .toLocaleLowerCase()
+            .includes(filterTitle.toLocaleLowerCase())
+        )
       );
-
-      setProducts(filteredProducts);
     }
   }, [filterTitle, setProducts]);
 
