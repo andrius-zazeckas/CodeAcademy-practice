@@ -1,14 +1,17 @@
 import axios from "axios";
 import { useState } from "react";
 
-export const PostProductAxios = () => {
+export const PostProductAxios = ({ fetchProducts }: any) => {
   const [newProduct, setNewProduct] = useState({
     image: null,
     title: null,
     price: null,
   });
 
-  const handleInputChange = (event: any, prop: any) => {
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    prop: string
+  ) => {
     setNewProduct({
       ...newProduct,
       [prop]: event.target.value,
@@ -26,7 +29,7 @@ export const PostProductAxios = () => {
         image: newProduct.image,
         price: newProduct.price,
       })
-      .then((result) => console.log(result))
+      .then(() => fetchProducts()) // siame bloke turi buti request products
       .catch((error) => console.error(error));
   };
 

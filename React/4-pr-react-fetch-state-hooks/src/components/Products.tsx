@@ -1,26 +1,35 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const Products = () => {
-  const [products, setProducts] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+export const Products = ({
+  products,
+  isLoading,
+  fetchProducts,
+  setProducts,
+}: any) => {
+  const [filterTitle, setFilterTitle] = useState("");
 
-  const removeProduct = (id: any) => {
-    const newProducts = products.filter((product) => product.id !== id);
-    setProducts(newProducts);
+  const removeProduct = (id: number) => {
+    axios
+      .delete(`https://golden-whispering-show.glitch.me/${id}`)
+      .then(() => fetchProducts())
+      .catch((error) => console.error(error));
+
+    // const newProducts = products.filter((product: any) => product.id !== id);
+    // setProducts(newProducts);
   };
 
   useEffect(() => {
-    const products = fetch("https://golden-whispering-show.glitch.me")
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((err) => {
-        console.error(err.message);
-      });
+    if (filterTitle) {
+      const filteredProducts = products.filter((product: any) =>
+        product.title
+          .toLocaleLowerCase()
+          .includes(filterTitle.toLocaleLowerCase())
+      );
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, []);
+      setProducts(filteredProducts);
+    }
+  }, [filterTitle, setProducts]);
 
   return (
     <>
@@ -29,8 +38,8 @@ export const Products = () => {
       ) : (
         <div className="container">
           {products &&
-            products.map((product) => (
-              <div key={product.id} className="product-container">
+            products.map((product: any, i: number) => (
+              <div key={`${product.id} - ${i}`} className="product-container">
                 <img src={product.image} alt={product.title} />
                 <p>{product.title}</p>
                 <h2>{product.price}</h2>
@@ -45,6 +54,12 @@ export const Products = () => {
             ))}
         </div>
       )}
+      <label htmlFor="filter-title">Produkto paieska</label>
+      <input
+        onChange={(event) => setFilterTitle(event.target.value)}
+        value={filterTitle}
+        name="filter-title"
+      />
     </>
   );
 };
