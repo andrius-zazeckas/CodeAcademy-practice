@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { Search } from "./components/Filter";
+
 import { PostProduct } from "./components/PostProduct";
 import { PostProductAxios } from "./components/PostProduct-axios-state-obejct";
 import { Products } from "./components/Products";
@@ -7,11 +9,15 @@ import { Products } from "./components/Products";
 function App() {
   const [products, setProducts] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [filtered, setFiltered] = useState([]);
 
   const fetchProducts = () => {
     fetch("https://golden-whispering-show.glitch.me")
       .then((response) => response.json())
-      .then((data) => setProducts(data))
+      .then((data) => {
+        setProducts(data);
+        setFiltered(data);
+      })
       .catch((err) => {
         console.error(err.message);
       })
@@ -37,12 +43,15 @@ function App() {
         isLoading={isLoading}
         fetchProducts={fetchProducts}
         setProducts={setProducts}
+        filtered={setFiltered}
       />
 
       <PostProduct />
 
       <p>Axios POST with useState as object:</p>
       <PostProductAxios fetchProducts={fetchProducts} />
+
+      {/* <Search /> */}
     </div>
   );
 }

@@ -6,8 +6,10 @@ export const Products = ({
   isLoading,
   fetchProducts,
   setProducts,
+  filtered,
 }: any) => {
   const [filterTitle, setFilterTitle] = useState("");
+  // const [initialProducts, setInitialProducts] = useState<any[]>([]);
 
   const removeProduct = (id: number) => {
     axios
@@ -20,6 +22,11 @@ export const Products = ({
   };
 
   useEffect(() => {
+    // const results = filtered.filter((res: any) =>
+    //   res.title.toLowerCase().includes(filterTitle)
+    // );
+    // setProducts(results);
+
     if (filterTitle) {
       setProducts((prevProducts: any) =>
         prevProducts.filter((prevProduct: any) =>
@@ -28,6 +35,8 @@ export const Products = ({
             .includes(filterTitle.toLocaleLowerCase())
         )
       );
+    } else {
+      fetchProducts();
     }
   }, [filterTitle, setProducts]);
 
