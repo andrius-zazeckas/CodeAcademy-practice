@@ -2,21 +2,22 @@ import { useState } from "react";
 
 export const RenderUserCard = ({ user }: any) => {
   const [isIdVisible, setIsIdVisible] = useState(false);
-  const [isUserCardVisible, setIsUserCardVisible] = useState(true);
 
   const visibilityHandler = () => {
-    if (isUserCardVisible) {
-      setIsIdVisible(true);
-      return setIsUserCardVisible(false);
-    }
-    setIsIdVisible(false);
-    setIsUserCardVisible(true);
+    setIsIdVisible((prevIsIdVisible) => !prevIsIdVisible);
+
+    // if (!isIdVisible) {
+    //   return setIsIdVisible(true);
+    // }
+    // setIsIdVisible(false);
   };
 
   return (
     <>
       <div className="user-container" onClick={visibilityHandler}>
-        {isUserCardVisible && (
+        {isIdVisible ? (
+          <h3>{user.id}</h3>
+        ) : (
           <div>
             <h3>{user.login}</h3>
             <p>
@@ -25,7 +26,6 @@ export const RenderUserCard = ({ user }: any) => {
             <p>User type: {user.type}</p>
           </div>
         )}
-        {isIdVisible && <h3>{user.id}</h3>}
       </div>
     </>
   );
