@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Add } from "./Add";
 import { Table } from "./Table";
 
 export const Home = () => {
@@ -21,6 +22,8 @@ export const Home = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  <Add fetchData={fetchData} />;
 
   return (
     <>
