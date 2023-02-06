@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Hover } from "./styling/HoverStyle";
 
 export const Table = ({ data, fetchData }: any) => {
   const handleClick = (id: number) => {
@@ -25,15 +26,15 @@ export const Table = ({ data, fetchData }: any) => {
         </thead>
         <tbody>
           {data.map((order: any) => (
-            <tr
+            <Hover
               key={order.id}
-              className="order-container"
               onClick={() => handleClick(order.id)}
+              color="blue"
             >
               <td>{order.id}</td>
               <td>{order.people}</td>
               <td>{order.price}</td>
-            </tr>
+            </Hover>
           ))}
         </tbody>
       </table>
