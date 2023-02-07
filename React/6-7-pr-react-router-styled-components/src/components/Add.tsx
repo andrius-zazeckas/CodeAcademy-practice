@@ -21,6 +21,10 @@ export const Add = () => {
     });
   };
 
+  const resetForm = () => {
+    setNewOrder({ people: null, price: null });
+  };
+
   const handleOrderSubmit: React.FormEventHandler<HTMLFormElement> = (
     event
   ) => {
@@ -33,7 +37,8 @@ export const Add = () => {
       })
       .then((res) => {
         alert(`${res.data.msg}`);
-        navigate(-1);
+        // navigate(-1);
+        resetForm();
       })
       .catch((error) => console.error(error));
   };
@@ -45,7 +50,7 @@ export const Add = () => {
           <input
             value={newOrder.people ?? ""}
             onChange={(event) => handleInputChange(event, "people")}
-            placeholder="People"
+            placeholder="People count"
             type="number"
           />
 
