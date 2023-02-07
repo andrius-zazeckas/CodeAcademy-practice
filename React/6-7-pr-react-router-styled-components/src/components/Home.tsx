@@ -23,7 +23,7 @@ export const Home = () => {
     fetchData();
   }, []);
 
-  <Add fetchData={fetchData} />;
+  <Add />;
 
   return (
     <>

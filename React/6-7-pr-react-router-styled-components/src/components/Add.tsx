@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "./Button";
 
-export const Add = ({ fetchData }: any) => {
+export const Add = () => {
   const [newOrder, setNewOrder] = useState({
     people: null,
     price: null,
