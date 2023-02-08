@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { PetList } from "./components/PetList";
+import { AddPetButton } from "./components/AddPetButton";
+import { PetsList } from "./components/PetsList";
+import { PetsContainer } from "./components/styles/PetsContainer";
+import { SecondaryHeader } from "./components/styles/SecondaryHeader";
 
 export const Home = () => {
   const [data, setData] = useState<any[]>([]);
@@ -16,5 +19,15 @@ export const Home = () => {
     fetchData();
   }, []);
 
-  return <PetList data={data} />;
+  return (
+    <>
+      <SecondaryHeader>
+        <h1>Pet List</h1>
+        <AddPetButton />
+      </SecondaryHeader>
+      <PetsContainer>
+        <PetsList data={data} fetchData={fetchData} />
+      </PetsContainer>
+    </>
+  );
 };

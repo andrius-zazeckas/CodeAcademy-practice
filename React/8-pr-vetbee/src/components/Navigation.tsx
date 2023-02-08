@@ -1,7 +1,13 @@
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-
+import {
+  BrowserRouter,
+  Link,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+import { AddPet } from "../AddPet";
 import { Home } from "../Home";
-import { Pets } from "../Pets";
+import { Logs } from "../Logs";
 import { BottomBorder } from "./styles/BottomBorder";
 import { HeaderStyled } from "./styles/HeaderStyled";
 import { LogoStyled } from "./styles/LogoStyled";
@@ -16,7 +22,10 @@ export const Navigation = () => {
           <Link to="/">
             <LogoStyled src="logo.png" alt="logo" />
           </Link>
-          <StyledLink to="/pets">Pets</StyledLink>
+          <div>
+            <StyledLink to="/">Pets</StyledLink>
+            <StyledLink to="/medications">Medications</StyledLink>
+          </div>
         </HeaderStyled>
       </Wrapper>
 
@@ -24,7 +33,9 @@ export const Navigation = () => {
       <Wrapper>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pets" element={<Pets />} />
+          <Route path="/logs/:id" element={<Logs />} />
+          <Route path="/add-pet" element={<AddPet />} />
+          {/* <Route path="/medications" element={<Meds />} /> */}
           <Route path="*" element={<h1>Page does not exist</h1>} />
         </Routes>
       </Wrapper>
