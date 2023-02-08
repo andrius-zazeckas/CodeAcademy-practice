@@ -7,12 +7,16 @@ import { SecondaryHeader } from "./components/styles/SecondaryHeader";
 
 export const Home = () => {
   const [data, setData] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = () => {
     axios
       .get("https://glittery-dull-snickerdoodle.glitch.me/v1/pets")
       .then((res) => setData(res.data))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -21,13 +25,19 @@ export const Home = () => {
 
   return (
     <>
-      <SecondaryHeader>
-        <h1>Pet List</h1>
-        <AddPetButton />
-      </SecondaryHeader>
-      <PetsContainer>
-        <PetsList data={data} fetchData={fetchData} />
-      </PetsContainer>
+      {isLoading ? (
+        <h1>Loading</h1>
+      ) : (
+        <div>
+          <SecondaryHeader>
+            <h1>Pet List</h1>
+            <AddPetButton />
+          </SecondaryHeader>
+          <PetsContainer>
+            <PetsList data={data} fetchData={fetchData} />
+          </PetsContainer>
+        </div>
+      )}
     </>
   );
 };
