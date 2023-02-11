@@ -9,11 +9,10 @@ import { useState } from "react";
 import { StyledLink } from "./styles/StyledLink";
 import { useNavigate } from "react-router-dom";
 
-export const AddPetForm = () => {
-  const [newPet, setNewPet] = useState({
+export const AddMedForm = () => {
+  const [newMed, setNewMed] = useState({
     name: null,
-    dob: null,
-    client_email: null,
+    description: null,
   });
 
   const navigate = useNavigate();
@@ -22,27 +21,26 @@ export const AddPetForm = () => {
     event: React.ChangeEvent<HTMLInputElement>,
     prop: string
   ) => {
-    setNewPet({
-      ...newPet,
+    setNewMed({
+      ...newMed,
       [prop]: event.target.value,
     });
   };
 
   const resetForm = () => {
-    setNewPet({ name: null, dob: null, client_email: null });
+    setNewMed({ name: null, description: null });
   };
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
 
     axios
-      .post("https://glittery-dull-snickerdoodle.glitch.me/v1/pets", {
-        name: newPet.name,
-        dob: newPet.dob,
-        client_email: newPet.client_email,
+      .post("https://glittery-dull-snickerdoodle.glitch.me/v1/meds", {
+        name: newMed.name,
+        description: newMed.description,
       })
       .then(() => {
-        alert(`Pet was added`);
+        alert(`Medication was added`);
 
         resetForm();
       })
@@ -55,35 +53,26 @@ export const AddPetForm = () => {
   return (
     <>
       <SecondaryHeader>
-        <h1>ADD PET</h1>
+        <h1>ADD MEDICATION</h1>
       </SecondaryHeader>
       <PetForm onSubmit={handleSubmit}>
         <div>
-          <LabelStyled htmlFor="petsName">Pets name:</LabelStyled>
+          <LabelStyled htmlFor="medName">Name:</LabelStyled>
           <InputStyled
-            name="petsName"
-            value={newPet.name ?? ""}
+            name="medName"
+            value={newMed.name ?? ""}
             onChange={(event) => handleInputChange(event, "name")}
           />
         </div>
         <div>
-          <LabelStyled htmlFor="dob">Pets date of birth:</LabelStyled>
+          <LabelStyled htmlFor="description">Description:</LabelStyled>
           <InputStyled
-            name="dob"
-            type="date"
-            value={newPet.dob ?? ""}
-            onChange={(event) => handleInputChange(event, "dob")}
+            name="description"
+            value={newMed.description ?? ""}
+            onChange={(event) => handleInputChange(event, "description")}
           />
         </div>
-        <div>
-          <LabelStyled htmlFor="email">Clients email:</LabelStyled>
-          <InputStyled
-            name="email"
-            type="email"
-            value={newPet.client_email ?? ""}
-            onChange={(event) => handleInputChange(event, "client_email")}
-          />
-        </div>
+
         <ButtonContainer style={{ margin: 20 }}>
           <StyledLink to="" onClick={() => navigate(-1)}>
             Cancel

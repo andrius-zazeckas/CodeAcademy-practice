@@ -21,8 +21,16 @@ export const LogsFilter = ({
         <FilterContainer>
           <h3>Display: </h3>
           <ButtonContainer>
-            <ColorButton onClick={handleClick}>Logs</ColorButton>
-            <ColorButton>Prescriptions</ColorButton>
+            {!isLogs ? (
+              <></>
+            ) : (
+              <ColorButton onClick={handleClick}>Logs</ColorButton>
+            )}
+            {!isPrescriptions ? (
+              <></>
+            ) : (
+              <ColorButton>Prescriptions</ColorButton>
+            )}
           </ButtonContainer>
         </FilterContainer>
       )}
