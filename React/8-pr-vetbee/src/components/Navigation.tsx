@@ -15,21 +15,29 @@ import { StyledLink } from "./styles/StyledLink";
 import { Wrapper } from "./styles/Wrapper";
 
 export const Navigation = () => {
+  const { pathname } = useLocation();
+
+  const medsLink = <StyledLink to="/medications">Medications</StyledLink>;
+  const petsLink = <StyledLink to="/">Pets</StyledLink>;
+  const logsLink = <StyledLink to="#">Logs</StyledLink>;
+
   return (
-    <BrowserRouter>
+    <>
       <Wrapper>
         <HeaderStyled>
           <Link to="/">
             <LogoStyled src="logo.png" alt="logo" />
           </Link>
           <div>
-            <StyledLink to="/">Pets</StyledLink>
-            <StyledLink to="/medications">Medications</StyledLink>
+            {petsLink}
+            {pathname === "/" ? medsLink : ""}
+            {pathname.includes("/logs") ? logsLink : ""}
           </div>
         </HeaderStyled>
       </Wrapper>
 
       <BottomBorder></BottomBorder>
+
       <Wrapper>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -39,6 +47,6 @@ export const Navigation = () => {
           <Route path="*" element={<h1>Page does not exist</h1>} />
         </Routes>
       </Wrapper>
-    </BrowserRouter>
+    </>
   );
 };
