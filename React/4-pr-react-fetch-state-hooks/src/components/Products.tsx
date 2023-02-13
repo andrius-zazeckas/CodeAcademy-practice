@@ -32,7 +32,12 @@ export const Products = ({
         .toLocaleLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
-        .includes(filterTitle)
+        .includes(
+          filterTitle
+            .toLocaleLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+        )
     );
     setProducts(results);
     // if (filterTitle) {
