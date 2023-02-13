@@ -2,14 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AddLogButton } from "./AddLogButton";
-import { AddPrescriptionButton } from "./AddPrescriptionButton";
+import { ButtonLink } from "./ButtonLink";
 import { LogsFilter } from "./LogsFilter";
 import { ButtonContainer } from "./styles/ButtonContainer";
 import { PetContainer } from "./styles/PetContainer";
 import { PetsContainer } from "./styles/PetsContainer";
 import { SecondaryHeader } from "./styles/SecondaryHeader";
 
-export const PetLogs = ({ filterLogs }: any) => {
+export const PetLogs = () => {
   const [logs, setLogs] = useState<any[]>([]);
   const [prescriptions, setPrescriptions] = useState<any[]>([]);
   const [isLogs, setIsLogs] = useState(true);
@@ -51,7 +51,7 @@ export const PetLogs = ({ filterLogs }: any) => {
 
     getPetLogs();
     getPetPrescriptions();
-  }, []);
+  }, [params.id]);
 
   return (
     <>
@@ -62,7 +62,10 @@ export const PetLogs = ({ filterLogs }: any) => {
           <h1>{logs[0]?.name}: Health records</h1>
         )}
         <ButtonContainer>
-          <AddPrescriptionButton params={params} />
+          <ButtonLink
+            message="ADD PRESCRIPTIONS"
+            link={`/add-prescription/${params.id}`}
+          />
           <AddLogButton params={params} />
         </ButtonContainer>
       </SecondaryHeader>

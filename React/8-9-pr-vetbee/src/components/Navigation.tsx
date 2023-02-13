@@ -1,41 +1,38 @@
 import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { AddLog } from "../pages/AddLog";
+import { AddMed } from "../pages/AddMed";
+import { AddPet } from "../pages/AddPet";
+import { AddPrescription } from "../pages/AddPrescription";
 import { Home } from "../Home";
-import { Logs } from "../pages/Logs";
-
-import { BottomBorder } from "./styles/BottomBorder";
+import { Logs } from "../Logs";
+import { Meds } from "../Meds";
 import { HeaderStyled } from "./styles/HeaderStyled";
 import { LogoStyled } from "./styles/LogoStyled";
 import { StyledLink } from "./styles/StyledLink";
 import { Wrapper } from "./styles/Wrapper";
-import { AddPet } from "../pages/AddPet";
-import { AddPrescription } from "../pages/AddPrescription";
-import { AddMed } from "../pages/AddMed";
-import { Meds } from "../pages/Meds";
+import logo from "../logo.png";
+
+const MedsLink = <StyledLink to="/meds">Medications</StyledLink>;
+const LogsLink = <StyledLink to="#">Logs</StyledLink>;
 
 export const Navigation = () => {
   const { pathname } = useLocation();
-
-  const medsLink = <StyledLink to="/meds">Medications</StyledLink>;
-  const petsLink = <StyledLink to="/">Pets</StyledLink>;
-  const logsLink = <StyledLink to="#">Logs</StyledLink>;
+  const isOnLogsLink = pathname.includes("/logs");
 
   return (
     <>
-      <Wrapper>
-        <HeaderStyled>
-          <Link to="/">
-            <LogoStyled src="logo.png" alt="logo" />
-          </Link>
-          <div>
-            {petsLink}
-            {pathname === "/" ? medsLink : ""}
-            {pathname.includes("/logs") ? logsLink : ""}
-          </div>
-        </HeaderStyled>
-      </Wrapper>
+      <HeaderStyled>
+        <Link to="/">
+          <LogoStyled src={logo} alt="logo" />
+        </Link>
 
-      <BottomBorder></BottomBorder>
+        <div>
+          <StyledLink to="/">Pets</StyledLink>
+
+          {pathname === "/" ? MedsLink : null}
+          {isOnLogsLink ? LogsLink : null}
+        </div>
+      </HeaderStyled>
 
       <Wrapper>
         <Routes>

@@ -47,7 +47,6 @@ export const AddPetForm = () => {
         resetForm();
       })
       .catch((error) => {
-        // alert(error.response.data.err);
         console.error(error.response.data.err);
       });
   };

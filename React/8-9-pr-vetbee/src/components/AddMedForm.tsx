@@ -14,7 +14,6 @@ export const AddMedForm = () => {
     name: null,
     description: null,
   });
-
   const navigate = useNavigate();
 
   const handleInputChange = (

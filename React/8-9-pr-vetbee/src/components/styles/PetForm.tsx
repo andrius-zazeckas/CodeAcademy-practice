@@ -8,4 +8,6 @@ export const PetForm = styled.form`
   border-radius: 5px;
   box-shadow: 0px 7px 8px 0px rgba(104, 104, 104, 0.23);
   padding: 40px 0 40px 0;
+  display: grid;
+  justify-content: center;
 `;

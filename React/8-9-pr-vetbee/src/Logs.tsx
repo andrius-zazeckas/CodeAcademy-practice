@@ -1,4 +1,4 @@
-import { PetLogs } from "../components/PetLogs";
+import { PetLogs } from "./components/PetLogs";
 
 export const Logs = () => {
   return (

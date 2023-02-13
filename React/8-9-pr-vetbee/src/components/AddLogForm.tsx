@@ -15,7 +15,6 @@ export const AddLogForm = () => {
     description: null,
     status: null,
   });
-
   const navigate = useNavigate();
   const params = useParams();
 
@@ -48,7 +47,6 @@ export const AddLogForm = () => {
         resetForm();
       })
       .catch((error) => {
-        // alert(error.response.data.err);
         console.error(error.response.data.err);
       });
   };
