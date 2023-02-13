@@ -1,4 +1,4 @@
-import { AddPetForm } from "./components/AddPetForm";
+import { AddPetForm } from "../components/AddPetForm";
 
 export const AddPet = () => {
   return <AddPetForm />;

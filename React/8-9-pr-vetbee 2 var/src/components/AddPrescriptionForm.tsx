@@ -1,18 +1,18 @@
+import { Autocomplete, TextField } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { GetMeds } from "../hooks/GetMeds";
+import { useGetMeds } from "../hooks/useGetMeds";
 import { ButtonContainer } from "./styles/ButtonContainer";
 import { ColorButton } from "./styles/ColorButton";
 import { InputStyled } from "./styles/InputStyled";
 import { LabelStyled } from "./styles/LabelStyled";
 import { PetForm } from "./styles/PetForm";
 import { SecondaryHeader } from "./styles/SecondaryHeader";
-import { SelectStyled } from "./styles/SelectStyled";
 import { StyledLink } from "./styles/StyledLink";
 
 export const AddPrescriptionForm = () => {
-  const { meds } = GetMeds();
+  const { meds } = useGetMeds();
   const [newPrescription, setNewPrescription] = useState({
     medication_id: null,
     pet_id: null,
@@ -58,7 +58,6 @@ export const AddPrescriptionForm = () => {
         resetForm();
       })
       .catch((error) => {
-        // alert(error.response.data.err);
         console.error(error.response.data.err);
       });
   };
@@ -68,24 +67,21 @@ export const AddPrescriptionForm = () => {
       <SecondaryHeader>
         <h1>ADD PRESCRIPTION</h1>
       </SecondaryHeader>
+
       <PetForm onSubmit={handleSubmit}>
-        <div>
-          <LabelStyled htmlFor="medName">Name:</LabelStyled>
-          <SelectStyled
-            onChange={handleSelect}
-            defaultValue={"default"}
-            // value={newPrescription.medication_id ?? ""}
-          >
-            <option value={"default"} disabled>
-              Select medication
-            </option>
-            {meds.map((med: any) => (
-              <option value={med.id} key={med.id}>
-                {med.name}
-              </option>
-            ))}
-          </SelectStyled>
-        </div>
+        <Autocomplete
+          onChange={handleSelect}
+          options={[...new Set(meds.map((med) => med.name))]}
+          renderInput={(params) => <TextField {...params} label="Medication" />}
+          sx={{
+            width: "30rem",
+            textAlign: "center",
+            "& option": {
+              padding: "0.5rem",
+            },
+          }}
+        />
+
         <div>
           <LabelStyled htmlFor="comment">Comment:</LabelStyled>
           <InputStyled
@@ -105,3 +101,37 @@ export const AddPrescriptionForm = () => {
     </>
   );
 };
+
+{
+  /* <TextField
+          select
+          sx={{ width: "40rem" }}
+          helperText="Select medication"
+        >
+          {meds.map((med) => (
+            <option key={med.id} value={med.name ?? ""}>
+              {med.description}
+            </option>
+          ))}
+        </TextField> */
+}
+
+{
+  /* <div>
+          <LabelStyled htmlFor="medName">Name:</LabelStyled>
+          <SelectStyled
+            onChange={handleSelect}
+            defaultValue="default"
+            // value={newPrescription.medication_id ?? ""}
+          >
+            <option value={"default"} disabled>
+              Select medication
+            </option>
+            {meds.map((med: any) => (
+              <option value={med.id} key={med.id}>
+                {med.name}
+              </option>
+            ))}
+          </SelectStyled>
+        </div> */
+}

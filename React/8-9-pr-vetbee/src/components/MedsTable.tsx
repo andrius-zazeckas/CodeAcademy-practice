@@ -1,4 +1,4 @@
-import { GetMeds } from "./GetMeds";
+import { GetMeds } from "../hooks/GetMeds";
 import { MedsContainer } from "./styles/MedsContainer";
 import { TableStyled } from "./styles/TableStyled";
 

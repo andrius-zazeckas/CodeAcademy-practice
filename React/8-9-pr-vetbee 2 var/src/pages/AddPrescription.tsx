@@ -1,4 +1,4 @@
-import { AddPrescriptionForm } from "./components/AddPrescriptionForm";
+import { AddPrescriptionForm } from "../components/AddPrescriptionForm";
 
 export const AddPrescription = () => {
   return <AddPrescriptionForm />;
