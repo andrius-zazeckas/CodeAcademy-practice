@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { AddPetButton } from "./components/AddPetButton";
+import { ColorButtonLink } from "./components/ColorButtonLink";
 import { PetsList } from "./components/PetsList";
 import { PetsContainer } from "./components/styles/PetsContainer";
 import { SecondaryHeader } from "./components/styles/SecondaryHeader";
@@ -31,7 +31,7 @@ export const Home = () => {
         <div>
           <SecondaryHeader>
             <h1>Pet List</h1>
-            <AddPetButton />
+            <ColorButtonLink link="/add-pet" message="ADD PET" />
           </SecondaryHeader>
           <PetsContainer>
             <PetsList data={data} fetchData={fetchData} />

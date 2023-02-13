@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { AddLogButton } from "./AddLogButton";
-import { ButtonLink } from "./ButtonLink";
 import { LogsFilter } from "./LogsFilter";
 import { ButtonContainer } from "./styles/ButtonContainer";
 import { PetContainer } from "./styles/PetContainer";
 import { PetsContainer } from "./styles/PetsContainer";
 import { SecondaryHeader } from "./styles/SecondaryHeader";
+import { ColorButtonLink } from "./ColorButtonLink";
+import { TransparentButtonLink } from "./TransparentButtonLink";
 
 export const PetLogs = () => {
   const [logs, setLogs] = useState<any[]>([]);
@@ -62,11 +62,14 @@ export const PetLogs = () => {
           <h1>{logs[0]?.name}: Health records</h1>
         )}
         <ButtonContainer>
-          <ButtonLink
-            message="ADD PRESCRIPTIONS"
+          <ColorButtonLink
+            message="ADD PRESCRIPTION"
             link={`/add-prescription/${params.id}`}
           />
-          <AddLogButton params={params} />
+          <TransparentButtonLink
+            message="ADD LOG"
+            link={`/add-log/${params.id}`}
+          />
         </ButtonContainer>
       </SecondaryHeader>
 

@@ -7,7 +7,7 @@ export const HeaderStyled = styled.header`
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 5px;
-  padding: 0 15%;
+  padding: 0 10%;
   padding-bottom: 10px;
   min-height: 64px;
   border-bottom: 1px rgb(232, 232, 232) solid;

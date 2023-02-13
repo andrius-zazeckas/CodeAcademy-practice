@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { TransparentButton } from "./styles/TransparentButton";
 
-export const AddLogButton = ({ params }: any) => {
+export const TransparentButtonLink = ({ link, message }: any) => {
   const navigate = useNavigate();
+
   return (
-    <TransparentButton onClick={() => navigate(`/add-log/${params.id}`)}>
-      ADD LOG
+    <TransparentButton onClick={() => navigate(link)}>
+      {message}
     </TransparentButton>
   );
 };

@@ -5,12 +5,13 @@ import { AddPet } from "../pages/AddPet";
 import { AddPrescription } from "../pages/AddPrescription";
 import { Home } from "../Home";
 import { Logs } from "../pages/Logs";
-import { Meds } from "../Meds";
+
 import { HeaderStyled } from "./styles/HeaderStyled";
 import { LogoStyled } from "./styles/LogoStyled";
 import { StyledLink } from "./styles/StyledLink";
 import { Wrapper } from "./styles/Wrapper";
 import logo from "../logo.png";
+import { Meds } from "../pages/Meds";
 
 const MedsLink = <StyledLink to="/meds">Medications</StyledLink>;
 const LogsLink = <StyledLink to="#">Logs</StyledLink>;
