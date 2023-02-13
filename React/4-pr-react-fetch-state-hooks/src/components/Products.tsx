@@ -21,11 +21,18 @@ export const Products = ({
     // setProducts(newProducts);
   };
 
-  // const filteredLC = filtered.map((e: any) => e.toLocaleLowerCase());
-  // console.log(filteredLC);
   useEffect(() => {
+    // const filteredLC = filtered.map(({ title }: any) =>
+    //   title.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    // );
+    // console.log(filteredLC);
+
     const results = filtered.filter((res: any) =>
-      res.title.toLocaleLowerCase("en-US").includes(filterTitle)
+      res.title
+        .toLocaleLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .includes(filterTitle)
     );
     setProducts(results);
     // if (filterTitle) {
