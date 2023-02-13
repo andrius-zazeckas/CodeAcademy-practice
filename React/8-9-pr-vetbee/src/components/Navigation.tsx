@@ -4,7 +4,7 @@ import { AddMed } from "../pages/AddMed";
 import { AddPet } from "../pages/AddPet";
 import { AddPrescription } from "../pages/AddPrescription";
 import { Home } from "../Home";
-import { Logs } from "../Logs";
+import { Logs } from "../pages/Logs";
 import { Meds } from "../Meds";
 import { HeaderStyled } from "./styles/HeaderStyled";
 import { LogoStyled } from "./styles/LogoStyled";
