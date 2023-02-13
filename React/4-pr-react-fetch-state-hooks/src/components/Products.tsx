@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Search } from "./Filter";
 
 export const Products = ({
   products,
@@ -9,7 +10,6 @@ export const Products = ({
   filtered,
 }: any) => {
   const [filterTitle, setFilterTitle] = useState("");
-  // const [initialProducts, setInitialProducts] = useState<any[]>([]);
 
   const removeProduct = (id: number) => {
     axios
@@ -21,24 +21,25 @@ export const Products = ({
     // setProducts(newProducts);
   };
 
+  // const filteredLC = filtered.map((e: any) => e.toLocaleLowerCase());
+  // console.log(filteredLC);
   useEffect(() => {
-    // const results = filtered.filter((res: any) =>
-    //   res.title.toLowerCase().includes(filterTitle)
+    const results = filtered.filter((res: any) =>
+      res.title.toLocaleLowerCase("en-US").includes(filterTitle)
+    );
+    setProducts(results);
+    // if (filterTitle) {
+    // setProducts((prevProducts: any) =>
+    //   prevProducts.filter((prevProduct: any) =>
+    //     prevProduct.title
+    //       .toLocaleLowerCase()
+    //       .includes(filterTitle.toLocaleLowerCase())
+    //   )
     // );
-    // setProducts(results);
-
-    if (filterTitle) {
-      setProducts((prevProducts: any) =>
-        prevProducts.filter((prevProduct: any) =>
-          prevProduct.title
-            .toLocaleLowerCase()
-            .includes(filterTitle.toLocaleLowerCase())
-        )
-      );
-    } else {
-      fetchProducts();
-    }
-  }, [filterTitle, setProducts]);
+    // } else {
+    //   fetchProducts();
+    // }
+  }, [filterTitle, filtered, setProducts]);
 
   return (
     <>

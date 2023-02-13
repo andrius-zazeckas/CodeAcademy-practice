@@ -43,7 +43,7 @@ function App() {
         isLoading={isLoading}
         fetchProducts={fetchProducts}
         setProducts={setProducts}
-        filtered={setFiltered}
+        filtered={filtered}
       />
 
       <PostProduct />
