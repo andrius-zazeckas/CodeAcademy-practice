@@ -12,10 +12,8 @@ import { Wrapper } from "./styles/Wrapper";
 import logo from "../logo.png";
 import { Meds } from "../pages/Meds";
 import { useContext } from "react";
-import { ProductsContext } from "./ProductsContext/ProductsContext";
 import { DarkModeContext } from "./DarkModeContext/DarkModeContext";
 import { DarkModeButton } from "./DarkModeButton";
-import { dark } from "@mui/material/styles/createPalette";
 
 const MedsLink = <StyledLink to="/meds">Medications</StyledLink>;
 const LogsLink = <StyledLink to="#">Logs</StyledLink>;
@@ -23,9 +21,6 @@ const LogsLink = <StyledLink to="#">Logs</StyledLink>;
 export const Navigation = () => {
   const { pathname } = useLocation();
   const isOnLogsLink = pathname.includes("/logs");
-
-  const products = useContext(ProductsContext);
-  // console.log(products);
 
   const { darkMode } = useContext(DarkModeContext);
 
