@@ -5,11 +5,15 @@ import { PetForm } from "./styles/PetForm";
 import { LabelStyled } from "./styles/LabelStyled";
 import { InputStyled } from "./styles/InputStyled";
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { StyledLink } from "./styles/StyledLink";
 import { useNavigate } from "react-router-dom";
+import { ProductsContext } from "./ProductsContext/ProductsContext";
 
 export const AddPetForm = () => {
+  const products = useContext(ProductsContext);
+  console.log(products);
+
   const [newPet, setNewPet] = useState({
     name: null,
     dob: null,
