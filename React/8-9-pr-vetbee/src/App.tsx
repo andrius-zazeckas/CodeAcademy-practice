@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { DarkModeContext } from "./components/DarkModeContext/DarkModeContext";
 import { Navigation } from "./components/Navigation";
 import { ProductsContext } from "./components/ProductsContext/ProductsContext";
 
@@ -8,11 +9,17 @@ export const App = () => {
 
   useEffect(() => setProducts(["apple"]), []);
 
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <div className="App">
-      <ProductsContext.Provider value={products}>
+      <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
         <Navigation />
-      </ProductsContext.Provider>
+      </DarkModeContext.Provider>
     </div>
   );
 };

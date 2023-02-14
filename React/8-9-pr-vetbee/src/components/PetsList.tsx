@@ -1,5 +1,7 @@
 import axios from "axios";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { DarkModeContext } from "./DarkModeContext/DarkModeContext";
 import { ButtonContainer } from "./styles/ButtonContainer";
 import { ColorButton } from "./styles/ColorButton";
 import { PetContainer } from "./styles/PetContainer";

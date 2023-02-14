@@ -5,7 +5,6 @@ import { AddPet } from "../pages/AddPet";
 import { AddPrescription } from "../pages/AddPrescription";
 import { Home } from "../Home";
 import { Logs } from "../pages/Logs";
-
 import { HeaderStyled } from "./styles/HeaderStyled";
 import { LogoStyled } from "./styles/LogoStyled";
 import { StyledLink } from "./styles/StyledLink";
@@ -14,6 +13,9 @@ import logo from "../logo.png";
 import { Meds } from "../pages/Meds";
 import { useContext } from "react";
 import { ProductsContext } from "./ProductsContext/ProductsContext";
+import { DarkModeContext } from "./DarkModeContext/DarkModeContext";
+import { DarkModeButton } from "./DarkModeButton";
+import { dark } from "@mui/material/styles/createPalette";
 
 const MedsLink = <StyledLink to="/meds">Medications</StyledLink>;
 const LogsLink = <StyledLink to="#">Logs</StyledLink>;
@@ -23,7 +25,9 @@ export const Navigation = () => {
   const isOnLogsLink = pathname.includes("/logs");
 
   const products = useContext(ProductsContext);
-  console.log(products);
+  // console.log(products);
+
+  const { darkMode } = useContext(DarkModeContext);
 
   return (
     <>
@@ -31,6 +35,10 @@ export const Navigation = () => {
         <Link to="/">
           <LogoStyled src={logo} alt="logo" />
         </Link>
+        <div>
+          <span>Dark Mode: </span>
+          <DarkModeButton />
+        </div>
 
         <div>
           <StyledLink to="/">Pets</StyledLink>
@@ -40,7 +48,7 @@ export const Navigation = () => {
         </div>
       </HeaderStyled>
 
-      <Wrapper>
+      <Wrapper style={{ background: darkMode ? "rgb(83, 87, 95)" : "" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/logs/:id" element={<Logs />} />
