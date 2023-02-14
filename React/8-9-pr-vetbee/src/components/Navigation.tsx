@@ -43,7 +43,7 @@ export const Navigation = () => {
         </div>
       </HeaderStyled>
 
-      <Wrapper style={{ background: darkMode ? "rgb(83, 87, 95)" : "" }}>
+      <Wrapper>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/logs/:id" element={<Logs />} />
