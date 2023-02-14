@@ -33,6 +33,7 @@ export const AddPrescriptionForm = () => {
   };
 
   const handleSelect = (event: any) => {
+    console.log(event.target.value);
     setNewPrescription({
       ...newPrescription,
       medication_id: event.target.value,
