@@ -1,14 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import { DarkModeContext } from "./components/DarkModeContext/DarkModeContext";
-import { Navigation } from "./components/Navigation";
-import { ProductsContext } from "./components/ProductsContext/ProductsContext";
+import { Router } from "./components/Router";
 
 export const App = () => {
-  const [products, setProducts] = useState<string[]>([]);
-
-  useEffect(() => setProducts(["apple"]), []);
-
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -18,7 +13,7 @@ export const App = () => {
   return (
     <div className="App">
       <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
-        <Navigation />
+        <Router />
       </DarkModeContext.Provider>
     </div>
   );
