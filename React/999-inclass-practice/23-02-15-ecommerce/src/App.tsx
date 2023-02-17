@@ -2,11 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Router } from "./components/Router";
+import { CartProductsContext } from "./context/CartProductsContext";
 import { ProductsContext } from "./context/ProductsContext";
 import { TProducts } from "./types/Tproducts";
 
 export const App = () => {
   const [products, setProducts] = useState<TProducts[]>([]);
+  const [cartProducts, setCartProducts] = useState([]);
 
   const GetProducts = () => {
     axios
@@ -26,7 +28,9 @@ export const App = () => {
   return (
     <div className="App">
       <ProductsContext.Provider value={products}>
-        <Router />
+        <CartProductsContext.Provider value={[cartProducts, setCartProducts]}>
+          <Router />
+        </CartProductsContext.Provider>
       </ProductsContext.Provider>
     </div>
   );
