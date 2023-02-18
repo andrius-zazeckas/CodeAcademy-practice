@@ -3,6 +3,7 @@ import { CartProductsContext } from "../context/CartProductsContext";
 import { ProductContainer } from "../styles/ProductContainer";
 import { ProductsContainer } from "../styles/ProductsContainer";
 import { TransparentButton } from "../styles/TransparentButton";
+import { TProducts } from "../types/Tproducts";
 
 export const Cart = () => {
   const [cartProducts, setCartProducts] = useContext(CartProductsContext);
@@ -17,11 +18,21 @@ export const Cart = () => {
       .values(),
   ];
 
-  console.log(result.map((p: any) => p.price));
-  console.log(cartProducts);
+  const handlePlus = (product: TProducts) => {
+    setCartProducts((prevCartProducts: any) => [
+      ...prevCartProducts,
+      { id: product.id, title: product.title },
+    ]);
+  };
 
-  const handlePlus = () => {
-    cartProducts.push();
+  const handleMinus = (id: number, i: number) => {
+    const removedProduct = cartProducts
+      .filter((pr: any) => pr.id === id)
+      .slice(0, -1);
+    const restProducts = cartProducts.filter((pr: any) => pr.id !== id);
+    restProducts.splice(i, 0, ...removedProduct);
+
+    setCartProducts(restProducts);
   };
 
   return (
@@ -30,9 +41,14 @@ export const Cart = () => {
         <ProductContainer key={product.id}>
           <p>{product.title}</p>
           <p>Product count: {product.count}</p>
-          <p>Sum: {product.price * product.count}</p>
-          <TransparentButton onClick={handlePlus}>+</TransparentButton>
-          <TransparentButton>-</TransparentButton>
+          <p>Product price: {product.price}</p>
+          <p>Sum: {(product.price * product.count).toFixed(2)}</p>
+          <TransparentButton onClick={() => handlePlus(product)}>
+            +
+          </TransparentButton>
+          <TransparentButton onClick={() => handleMinus(product.id, i)}>
+            -
+          </TransparentButton>
         </ProductContainer>
       ))}
     </ProductsContainer>
