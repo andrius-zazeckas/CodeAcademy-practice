@@ -2,7 +2,8 @@ import { Autocomplete, TextField } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { useGetMeds } from "../hooks/useGetMeds";
+import { type TMed, useGetMeds } from "../hooks/useGetMeds";
+import { TNewPrescription } from "./types/TNewPrescription";
 import { ButtonContainer } from "./styles/ButtonContainer";
 import { ColorButton } from "./styles/ColorButton";
 import { InputStyled } from "./styles/InputStyled";
@@ -12,8 +13,8 @@ import { SecondaryHeader } from "./styles/SecondaryHeader";
 import { StyledLink } from "./styles/StyledLink";
 
 export const AddPrescriptionForm = () => {
-  const { meds } = useGetMeds();
-  const [newPrescription, setNewPrescription] = useState({
+  const { uniqueMeds } = useGetMeds();
+  const [newPrescription, setNewPrescription] = useState<TNewPrescription>({
     medication_id: null,
     pet_id: null,
     comment: null,
@@ -32,11 +33,25 @@ export const AddPrescriptionForm = () => {
     });
   };
 
-  const handleSelect = (event: any) => {
-    console.log(event.target.value);
+  // const handleSelect = (event: any) => {
+  //   console.log(event.target.value);
+  //   setNewPrescription({
+  //     ...newPrescription,
+  //     medication_id: event.target.value,
+  //   });
+  // };
+
+  const handleSelect = (
+    _: React.SyntheticEvent<Element, Event>,
+    value: TMed | null
+  ) => {
+    if (!value?.id) {
+      return;
+    }
+
     setNewPrescription({
       ...newPrescription,
-      medication_id: event.target.value,
+      medication_id: value?.id,
     });
   };
 
@@ -72,7 +87,8 @@ export const AddPrescriptionForm = () => {
       <PetForm onSubmit={handleSubmit}>
         <Autocomplete
           onChange={handleSelect}
-          options={[...new Set(meds.map((med) => med.name))]}
+          options={uniqueMeds}
+          getOptionLabel={(option) => option.name ?? ""}
           renderInput={(params) => <TextField {...params} label="Medication" />}
           sx={{
             width: "30rem",

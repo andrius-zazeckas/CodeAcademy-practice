@@ -9,6 +9,7 @@ export type TMed = {
 
 export const useGetMeds = () => {
   const [meds, setMeds] = useState<TMed[]>([]);
+  const [uniqueMeds, setUniqueMeds] = useState<TMed[]>([]);
 
   const getMeds = () => {
     axios
@@ -24,8 +25,31 @@ export const useGetMeds = () => {
   };
 
   useEffect(() => {
+    if (meds.length) {
+      const tempUniqueMeds: TMed[] = [];
+
+      meds.forEach((med) => {
+        const hasMedication = tempUniqueMeds.some((medToCompare) => {
+          if (
+            med.name?.toLocaleLowerCase() ===
+            medToCompare.name?.toLocaleLowerCase()
+          ) {
+            return true;
+          }
+        });
+
+        if (!hasMedication) {
+          tempUniqueMeds.push(med);
+        }
+      });
+
+      setUniqueMeds(tempUniqueMeds);
+    }
+  }, [meds]);
+
+  useEffect(() => {
     getMeds();
   }, []);
 
-  return { meds };
+  return { meds, uniqueMeds };
 };
