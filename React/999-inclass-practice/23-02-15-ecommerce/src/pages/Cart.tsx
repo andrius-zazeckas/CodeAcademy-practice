@@ -19,18 +19,15 @@ export const Cart = () => {
   ];
 
   const handlePlus = (product: TProducts) => {
-    setCartProducts((prevCartProducts: any) => [
-      ...prevCartProducts,
-      { id: product.id, title: product.title },
-    ]);
+    setCartProducts((prevCartProducts: any) => [...prevCartProducts, product]);
   };
 
   const handleMinus = (id: number, i: number) => {
-    const removedProduct = cartProducts
+    const removeProduct = cartProducts
       .filter((pr: any) => pr.id === id)
       .slice(0, -1);
     const restProducts = cartProducts.filter((pr: any) => pr.id !== id);
-    restProducts.splice(i, 0, ...removedProduct);
+    restProducts.splice(i, 0, ...removeProduct);
 
     setCartProducts(restProducts);
   };

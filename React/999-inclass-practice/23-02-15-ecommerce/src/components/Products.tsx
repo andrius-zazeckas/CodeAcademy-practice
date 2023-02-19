@@ -11,10 +11,7 @@ export const Products = () => {
   const [cartProducts, setCartProducts] = useContext(CartProductsContext);
 
   const handleClick = (product: TProducts) => {
-    setCartProducts((prevCartProducts: any) => [
-      ...prevCartProducts,
-      { id: product.id, title: product.title, price: product.price },
-    ]);
+    setCartProducts((prevCartProducts: any) => [...prevCartProducts, product]);
   };
 
   return (
