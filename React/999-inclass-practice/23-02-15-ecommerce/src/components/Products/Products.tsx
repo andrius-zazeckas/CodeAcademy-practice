@@ -4,7 +4,6 @@ import { ProductsContext } from "../../ProductsContext/ProductsContext";
 import { ProductContainer } from "../../styles/ProductContainer";
 import { ProductsContainer } from "../../styles/ProductsContainer";
 import { TransparentButton } from "../../styles/TransparentButton";
-import { TProduct } from "../../types/TProduct";
 
 export const Products = () => {
   const { products } = useContext(ProductsContext);

@@ -1,80 +1,51 @@
 import { useContext } from "react";
-import { ProductsContext } from "../ProductsContext";
 import { CartProductsContext } from "../ProductsContext/CartProductsContext";
 import { ProductContainer } from "../styles/ProductContainer";
 import { ProductsContainer } from "../styles/ProductsContainer";
 import { TransparentButton } from "../styles/TransparentButton";
-import { TProduct } from "../types/TProduct";
 
 export const Cart = () => {
   const { cartProducts, setCartProducts } = useContext(CartProductsContext);
-  // const { products, setProducts } = useContext(ProductsContext);
 
   console.log(cartProducts);
 
   const handlePlus = (productIndex: number) => {
     const product = cartProducts[productIndex];
-    const isProductInCart = cartProducts.some(
-      (cartProduct) => cartProduct.id === product.id
-    );
-    // console.log(product);
-    console.log(product.amount);
+    // const isProductInCart = cartProducts.some(
+    //   (cartProduct) => cartProduct.id === product.id
+    // );
 
-    if (isProductInCart) {
-      return setCartProducts((prevCartProducts) => {
-        const newCartProducts = prevCartProducts.map((cartProduct) => ({
-          ...cartProduct,
-          amount:
-            cartProduct.id === product.id
-              ? cartProduct.amount + 1
-              : cartProduct.amount,
-        }));
-        return newCartProducts;
-      });
-    }
+    product.amount += 1;
 
-    setCartProducts([...cartProducts, { ...product, amount: 1 }]);
-  };
-
-  const handleMinus = (productIndex: number) => {
-    const product = cartProducts[productIndex];
-    const isProductInCart = cartProducts.some(
-      (cartProduct) => cartProduct.id === product.id
-    );
-
-    console.log(product.amount);
-
-    if (isProductInCart && product.amount >= 1) {
-      return setCartProducts((prevCartProducts) => {
-        const newCartProducts = prevCartProducts.map((cartProduct) => ({
-          ...cartProduct,
-          amount:
-            cartProduct.id === product.id
-              ? cartProduct.amount - 1
-              : cartProduct.amount,
-        }));
-        return newCartProducts;
-      });
-    }
-
-    cartProducts.splice(productIndex, 1);
+    // if (isProductInCart) {
+    //   return setCartProducts((prevCartProducts) => {
+    //     const newCartProducts = prevCartProducts.map((cartProduct) => ({
+    //       ...cartProduct,
+    //       amount:
+    //         cartProduct.id === product.id
+    //           ? cartProduct.amount + 1
+    //           : cartProduct.amount,
+    //     }));
+    //     return newCartProducts;
+    //   });
+    // }
 
     setCartProducts([...cartProducts]);
   };
 
-  // const handlePlus = (product: TProduct) => {
-  //   setCartProducts((prevCartProducts: any) => [...prevCartProducts, product]);
-  // };
+  const handleMinus = (productIndex: number) => {
+    const product = cartProducts[productIndex];
 
-  // const handleMinus = (id: number, i: number) => {
-  //   const removeProduct = cartProducts
-  //     .filter((pr: any) => pr.id === id)
-  //     .slice(0, -1);
-  //   const restProducts = cartProducts.filter((pr: any) => pr.id !== id);
-  //   restProducts.splice(i, 0, ...removeProduct);
+    product.amount -= 1;
 
-  //   setCartProducts(restProducts);
-  // };
+    if (product.amount === 0) {
+      cartProducts.splice(productIndex, 1);
+
+      return setCartProducts([...cartProducts]);
+    }
+
+    setCartProducts([...cartProducts]);
+  };
 
   return (
     <ProductsContainer>
