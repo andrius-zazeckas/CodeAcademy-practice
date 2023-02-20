@@ -15,7 +15,7 @@ export const Cart = () => {
     //   (cartProduct) => cartProduct.id === product.id
     // );
 
-    product.amount += 1;
+    product.amount = ++product.amount;
 
     // if (isProductInCart) {
     //   return setCartProducts((prevCartProducts) => {
