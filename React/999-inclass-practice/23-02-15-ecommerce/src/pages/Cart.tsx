@@ -7,8 +7,6 @@ import { TransparentButton } from "../styles/TransparentButton";
 export const Cart = () => {
   const { cartProducts, setCartProducts } = useContext(CartProductsContext);
 
-  console.log(cartProducts);
-
   const handlePlus = (productIndex: number) => {
     const product = cartProducts[productIndex];
     // const isProductInCart = cartProducts.some(
