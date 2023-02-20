@@ -1,4 +1,4 @@
-export type TProducts = {
+export type TCartProduct = {
   id: number;
   title: string | null;
   price: number | null;
@@ -9,4 +9,5 @@ export type TProducts = {
     rate: number | null;
     count: number | null;
   };
+  amount: number;
 };

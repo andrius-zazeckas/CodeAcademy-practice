@@ -1,14 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
-import { Router } from "./components/Router";
-import { CartProductsContext } from "./context/CartProductsContext";
-import { ProductsContext } from "./context/ProductsContext";
-import { TProducts } from "./types/Tproducts";
+import { MainRouter } from "./components/MainRouter/MainRouter";
+import { CartProductsContext } from "./ProductsContext/CartProductsContext";
+import { ProductsContext } from "./ProductsContext/ProductsContext";
+import { TCartProduct } from "./types/TCartProduct";
+import { TProduct } from "./types/TProduct";
 
 export const App = () => {
-  const [products, setProducts] = useState<TProducts[]>([]);
-  const [cartProducts, setCartProducts] = useState([]);
+  const [products, setProducts] = useState<TProduct[]>([]);
+  const [cartProducts, setCartProducts] = useState<TCartProduct[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const GetProducts = () => {
     axios
@@ -18,7 +20,10 @@ export const App = () => {
           setProducts(res.data);
         }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -27,9 +32,9 @@ export const App = () => {
 
   return (
     <div className="App">
-      <ProductsContext.Provider value={products}>
-        <CartProductsContext.Provider value={[cartProducts, setCartProducts]}>
-          <Router />
+      <ProductsContext.Provider value={{ products, setProducts }}>
+        <CartProductsContext.Provider value={{ cartProducts, setCartProducts }}>
+          {isLoading ? <h1>Loading...</h1> : <MainRouter />}
         </CartProductsContext.Provider>
       </ProductsContext.Provider>
     </div>
