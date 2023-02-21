@@ -8,51 +8,41 @@ export const Cart = () => {
   const { cartProducts, setCartProducts } = useContext(CartProductsContext);
 
   const handlePlus = (productIndex: number) => {
-    const product = cartProducts[productIndex];
-    // const isProductInCart = cartProducts.some(
-    //   (cartProduct) => cartProduct.id === product.id
-    // );
+    const modifiedProducts = [...cartProducts];
+    const product = modifiedProducts[productIndex];
 
     product.amount = ++product.amount;
 
-    // if (isProductInCart) {
-    //   return setCartProducts((prevCartProducts) => {
-    //     const newCartProducts = prevCartProducts.map((cartProduct) => ({
-    //       ...cartProduct,
-    //       amount:
-    //         cartProduct.id === product.id
-    //           ? cartProduct.amount + 1
-    //           : cartProduct.amount,
-    //     }));
-    //     return newCartProducts;
-    //   });
-    // }
-
-    setCartProducts([...cartProducts]);
+    setCartProducts(modifiedProducts);
   };
 
   const handleMinus = (productIndex: number) => {
-    const product = cartProducts[productIndex];
+    const modifiedProducts = [...cartProducts];
+    const product = modifiedProducts[productIndex];
 
     product.amount -= 1;
 
-    if (product.amount === 0) {
+    if (!product.amount) {
       cartProducts.splice(productIndex, 1);
 
       return setCartProducts([...cartProducts]);
     }
 
-    setCartProducts([...cartProducts]);
+    setCartProducts(modifiedProducts);
   };
 
   return (
     <ProductsContainer>
-      {cartProducts.map((product: any, i: number) => (
+      {cartProducts.map((product, i: number) => (
         <ProductContainer key={product.id}>
           <p>{product.title}</p>
           <p>Product amount: {product.amount}</p>
-          <p>Product price: {product.price}</p>
-          <p>Sum: {(product.price * product.amount).toFixed(2)}</p>
+          {product.price ? (
+            <>
+              <p>Product price: {product.price}</p>
+              <p>Sum: {(product.price * product.amount).toFixed(2)}</p>
+            </>
+          ) : null}
           <TransparentButton onClick={() => handlePlus(i)}>+</TransparentButton>
           <TransparentButton onClick={() => handleMinus(i)}>
             -
