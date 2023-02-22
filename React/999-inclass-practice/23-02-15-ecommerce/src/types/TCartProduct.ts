@@ -1,13 +1,5 @@
-export type TCartProduct = {
-  id: number;
-  title: string | null;
-  price: number | null;
-  description: string | null;
-  category: string | null;
-  image: string;
-  rating: {
-    rate: number | null;
-    count: number | null;
-  };
+import type { TProduct } from ".";
+
+export type TCartProduct = TProduct & {
   amount: number;
 };
