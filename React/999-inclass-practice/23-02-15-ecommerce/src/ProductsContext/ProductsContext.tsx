@@ -3,9 +3,8 @@ import type { TProductsContext } from "./types";
 
 export const INITIAL_VALUE: TProductsContext = {
   products: [],
-  setProducts: () => {},
   cartProducts: [],
-  setCartProducts: () => {},
+  dispatch: () => {},
 };
 
 // const INITIAL_VALUE = {
@@ -22,4 +21,5 @@ export const INITIAL_VALUE: TProductsContext = {
 //   setCartProducts: () => {},
 // } as TProductsContext;
 
+// export const ProductsContext = createContext({ state: { age: 0 } });
 export const ProductsContext = createContext(INITIAL_VALUE);
