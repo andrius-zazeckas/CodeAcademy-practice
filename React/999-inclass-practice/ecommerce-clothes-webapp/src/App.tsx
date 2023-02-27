@@ -1,7 +1,18 @@
+import { useReducer } from "react";
+import { ProductsContext, MainRouter } from "./components";
+import { productsReducer } from "./components/ProductsContext/productsReducer";
+
 export const App = () => {
+  const [state, dispatch] = useReducer(productsReducer, {
+    fetchedProducts: [],
+    cartProducts: [],
+  });
+
   return (
-    <div className="App">
-      <h1>Products</h1>
+    <div>
+      <ProductsContext.Provider value={{ ...state, dispatch }}>
+        <MainRouter />
+      </ProductsContext.Provider>
     </div>
   );
 };
