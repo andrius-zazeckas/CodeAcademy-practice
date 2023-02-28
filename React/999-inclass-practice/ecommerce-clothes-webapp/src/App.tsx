@@ -1,6 +1,5 @@
 import { useReducer } from "react";
-import { ProductsContext, MainRouter } from "./components";
-import { productsReducer } from "./components/ProductsContext/productsReducer";
+import { ProductsContext, MainRouter, productsReducer } from "./components";
 
 export const App = () => {
   const [state, dispatch] = useReducer(productsReducer, {
