@@ -7,6 +7,8 @@ export const App = () => {
     cartProducts: [],
   });
 
+  const x = process.env.REACT_APP_SECRET_VALUE;
+
   return (
     <div>
       <ProductsContext.Provider value={{ ...state, dispatch }}>
