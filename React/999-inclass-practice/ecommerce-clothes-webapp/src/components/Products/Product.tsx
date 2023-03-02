@@ -1,12 +1,12 @@
-import { ImageListItem, ImageListItemBar } from "@mui/material";
+import { Box, ImageListItem, ImageListItemBar } from "@mui/material";
 import { type FC, useContext } from "react";
 import { ProductsContext } from "../ProductsContext";
-import { ProductButtons } from "./ProductButtons";
+import { ProductActionButton } from "./ProductActionButton";
 import type { TProductProps } from "./types";
 
 // export const Product = ({ product }: TProductProps) => {
 export const Product: FC<TProductProps> = ({ product }) => {
-  const { cartProducts, dispatch } = useContext(ProductsContext);
+  const { cartProducts } = useContext(ProductsContext);
 
   const isProductInCart = cartProducts.some(
     // ToDo - naudoti objekta del O(N)2 time complexity
@@ -27,10 +27,30 @@ export const Product: FC<TProductProps> = ({ product }) => {
         position="top"
       />
 
-      <ProductButtons
-        isProductInCart={isProductInCart}
-        productId={product.id}
-      />
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        gap="30px"
+        height="60px"
+        // sx={{ "& button": { width: "40px" } }}
+      >
+        <ProductActionButton
+          color="success"
+          title="+"
+          type="addProduct"
+          productId={product.id}
+        />
+
+        {isProductInCart ? (
+          <ProductActionButton
+            color="error"
+            title="-"
+            type="removeProduct"
+            productId={product.id}
+          />
+        ) : null}
+      </Box>
     </ImageListItem>
   );
 };

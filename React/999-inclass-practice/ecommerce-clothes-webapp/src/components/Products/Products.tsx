@@ -28,8 +28,6 @@ export const Products = () => {
         <h2>Loading</h2>
       ) : (
         <div>
-          <h1>Products</h1>
-
           <ImageList
             cols={3}
             gap={30}
