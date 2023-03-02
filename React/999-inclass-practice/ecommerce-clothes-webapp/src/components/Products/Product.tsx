@@ -1,11 +1,17 @@
 import { ImageListItem, ImageListItemBar } from "@mui/material";
 import { type FC, useContext } from "react";
 import { ProductsContext } from "../ProductsContext";
+import { ProductButtons } from "./ProductButtons";
 import type { TProductProps } from "./types";
 
 // export const Product = ({ product }: TProductProps) => {
 export const Product: FC<TProductProps> = ({ product }) => {
-  const { dispatch } = useContext(ProductsContext);
+  const { cartProducts, dispatch } = useContext(ProductsContext);
+
+  const isProductInCart = cartProducts.some(
+    // ToDo - naudoti objekta del O(N)2 time complexity
+    (cartProduct) => cartProduct.id === product.id
+  );
 
   return (
     <ImageListItem>
@@ -21,24 +27,10 @@ export const Product: FC<TProductProps> = ({ product }) => {
         position="top"
       />
 
-      <button
-        onClick={() =>
-          dispatch({ type: "addProduct", payload: { productId: product.id } })
-        }
-      >
-        Add to cart
-      </button>
-
-      <button
-        onClick={() =>
-          dispatch({
-            type: "removeProduct",
-            payload: { productId: product.id },
-          })
-        }
-      >
-        Remove from cart
-      </button>
+      <ProductButtons
+        isProductInCart={isProductInCart}
+        productId={product.id}
+      />
     </ImageListItem>
   );
 };
