@@ -1,13 +1,18 @@
 import { Box, Grid, Typography } from "@mui/material";
 import type { FC } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const Header: FC = () => {
+  const { pathname } = useLocation();
+  const isOnCartLink = pathname.includes("/cart");
+
   return (
     <Box component="header" textAlign="center" margin="0 auto" width="600px">
-      <Typography component="h1" variant="h3" padding={2}>
-        Products
+      <Typography variant="h3" padding={2} fontWeight="600" fontSize="44px">
+        {isOnCartLink ? "CART" : "PRODUCTS"}
       </Typography>
+
+      {/* TODO heading Products pagal link, sutvarkyti warning */}
 
       <Grid
         container
@@ -24,13 +29,13 @@ export const Header: FC = () => {
       >
         <Grid item xs={12} sm={6}>
           <Link to="/">
-            <Typography>Home</Typography>
+            <Typography fontSize="32px">Home</Typography>
           </Link>
         </Grid>
 
         <Grid item xs={12} sm={6}>
           <Link to="/cart">
-            <Typography>Cart</Typography>
+            <Typography fontSize="32px">Cart</Typography>
           </Link>
         </Grid>
       </Grid>

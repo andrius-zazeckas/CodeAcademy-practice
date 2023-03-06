@@ -1,4 +1,4 @@
-import { Box, ImageListItem, ImageListItemBar } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { type FC, useContext } from "react";
 import { ProductsContext } from "../ProductsContext";
 import { ProductActionButton } from "./ProductActionButton";
@@ -14,18 +14,37 @@ export const Product: FC<TProductProps> = ({ product }) => {
   );
 
   return (
-    <ImageListItem>
-      <img
-        src={`${product.image}?w=248&fit=crop&auto=format`}
-        srcSet={`${product.image}?w=248&h&fit=crop&auto=format&dpr=2 2x`}
-        loading="lazy"
-      />
+    <Grid
+      item
+      xs={6}
+      sm={3}
+      padding="20px"
+      boxShadow="0px 0px 8px 1px rgba(0, 0, 0, 0.1)"
+      borderRadius="5px"
+      textAlign="center"
+    >
+      <Box
+        display="flex"
+        margin="0 auto"
+        width="100px"
+        height="200px"
+        alignItems="center"
+        sx={{
+          "& img": { objectFit: "cover", width: "100%", maxHeight: "100%" },
+        }}
+      >
+        <img
+          src={`${product.image}?w=248&fit=crop&auto=format`}
+          srcSet={`${product.image}?w=248&h&fit=crop&auto=format&dpr=2 2x`}
+          loading="lazy"
+          alt={product.title ?? "Product image"}
+        />
+      </Box>
 
-      <ImageListItemBar
-        title={product.title}
-        subtitle={<span>PRICE: {product.price}</span>}
-        position="top"
-      />
+      <Box height="50px" overflow="clip">
+        <Typography>{product.title}</Typography>
+        <Typography>PRICE: {product.price}</Typography>
+      </Box>
 
       <Box
         display="flex"
@@ -51,6 +70,6 @@ export const Product: FC<TProductProps> = ({ product }) => {
           />
         ) : null}
       </Box>
-    </ImageListItem>
+    </Grid>
   );
 };
