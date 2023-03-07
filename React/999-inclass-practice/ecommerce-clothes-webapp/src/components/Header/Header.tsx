@@ -12,9 +12,12 @@ export const Header: FC = () => {
         {isOnCartLink ? "CART" : "PRODUCTS"}
       </Typography>
 
+      {/* <div role="products"></div> */}
+
       {/* TODO heading Products pagal link, sutvarkyti warning */}
 
       <Grid
+        role="navigation"
         container
         textAlign="center"
         mb={2}
@@ -29,13 +32,17 @@ export const Header: FC = () => {
       >
         <Grid item xs={12} sm={6}>
           <Link to="/">
-            <Typography fontSize="32px">Home</Typography>
+            <Typography aria-label="home link" fontSize="32px">
+              Home
+            </Typography>
           </Link>
         </Grid>
 
         <Grid item xs={12} sm={6}>
           <Link to="/cart">
-            <Typography fontSize="32px">Cart</Typography>
+            <Typography aria-label="cart link" fontSize="32px">
+              Cart
+            </Typography>
           </Link>
         </Grid>
       </Grid>
