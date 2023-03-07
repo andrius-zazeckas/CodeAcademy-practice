@@ -7,7 +7,13 @@ export const Header: FC = () => {
   const isOnCartLink = pathname.includes("/cart");
 
   return (
-    <Box component="header" textAlign="center" margin="0 auto" width="600px">
+    <Box
+      component="header"
+      textAlign="center"
+      margin="0 auto"
+      // width="100"
+      borderBottom="2px solid black"
+    >
       <Typography variant="h3" padding={2} fontWeight="600" fontSize="44px">
         {isOnCartLink ? "CART" : "PRODUCTS"}
       </Typography>
