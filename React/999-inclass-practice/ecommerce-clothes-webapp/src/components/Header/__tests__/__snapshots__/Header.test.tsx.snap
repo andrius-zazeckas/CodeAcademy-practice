@@ -2,7 +2,7 @@
 
 exports[`Header matches snapshot 1`] = `
 <header
-  className="MuiBox-root css-wyu7nf"
+  className="MuiBox-root css-17mas4t"
 >
   <h3
     className="MuiTypography-root MuiTypography-h3 css-93metl-MuiTypography-root"
@@ -39,7 +39,9 @@ exports[`Header matches snapshot 1`] = `
           aria-label="cart link"
           className="MuiTypography-root MuiTypography-body1 css-fldieq-MuiTypography-root"
         >
-          Cart
+          Cart (
+          0
+          )
         </p>
       </a>
     </div>

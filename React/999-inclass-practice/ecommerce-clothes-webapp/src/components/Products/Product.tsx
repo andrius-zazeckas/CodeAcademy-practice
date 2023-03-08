@@ -22,6 +22,7 @@ export const Product: FC<TProductProps> = ({ product }) => {
       boxShadow="0px 0px 8px 1px rgba(0, 0, 0, 0.1)"
       borderRadius="5px"
       textAlign="center"
+      aria-label="product"
     >
       <Box
         display="flex"

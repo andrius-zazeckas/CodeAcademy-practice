@@ -18,7 +18,7 @@ export const Products = () => {
   const [inexpensiveProducts, setInexpensiveProducts] = useState<TProduct[]>(
     []
   );
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!fetchedProducts.length);
 
   const productsToRender = shouldShowCheapProducts
     ? inexpensiveProducts
@@ -39,27 +39,29 @@ export const Products = () => {
   };
 
   useEffect(() => {
-    axios
-      .get("https://fakestoreapi.com/products")
-      .then((res) =>
-        dispatch({
-          type: "setProducts",
-          payload: { fetchedProducts: res.data },
+    if (!fetchedProducts.length) {
+      axios
+        .get("https://fakestoreapi.com/products")
+        .then((res) => {
+          dispatch({
+            type: "setProducts",
+            payload: { fetchedProducts: res.data },
+          });
         })
-      )
-      .catch((error) => console.error(error))
-      .finally(() => setIsLoading(false));
-  }, [dispatch]);
+        .catch((error) => console.error(error))
+        .finally(() => setIsLoading(false));
+    }
+  }, [dispatch, fetchedProducts]);
 
   return (
-    <>
+    <Box role="products-container">
       <Box textAlign="center">
         <FormControlLabel
           control={
             <Checkbox
               checked={shouldShowCheapProducts}
               onChange={handleCheckboxChange}
-              name="inexpensive products"
+              name="inexpensive products checkbox"
             />
           }
           label="Inexpensive Products"
@@ -67,11 +69,17 @@ export const Products = () => {
       </Box>
 
       {isLoading ? (
-        <Typography component="h1" variant="h3" padding={2}>
+        <Typography
+          component="h1"
+          variant="h3"
+          padding={2}
+          role="loading-message"
+        >
           Loading
         </Typography>
       ) : (
         <Grid
+          aria-label="products list"
           container
           display="flex"
           justifyContent="center"
@@ -85,6 +93,6 @@ export const Products = () => {
           ))}
         </Grid>
       )}
-    </>
+    </Box>
   );
 };

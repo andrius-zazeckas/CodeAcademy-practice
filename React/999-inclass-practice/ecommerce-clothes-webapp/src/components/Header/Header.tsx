@@ -55,7 +55,7 @@ export const Header: FC = () => {
         <Grid item xs={12} sm={6}>
           <Link to="/cart">
             <Typography aria-label="cart link" fontSize="32px">
-              Cart - {cartAmount}
+              Cart ({cartAmount})
             </Typography>
           </Link>
         </Grid>
