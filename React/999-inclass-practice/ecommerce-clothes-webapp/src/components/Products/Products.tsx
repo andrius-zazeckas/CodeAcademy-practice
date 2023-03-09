@@ -24,6 +24,12 @@ export const Products = () => {
     ? inexpensiveProducts
     : fetchedProducts;
 
+  const productNumber = 4;
+
+  const firstNproductsToRender = shouldShowCheapProducts
+    ? inexpensiveProducts.slice(0, productNumber)
+    : fetchedProducts.slice(0, productNumber);
+
   const handleCheckboxChange = () => {
     setShouldShowCheapProducts(
       (prevShouldShowCheapProducts) => !prevShouldShowCheapProducts

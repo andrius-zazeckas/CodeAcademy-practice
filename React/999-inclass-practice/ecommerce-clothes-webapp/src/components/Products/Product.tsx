@@ -30,18 +30,24 @@ export const Product: FC<TProductProps> = ({ product }) => {
         width="100px"
         height="200px"
         alignItems="center"
+        aria-label="product image"
         sx={{
           "& img": { objectFit: "cover", width: "100%", maxHeight: "100%" },
         }}
       >
-        <img src={product.image} alt={product.title ?? "Product image"} />
+        <img
+          src={product && product.image}
+          alt={(product && product.title) ?? "Product image"}
+        />
       </Box>
 
       <Box height="70px" overflow="clip">
         <Typography height="50px" overflow="hidden">
-          {product.title}
+          {product && product.title}
         </Typography>
-        <Typography color="darkRed">PRICE: {product.price}</Typography>
+        <Typography color="darkRed">
+          PRICE: {product && product.price}
+        </Typography>
       </Box>
 
       <Box
@@ -56,7 +62,7 @@ export const Product: FC<TProductProps> = ({ product }) => {
           color="success"
           title="+"
           type="addProduct"
-          productId={product.id}
+          productId={product && product.id}
         />
 
         {isProductInCart ? (

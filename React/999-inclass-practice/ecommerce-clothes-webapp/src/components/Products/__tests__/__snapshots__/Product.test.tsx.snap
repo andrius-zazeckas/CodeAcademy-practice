@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product matches snapshot 1`] = `
+<div
+  aria-label="product"
+  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-vrw0vt-MuiGrid-root"
+>
+  <div
+    className="MuiBox-root css-civhbh"
+  >
+    <img
+      alt="Product image"
+    />
+  </div>
+  <div
+    className="MuiBox-root css-1imvbg5"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+    />
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+    >
+      PRICE: 
+    </p>
+  </div>
+  <div
+    className="MuiBox-root css-1xcgjaw"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      +
+    </button>
+  </div>
+</div>
+`;
