@@ -1,1 +1,0 @@
-export { ProductsContext } from "./ProductsContext";

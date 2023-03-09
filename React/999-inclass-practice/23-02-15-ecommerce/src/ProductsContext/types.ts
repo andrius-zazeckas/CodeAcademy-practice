@@ -1,12 +1,12 @@
-import type { Dispatch } from "react";
-import type { TCartProduct } from "../types/TCartProduct";
-import type { TProduct } from "../types/TProduct";
+import { TCartProduct } from "../types/TCartProduct";
+import { TProduct } from "../types/TProduct";
 
-export type TProductsContext = TProductState & {
-  dispatch: Dispatch<any>;
+export type TProductsContext = {
+  products: TProduct[];
+  setProducts: React.Dispatch<React.SetStateAction<TProduct[]>>;
 };
 
-export type TProductState = {
-  products: TProduct[];
+export type TCartProductsContext = {
   cartProducts: TCartProduct[];
+  setCartProducts: React.Dispatch<React.SetStateAction<TCartProduct[]>>;
 };
