@@ -42,12 +42,13 @@ export const Product: FC<TProductProps> = ({ product }) => {
       </Box>
 
       <Box height="70px" overflow="clip">
-        <Typography height="50px" overflow="hidden">
+        <Typography height="50px" overflow="hidden" aria-label="product title">
           {product && product.title}
         </Typography>
-        <Typography color="darkRed">
+        <Typography color="darkRed" aria-label="product price">
           PRICE: {product && product.price}
         </Typography>
+        <Typography>{product.description}</Typography>
       </Box>
 
       <Box

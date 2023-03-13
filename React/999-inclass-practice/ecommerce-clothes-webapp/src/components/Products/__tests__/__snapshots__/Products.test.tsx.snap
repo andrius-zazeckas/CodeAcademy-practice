@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Products matches snapshot 1`] = `
+exports[`Products matches Loading snapshot 1`] = `
 <div
   className="MuiBox-root css-0"
   role="products-container"
@@ -61,5 +61,1311 @@ exports[`Products matches snapshot 1`] = `
   >
     Loading
   </h1>
+</div>
+`;
+
+exports[`Products should show amount of products that was provided 1`] = `
+<div
+  className="MuiBox-root css-0"
+  role="products-container"
+>
+  <div
+    className="MuiBox-root css-xi606m"
+  >
+    <label
+      className="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-j204z7-MuiFormControlLabel-root"
+    >
+      <span
+        className="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-root MuiCheckbox-colorPrimary css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={null}
+      >
+        <input
+          checked={false}
+          className="PrivateSwitchBase-input css-1m9pwf3"
+          data-indeterminate={false}
+          name="inexpensive products checkbox"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="CheckBoxOutlineBlankIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+          />
+        </svg>
+        <span
+          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </span>
+      <span
+        className="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-ahj2mt-MuiTypography-root"
+      >
+        Inexpensive Products
+      </span>
+    </label>
+  </div>
+  <div
+    aria-label="products list"
+    className="MuiGrid-root MuiGrid-container css-5gzhh4-MuiGrid-root"
+  >
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+          src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          109.95
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Mens Casual Premium Slim Fit T-Shirts "
+          src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Mens Casual Premium Slim Fit T-Shirts 
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          22.3
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Mens Cotton Jacket"
+          src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Mens Cotton Jacket
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          55.99
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Mens Casual Slim Fit"
+          src="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Mens Casual Slim Fit
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          15.99
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet"
+          src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          695
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Solid Gold Petite Micropave "
+          src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Solid Gold Petite Micropave 
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          168
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="White Gold Plated Princess"
+          src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          White Gold Plated Princess
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          9.99
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Pierced Owl Rose Gold Plated Stainless Steel Double"
+          src="https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Pierced Owl Rose Gold Plated Stainless Steel Double
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          10.99
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="WD 2TB Elements Portable External Hard Drive - USB 3.0 "
+          src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          WD 2TB Elements Portable External Hard Drive - USB 3.0 
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          64
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s"
+          src="https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          109
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5"
+          src="https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          109
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive"
+          src="https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          114
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin"
+          src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          599
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED "
+          src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED 
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          999.99
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats"
+          src="https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          56.99
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket"
+          src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          29.95
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Rain Jacket Women Windbreaker Striped Climbing Raincoats"
+          src="https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Rain Jacket Women Windbreaker Striped Climbing Raincoats
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          39.99
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="MBJ Women's Solid Short Sleeve Boat Neck V "
+          src="https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          MBJ Women's Solid Short Sleeve Boat Neck V 
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          9.85
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="Opna Women's Short Sleeve Moisture"
+          src="https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          Opna Women's Short Sleeve Moisture
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          7.95
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+    <div
+      aria-label="product"
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-s4tbib-MuiGrid-root"
+    >
+      <div
+        aria-label="product image"
+        className="MuiBox-root css-civhbh"
+      >
+        <img
+          alt="DANVOUY Womens T Shirt Casual Cotton Short"
+          src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"
+        />
+      </div>
+      <div
+        className="MuiBox-root css-1imvbg5"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+        >
+          DANVOUY Womens T Shirt Casual Cotton Short
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+        >
+          PRICE: 
+          12.99
+        </p>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.
+        </p>
+      </div>
+      <div
+        className="MuiBox-root css-1xcgjaw"
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          +
+          <span
+            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 `;

@@ -19,7 +19,7 @@ export const Cart = () => {
   // ToDo: material ui list (DataGrid)
 
   return (
-    <Box>
+    <Box aria-label="cart">
       <ul>
         {cartProducts.map((product) => (
           <Grid
@@ -46,7 +46,9 @@ export const Cart = () => {
                 productId={product.id}
               />
 
-              <Typography textAlign="center">{product.amount}</Typography>
+              <Typography textAlign="center" aria-label="product amount">
+                {product.amount}
+              </Typography>
 
               <ProductActionButton
                 color="error"
@@ -67,7 +69,7 @@ export const Cart = () => {
       </ul>
       <Box display="flex" justifyContent="center" alignItems="center" mt="20px">
         <Typography variant="h4">Total price:&nbsp;</Typography>
-        <Typography variant="h4">
+        <Typography variant="h4" aria-label="total price">
           {currencyFormat.format(totalPrice)}
         </Typography>
       </Box>

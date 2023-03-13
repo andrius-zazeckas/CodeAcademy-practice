@@ -1,4 +1,4 @@
-import { Dispatch } from "react";
+import type { Dispatch } from "react";
 
 export type TProduct = {
   id: number;

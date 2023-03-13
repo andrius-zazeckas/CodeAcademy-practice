@@ -1,27 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Product matches snapshot 1`] = `
+exports[`Product should render Product 1`] = `
 <div
   aria-label="product"
   className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-vrw0vt-MuiGrid-root"
 >
   <div
+    aria-label="product image"
     className="MuiBox-root css-civhbh"
   >
     <img
-      alt="Product image"
+      alt="Test"
+      src="testImage.jpg"
     />
   </div>
   <div
     className="MuiBox-root css-1imvbg5"
   >
     <p
+      aria-label="product title"
       className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
-    />
+    >
+      Test
+    </p>
     <p
+      aria-label="product price"
       className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
     >
       PRICE: 
+      2.99
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      For testing purposes
     </p>
   </div>
   <div
@@ -47,6 +59,73 @@ exports[`Product matches snapshot 1`] = `
       type="button"
     >
       +
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Product should show product information 1`] = `
+<div
+  aria-label="product"
+  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 MuiGrid-grid-sm-3 css-vrw0vt-MuiGrid-root"
+>
+  <div
+    aria-label="product image"
+    className="MuiBox-root css-civhbh"
+  >
+    <img
+      alt="Test"
+      src="testImage.jpg"
+    />
+  </div>
+  <div
+    className="MuiBox-root css-1imvbg5"
+  >
+    <p
+      aria-label="product title"
+      className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
+    >
+      Test
+    </p>
+    <p
+      aria-label="product price"
+      className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
+    >
+      PRICE: 
+      2.99
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      For testing purposes
+    </p>
+  </div>
+  <div
+    className="MuiBox-root css-1xcgjaw"
+  >
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      +
+      <span
+        className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+      />
     </button>
   </div>
 </div>
