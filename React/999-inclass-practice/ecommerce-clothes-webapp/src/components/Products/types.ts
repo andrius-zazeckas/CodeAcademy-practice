@@ -8,6 +8,7 @@ export type TProductActionButtonProps = {
   title: string;
   type: TProductsAction["type"];
   productId: number;
+  label?: string;
   color?:
     | "inherit"
     | "primary"

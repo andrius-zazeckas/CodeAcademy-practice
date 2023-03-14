@@ -40,6 +40,7 @@ exports[`Product should render Product 1`] = `
     className="MuiBox-root css-1xcgjaw"
   >
     <button
+      aria-label="add product"
       className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
       disabled={false}
       onBlur={[Function]}
@@ -104,6 +105,7 @@ exports[`Product should show product information 1`] = `
     className="MuiBox-root css-1xcgjaw"
   >
     <button
+      aria-label="add product"
       className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
       disabled={false}
       onBlur={[Function]}

@@ -8,6 +8,7 @@ export const ProductActionButton: FC<TProductActionButtonProps> = ({
   type,
   productId,
   color,
+  label,
 }) => {
   const { dispatch } = useContext(ProductsContext);
 
@@ -17,6 +18,7 @@ export const ProductActionButton: FC<TProductActionButtonProps> = ({
       color={color}
       sx={{ width: "30px", height: "30px" }}
       onClick={() => dispatch({ type, payload: { productId } })}
+      aria-label={label}
     >
       {title}
     </Button>

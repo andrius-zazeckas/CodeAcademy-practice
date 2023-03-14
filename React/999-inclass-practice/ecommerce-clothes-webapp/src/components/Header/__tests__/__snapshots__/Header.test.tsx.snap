@@ -32,11 +32,11 @@ exports[`Header matches snapshot 1`] = `
       className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 css-1b3l6lk-MuiGrid-root"
     >
       <a
+        aria-label="cart link"
         href="/cart"
         onClick={[Function]}
       >
         <p
-          aria-label="cart link"
           className="MuiTypography-root MuiTypography-body1 css-fldieq-MuiTypography-root"
         >
           Cart (

@@ -143,11 +143,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -163,6 +165,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -205,11 +208,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Mens Casual Premium Slim Fit T-Shirts 
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -225,6 +230,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -267,11 +273,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Mens Cotton Jacket
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -287,6 +295,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -329,11 +338,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Mens Casual Slim Fit
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -349,6 +360,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -391,11 +403,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -411,6 +425,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -453,11 +468,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Solid Gold Petite Micropave 
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -473,6 +490,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -515,11 +533,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           White Gold Plated Princess
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -535,6 +555,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -577,11 +598,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Pierced Owl Rose Gold Plated Stainless Steel Double
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -597,6 +620,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -639,11 +663,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           WD 2TB Elements Portable External Hard Drive - USB 3.0 
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -659,6 +685,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -701,11 +728,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -721,6 +750,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -763,11 +793,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -783,6 +815,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -825,11 +858,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -845,6 +880,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -887,11 +923,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -907,6 +945,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -949,11 +988,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED 
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -969,6 +1010,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -1011,11 +1053,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -1031,6 +1075,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -1073,11 +1118,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -1093,6 +1140,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -1135,11 +1183,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Rain Jacket Women Windbreaker Striped Climbing Raincoats
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -1155,6 +1205,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -1197,11 +1248,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           MBJ Women's Solid Short Sleeve Boat Neck V 
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -1217,6 +1270,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -1259,11 +1313,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           Opna Women's Short Sleeve Moisture
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -1279,6 +1335,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -1321,11 +1378,13 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1imvbg5"
       >
         <p
+          aria-label="product title"
           className="MuiTypography-root MuiTypography-body1 css-zwkcuf-MuiTypography-root"
         >
           DANVOUY Womens T Shirt Casual Cotton Short
         </p>
         <p
+          aria-label="product price"
           className="MuiTypography-root MuiTypography-body1 css-mfsdrg-MuiTypography-root"
         >
           PRICE: 
@@ -1341,6 +1400,7 @@ exports[`Products should show amount of products that was provided 1`] = `
         className="MuiBox-root css-1xcgjaw"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}

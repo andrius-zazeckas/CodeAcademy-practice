@@ -5,9 +5,12 @@ exports[`Cart should calculate cart total price 1`] = `
   aria-label="cart"
   className="MuiBox-root css-0"
 >
-  <ul>
-    <li
-      className="MuiGrid-root MuiGrid-container css-1207xz3-MuiGrid-root"
+  <div
+    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+  >
+    <div
+      aria-label="cart product"
+      className="MuiGrid-root MuiGrid-container MuiGrid-item css-hayvbu-MuiGrid-root"
     >
       <div
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
@@ -22,6 +25,7 @@ exports[`Cart should calculate cart total price 1`] = `
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-82ndot-MuiGrid-root"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -52,6 +56,7 @@ exports[`Cart should calculate cart total price 1`] = `
           2
         </p>
         <button
+          aria-label="remove product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1orhlu6-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -85,8 +90,8 @@ exports[`Cart should calculate cart total price 1`] = `
           €2.99
         </p>
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
   <div
     className="MuiBox-root css-1ez87es"
   >
@@ -110,7 +115,9 @@ exports[`Cart should render Cart 1`] = `
   aria-label="cart"
   className="MuiBox-root css-0"
 >
-  <ul />
+  <div
+    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+  />
   <div
     className="MuiBox-root css-1ez87es"
   >
@@ -134,9 +141,12 @@ exports[`Cart should show product amount in cart 1`] = `
   aria-label="cart"
   className="MuiBox-root css-0"
 >
-  <ul>
-    <li
-      className="MuiGrid-root MuiGrid-container css-1207xz3-MuiGrid-root"
+  <div
+    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+  >
+    <div
+      aria-label="cart product"
+      className="MuiGrid-root MuiGrid-container MuiGrid-item css-hayvbu-MuiGrid-root"
     >
       <div
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
@@ -151,6 +161,7 @@ exports[`Cart should show product amount in cart 1`] = `
         className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-82ndot-MuiGrid-root"
       >
         <button
+          aria-label="add product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -178,6 +189,7 @@ exports[`Cart should show product amount in cart 1`] = `
           2
         </p>
         <button
+          aria-label="remove product"
           className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1orhlu6-MuiButtonBase-root-MuiButton-root"
           disabled={false}
           onBlur={[Function]}
@@ -208,8 +220,8 @@ exports[`Cart should show product amount in cart 1`] = `
           €2.99
         </p>
       </div>
-    </li>
-  </ul>
+    </div>
+  </div>
   <div
     className="MuiBox-root css-1ez87es"
   >

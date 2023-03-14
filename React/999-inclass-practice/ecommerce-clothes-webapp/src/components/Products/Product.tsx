@@ -64,6 +64,7 @@ export const Product: FC<TProductProps> = ({ product }) => {
           title="+"
           type="addProduct"
           productId={product && product.id}
+          label="add product"
         />
 
         {isProductInCart ? (
@@ -72,6 +73,7 @@ export const Product: FC<TProductProps> = ({ product }) => {
             title="-"
             type="removeProduct"
             productId={product.id}
+            label="remove product"
           />
         ) : null}
       </Box>

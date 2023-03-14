@@ -8,11 +8,11 @@ export const Header: FC = () => {
   const { pathname } = useLocation();
   const isOnCartLink = pathname.includes("/cart");
 
-  let cartAmount = 0;
+  // let cartAmount = 0;
 
-  cartProducts.forEach((product) => {
-    cartAmount += product.amount;
-  });
+  // cartProducts.forEach((product) => {
+  //   cartAmount += product.amount;
+  // });
 
   return (
     <Box
@@ -53,9 +53,9 @@ export const Header: FC = () => {
         </Grid>
 
         <Grid item xs={12} sm={6}>
-          <Link to="/cart">
-            <Typography aria-label="cart link" fontSize="32px">
-              Cart ({cartAmount})
+          <Link to="/cart" aria-label="cart link">
+            <Typography fontSize="32px">
+              Cart ({cartProducts.length})
             </Typography>
           </Link>
         </Grid>
