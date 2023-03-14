@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cart should calculate correct cart total price 1`] = `
+exports[`Cart should calculate cart total price 1`] = `
 <div
   aria-label="cart"
   className="MuiBox-root css-0"
@@ -120,6 +120,7 @@ exports[`Cart should render Cart 1`] = `
       Total price: 
     </h4>
     <h4
+      aria-label="total price"
       className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
     >
       €0.00

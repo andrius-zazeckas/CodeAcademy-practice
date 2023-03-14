@@ -29,7 +29,7 @@ describe("Cart", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it.only("should show product amount in cart", () => {
+  it("should show product amount in cart", () => {
     render(
       <ProductsContext.Provider
         value={{
@@ -42,7 +42,9 @@ describe("Cart", () => {
       </ProductsContext.Provider>
     );
 
-    expect(screen.getByLabelText("product amount").textContent).toBe("2");
+    expect(screen.getByLabelText("product amount").textContent).toBe(
+      `${cartProducts[0].amount}`
+    );
 
     const tree = renderer.create(
       <ProductsContext.Provider
@@ -59,7 +61,7 @@ describe("Cart", () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it.only("should calculate correct cart total price", () => {
+  it("should calculate cart total price", () => {
     render(
       <ProductsContext.Provider
         value={{
@@ -72,10 +74,15 @@ describe("Cart", () => {
       </ProductsContext.Provider>
     );
 
+    const currencyFormat = new Intl.NumberFormat(navigator.language, {
+      style: "currency",
+      currency: "EUR",
+    });
+
     const totalPrice = cartProducts[0].amount * cartProducts[0].price;
 
     expect(screen.getByLabelText("total price").textContent).toBe(
-      `€${totalPrice}`
+      `${currencyFormat.format(totalPrice)}`
     );
 
     const tree = renderer.create(
