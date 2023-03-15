@@ -120,6 +120,7 @@ exports[`Cart should render Cart 1`] = `
   className="MuiBox-root css-0"
 >
   <h3
+    aria-label="empty cart"
     className="MuiTypography-root MuiTypography-body1 css-1ykj1nk-MuiTypography-root"
   >
     No products in cart

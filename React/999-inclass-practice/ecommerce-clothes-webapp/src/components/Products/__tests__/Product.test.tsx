@@ -3,20 +3,20 @@ import { Product } from "../Product";
 import renderer from "react-test-renderer";
 
 describe("Product", () => {
-  const product = {
-    id: 1,
-    title: "Test",
-    price: 2.99,
-    description: "For testing purposes",
-    category: "Testing category",
-    image: "testImage.jpg",
-    rating: {
-      rate: 4,
-      count: 2,
-    },
-  };
-
   it("should render Product", () => {
+    const product = {
+      id: 1,
+      title: "Test",
+      price: 2.99,
+      description: "For testing purposes",
+      category: "Testing category",
+      image: "testImage.jpg",
+      rating: {
+        rate: 4,
+        count: 2,
+      },
+    };
+
     render(<Product product={product} />);
     expect(screen.getByLabelText("product")).toBeVisible();
 
@@ -26,6 +26,19 @@ describe("Product", () => {
   });
 
   it("should show product information", () => {
+    const product = {
+      id: 1,
+      title: "Test",
+      price: 2.99,
+      description: "For testing purposes",
+      category: "Testing category",
+      image: "testImage.jpg",
+      rating: {
+        rate: 4,
+        count: 2,
+      },
+    };
+
     render(<Product product={product} />);
 
     const productTitle = screen.getByLabelText("product title");

@@ -27,7 +27,13 @@ export const Cart = () => {
   return (
     <Box aria-label="cart">
       {isCartEmpty ? (
-        <Typography component="h3" textAlign="center" fontSize="30px" my="20px">
+        <Typography
+          component="h3"
+          textAlign="center"
+          fontSize="30px"
+          my="20px"
+          aria-label="empty cart"
+        >
           No products in cart
         </Typography>
       ) : (
