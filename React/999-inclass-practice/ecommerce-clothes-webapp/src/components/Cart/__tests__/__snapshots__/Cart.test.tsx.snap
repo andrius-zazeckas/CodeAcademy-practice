@@ -6,106 +6,110 @@ exports[`Cart should calculate cart total price 1`] = `
   className="MuiBox-root css-0"
 >
   <div
-    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+    className="MuiBox-root css-0"
   >
     <div
-      aria-label="cart product"
-      className="MuiGrid-root MuiGrid-container MuiGrid-item css-hayvbu-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
     >
       <div
-        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
+        aria-label="cart product"
+        className="MuiGrid-root MuiGrid-container MuiGrid-item css-hayvbu-MuiGrid-root"
       >
-        <p
-          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
         >
-          Test
-        </p>
-      </div>
-      <div
-        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-82ndot-MuiGrid-root"
-      >
-        <button
-          aria-label="add product"
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            Test
+          </p>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-82ndot-MuiGrid-root"
         >
-          +
-          <span
-            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-          />
-        </button>
-        <p
-          aria-label="product amount"
-          className="MuiTypography-root MuiTypography-body1 css-1uwgr7b-MuiTypography-root"
+          <button
+            aria-label="add product"
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            +
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <p
+            aria-label="product amount"
+            className="MuiTypography-root MuiTypography-body1 css-1uwgr7b-MuiTypography-root"
+          >
+            2
+          </p>
+          <button
+            aria-label="remove product"
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1orhlu6-MuiButtonBase-root-MuiButton-root"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            -
+            <span
+              className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
         >
-          2
-        </p>
-        <button
-          aria-label="remove product"
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1orhlu6-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          -
-          <span
-            className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
-          />
-        </button>
-      </div>
-      <div
-        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
-      >
-        <p
-          className="MuiTypography-root MuiTypography-body1 css-hlnzui-MuiTypography-root"
-        >
-          €2.99
-        </p>
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-hlnzui-MuiTypography-root"
+          >
+            €2.99
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    className="MuiBox-root css-1ez87es"
-  >
-    <h4
-      className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+    <div
+      className="MuiBox-root css-1ez87es"
     >
-      Total price: 
-    </h4>
-    <h4
-      aria-label="total price"
-      className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
-    >
-      €5.98
-    </h4>
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+      >
+        Total price: 
+      </h4>
+      <h4
+        aria-label="total price"
+        className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+      >
+        €5.98
+      </h4>
+    </div>
   </div>
 </div>
 `;
@@ -115,24 +119,11 @@ exports[`Cart should render Cart 1`] = `
   aria-label="cart"
   className="MuiBox-root css-0"
 >
-  <div
-    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
-  />
-  <div
-    className="MuiBox-root css-1ez87es"
+  <h3
+    className="MuiTypography-root MuiTypography-body1 css-1ykj1nk-MuiTypography-root"
   >
-    <h4
-      className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
-    >
-      Total price: 
-    </h4>
-    <h4
-      aria-label="total price"
-      className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
-    >
-      €0.00
-    </h4>
-  </div>
+    No products in cart
+  </h3>
 </div>
 `;
 
@@ -142,100 +133,104 @@ exports[`Cart should show product amount in cart 1`] = `
   className="MuiBox-root css-0"
 >
   <div
-    className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+    className="MuiBox-root css-0"
   >
     <div
-      aria-label="cart product"
-      className="MuiGrid-root MuiGrid-container MuiGrid-item css-hayvbu-MuiGrid-root"
+      className="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
     >
       <div
-        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
+        aria-label="cart product"
+        className="MuiGrid-root MuiGrid-container MuiGrid-item css-hayvbu-MuiGrid-root"
       >
-        <p
-          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-6 css-1osj8n2-MuiGrid-root"
         >
-          Test
-        </p>
-      </div>
-      <div
-        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-82ndot-MuiGrid-root"
-      >
-        <button
-          aria-label="add product"
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+          >
+            Test
+          </p>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-82ndot-MuiGrid-root"
         >
-          +
-        </button>
-        <p
-          aria-label="product amount"
-          className="MuiTypography-root MuiTypography-body1 css-1uwgr7b-MuiTypography-root"
+          <button
+            aria-label="add product"
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedSuccess MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1klp1e9-MuiButtonBase-root-MuiButton-root"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            +
+          </button>
+          <p
+            aria-label="product amount"
+            className="MuiTypography-root MuiTypography-body1 css-1uwgr7b-MuiTypography-root"
+          >
+            2
+          </p>
+          <button
+            aria-label="remove product"
+            className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1orhlu6-MuiButtonBase-root-MuiButton-root"
+            disabled={false}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            -
+          </button>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
         >
-          2
-        </p>
-        <button
-          aria-label="remove product"
-          className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedError MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1orhlu6-MuiButtonBase-root-MuiButton-root"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          -
-        </button>
-      </div>
-      <div
-        className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3 css-1equabv-MuiGrid-root"
-      >
-        <p
-          className="MuiTypography-root MuiTypography-body1 css-hlnzui-MuiTypography-root"
-        >
-          €2.99
-        </p>
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-hlnzui-MuiTypography-root"
+          >
+            €2.99
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    className="MuiBox-root css-1ez87es"
-  >
-    <h4
-      className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+    <div
+      className="MuiBox-root css-1ez87es"
     >
-      Total price: 
-    </h4>
-    <h4
-      aria-label="total price"
-      className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
-    >
-      €5.98
-    </h4>
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+      >
+        Total price: 
+      </h4>
+      <h4
+        aria-label="total price"
+        className="MuiTypography-root MuiTypography-h4 css-5lbw0b-MuiTypography-root"
+      >
+        €5.98
+      </h4>
+    </div>
   </div>
 </div>
 `;
